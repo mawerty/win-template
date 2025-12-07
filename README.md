@@ -17,6 +17,7 @@
 ## 📋 Spis treści
 
 - [**Demo - Gotowa wersja**](#-demo---gotowa-wersja-do-uruchomienia) ⭐
+- [**Prezentacja**](#-prezentacja) 📽️
 - [O projekcie](#-o-projekcie)
 - [Kluczowe funkcje](#-kluczowe-funkcje)
 - [Architektura](#-architektura)
@@ -209,7 +210,18 @@ W folderze znajduje się plik **`Atlantis-Analyst-Demo.zip`** - to w pełni dzia
 
 To jest bezpieczna wersja z zapisanymi danymi (mock data) - nie wymaga połączenia z internetem ani żadnych kluczy API. Działa na każdym komputerze z Node.js.
 
+> 📌 **Jak przeglądać demo:** W wersji demo **nie działa generowanie nowych analiz** - to wymaga backendu i kluczy API. Aby zobaczyć funkcjonalność aplikacji:
+> 1. Kliknij na **istniejącą sesję analizy** na liście
+> 2. Przeglądaj wygenerowane **tematy, scenariusze i źródła**
+> 3. Sprawdź **ścieżkę wnioskowania** i **historię ewolucji jakości**
+
 > ⚠️ **Uwaga:** Pełna wersja z backendem (poniżej) może wymagać dodatkowej konfiguracji. Jeśli masz problemy z uruchomieniem pełnej wersji, użyj wersji demo powyżej - ta na pewno zadziała!
+
+---
+
+## 📽️ Prezentacja
+
+W repozytorium znajduje się plik **`Prezentacja.pdf`** - prezentacja projektu zawierająca opis koncepcji, architektury i funkcjonalności narzędzia.
 
 ---
 
