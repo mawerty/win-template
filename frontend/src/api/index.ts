@@ -1,2 +1,2 @@
 export * from "./fetcher";
-export * from "./cats";
+export * from "./analysis";

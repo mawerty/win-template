@@ -1,7 +1,7 @@
 [project]
 name = "hackathon-backend"
 version = "0.1.0"
-description = "Hackathon backend template with FastAPI"
+description = "Atlantis Analyst - Geopolitical Scenario Generator"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
@@ -9,12 +9,10 @@ dependencies = [
     "sqlmodel>=0.0.22",
     "pydantic[email]>=2.9.0",
     "pydantic-settings>=2.6.0",
-    # Auth
-    "pyjwt>=2.9.0",
-    "bcrypt>=4.2.0",
-    # File uploads
-    "python-multipart>=0.0.12",
-    "aiofiles>=24.1.0",
+    # HTTP client for APIs
+    "httpx>=0.27.0",
+    # Environment variables
+    "python-dotenv>=1.0.0",
 ]
 
 [project.scripts]

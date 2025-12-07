@@ -1,5 +1,3 @@
-"""Models package - import all models here for SQLModel to discover them."""
+from .analysis import AnalysisSession, Topic, Scenario, EvolutionLog
 
-from app.models.cat import Cat, CatCreate, CatRead, CatUpdate
-
-__all__ = ["Cat", "CatCreate", "CatRead", "CatUpdate"]
+__all__ = ["AnalysisSession", "Topic", "Scenario", "EvolutionLog"]

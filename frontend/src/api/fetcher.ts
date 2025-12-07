@@ -39,6 +39,39 @@ export async function apiFetch<TData, TBody = unknown>({
   return response.json();
 }
 
+// Simple fetcher for direct use
+export async function fetcher<T>(url: string, options?: RequestInit): Promise<T> {
+  let response: Response;
+  
+  try {
+    response = await fetch(`${API_BASE_URL}${url}`, {
+      ...options,
+      headers: {
+        "Content-Type": "application/json",
+        ...options?.headers,
+      },
+    });
+  } catch (networkError) {
+    // Network error (server down, CORS, etc.)
+    throw { 
+      status: 0, 
+      message: "Nie można połączyć z serwerem",
+      payload: { detail: "Sprawdź czy backend działa" }
+    };
+  }
+
+  if (!response.ok) {
+    const errorPayload = await response.json().catch(() => ({ detail: `HTTP ${response.status}` }));
+    throw { status: response.status, payload: errorPayload };
+  }
+
+  if (response.status === 204) {
+    return undefined as T;
+  }
+
+  return response.json();
+}
+
 export function buildQueryString(
   params: Record<string, string | number | boolean | undefined | null>
 ): string {

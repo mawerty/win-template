@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.db import init_db
-from app.routes import health, cats
+from app.routes import health, analysis, articles
 
 
 @asynccontextmanager
@@ -15,8 +15,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Hackathon API",
-    description="Fast hackathon template API",
+    title="Atlantis Analyst",
+    description="Narzędzie analityczne dla MSZ - scenariusze geopolityczne",
     version="0.1.0",
     lifespan=lifespan,
 )
@@ -30,16 +30,5 @@ app.add_middleware(
 )
 
 app.include_router(health.router, tags=["Health"])
-app.include_router(cats.router, prefix=settings.api_prefix, tags=["Cats"])
-
-if settings.enable_auth:
-    from app.features.auth import auth_router
-    app.include_router(auth_router, prefix=f"{settings.api_prefix}/auth", tags=["Auth"])
-
-if settings.enable_file_upload:
-    from app.features.uploads import uploads_router
-    app.include_router(uploads_router, prefix=f"{settings.api_prefix}/uploads", tags=["Uploads"])
-
-if settings.enable_websockets:
-    from app.features.websockets import websockets_router
-    app.include_router(websockets_router, tags=["WebSockets"])
+app.include_router(analysis.router, prefix=settings.api_prefix, tags=["Analysis"])
+app.include_router(articles.router, prefix=settings.api_prefix, tags=["Articles"])

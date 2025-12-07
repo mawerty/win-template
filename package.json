@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently -n be,fe -c blue,green \"pnpm dev:be\" \"pnpm dev:fe\"",
-    "dev:be": "cd backend && uv run uvicorn app.main:app --reload --port 8000",
+    "dev:be": "lsof -ti:8000 | xargs kill -9 2>/dev/null; cd backend && uv run uvicorn app.main:app --reload --port 8000",
     "dev:fe": "pnpm -C frontend dev",
     "build": "pnpm -C frontend build",
     "api": "openapi-codegen gen api && biome check --fix frontend/src/api",

@@ -1,19 +1,23 @@
 import { Link } from "react-router-dom";
-import { Home } from "lucide-react";
-import { Button } from "@/components/ui";
+import { Button } from "@/components/ui/button";
+import { Home, AlertTriangle } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center py-20 text-center">
-      <h1 className="text-6xl font-bold text-muted-foreground">404</h1>
-      <p className="text-xl text-muted-foreground mt-4 mb-8">Page not found</p>
+    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
+      <div className="p-4 rounded-full bg-amber-500/10 mb-6">
+        <AlertTriangle className="h-12 w-12 text-amber-400" />
+      </div>
+      <h1 className="text-4xl font-bold text-slate-100 mb-2">404</h1>
+      <p className="text-lg text-slate-400 mb-6">
+        Strona nie została znaleziona
+      </p>
       <Button asChild>
         <Link to="/">
           <Home className="mr-2 h-4 w-4" />
-          Back to Home
+          Wróć do strony głównej
         </Link>
       </Button>
     </div>
   );
 }
-
