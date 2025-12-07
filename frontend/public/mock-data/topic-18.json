@@ -1,0 +1,18 @@
+{
+  "id": 18,
+  "session_id": 1,
+  "name": "Geopolitical Implications of Low Oil Prices for Russia and Regional Stability",
+  "keywords": [
+    "Russia budget impact",
+    "energy geopolitics",
+    "Baltic Sea security",
+    "hybrid threats"
+  ],
+  "weight": 70,
+  "rationale": "Factor (f) Low oil prices will impact Russia's budget, potentially influencing its foreign policy and regional stability, which directly affects Atlantis.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

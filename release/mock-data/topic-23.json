@@ -1,0 +1,18 @@
+{
+  "id": 23,
+  "session_id": 1,
+  "name": "Strengthening Atlantis's Critical Infrastructure Against Hybrid Attacks",
+  "keywords": [
+    "cybersecurity",
+    "energy grid protection",
+    "transport infrastructure",
+    "military readiness"
+  ],
+  "weight": 70,
+  "rationale": "Hybrid attacks on critical infrastructure are a direct military threat, requiring robust defense and resilience strategies for Atlantis.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

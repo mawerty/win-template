@@ -19,6 +19,7 @@ export interface Topic {
   keywords: string[];
   weight: number;      // 1-100, higher = more important
   rationale: string;   // Why this topic is relevant
+  situation_factor?: string; // Which situation factor (a/b/c/d/e/f) this relates to
   selected: boolean;
   has_cached_urls?: boolean;
   urls_cached_at?: string | null;
@@ -188,28 +189,30 @@ export interface SessionListItem {
 // Default Atlantis profile
 export const DEFAULT_COUNTRY_PROFILE: CountryProfile = {
   name: "Atlantis",
-  population: "28 mln",
-  geography: "Dostęp do Morza Bałtyckiego, kilka dużych żeglownych rzek, ograniczone zasoby wody pitnej",
-  climate: "Umiarkowany",
-  economy: "Przemysł ciężki, motoryzacyjny, spożywczy, chemiczny, ICT. Ambicje w zakresie OZE, przetwarzania surowców krytycznych oraz budowy ponadnarodowej infrastruktury AI (big data centers, giga fabryki AI, komputery kwantowe)",
-  army: "150 tys. zawodowych żołnierzy",
-  digitalization: "Powyżej średniej europejskiej",
-  currency: "Waluta inna niż euro",
-  key_relations: "Niemcy, Francja, Finlandia, Ukraina, USA, Japonia",
-  political_threats: "Niestabilność w UE, rozpad UE na grupy różnych prędkości, negatywna kampania wizerunkowa ze strony aktorów państwowych, zakłócenia w dostawach paliw węglowodorowych, narażenie na embargo procesorów",
-  military_threats: "Zagrożenie atakiem zbrojnym sąsiada, ataki hybrydowe na infrastrukturę krytyczną i cyberprzestrzeń",
-  milestones: "Demokracja parlamentarna od 130 lat, stagnacja 1930-1950 i 1980-1990, członkostwo UE i NATO od 1997, 25. gospodarka świata wg PKB od 2020, deficyt i dług publiczny w okolicach średniej unijnej",
+  population: "28 million",
+  geography: "Access to the Baltic Sea, several large navigable rivers, limited freshwater resources",
+  climate: "Temperate",
+  economy: "Heavy industry, automotive, food, chemical, ICT. Ambitions in renewable energy, critical raw materials processing, and building transnational AI infrastructure (big data centers, giga AI factories, quantum computers)",
+  army: "150,000 professional soldiers",
+  digitalization: "Above European average",
+  currency: "Currency other than euro",
+  key_relations: "Germany, France, Finland, Ukraine, USA, Japan",
+  political_threats: "EU instability, EU fragmentation into multi-speed groups, negative image campaigns from state actors, disruptions in hydrocarbon fuel supplies, exposure to processor embargoes",
+  military_threats: "Threat of armed attack from neighbor, hybrid attacks on critical infrastructure and cyberspace",
+  milestones: "Parliamentary democracy for 130 years, stagnation 1930-1950 and 1980-1990, EU and NATO membership since 1997, 25th world economy by GDP since 2020, deficit and public debt around EU average",
 };
 
-export const DEFAULT_SITUATION = `a) Wskutek zaistniałej przed miesiącem katastrofy naturalnej wiodący światowy producent procesorów graficznych stracił 60% zdolności produkcyjnych; odbudowa mocy produkcyjnych poprzez inwestycje w filie zlokalizowane na obszarach nieobjętych katastrofą potrwa do końca roku 2028 (waga istotności: 30)
+export const DEFAULT_SITUATION = `a) Due to a natural disaster that occurred a month ago, the world's leading GPU manufacturer lost 60% of production capacity; rebuilding production capacity through investments in subsidiaries located in areas unaffected by the disaster will take until the end of 2028 (importance weight: 30)
 
-b) Przemysł motoryzacyjny w Europie (piątka głównych partnerów handlowy państwa Atlantis to kraje europejskie) bardzo wolno przestawia się na produkcję samochodów elektrycznych; rynek europejski zalewają tanie samochody elektryczne z Azji Wschodniej; europejski przemysł motoryzacyjny będzie miał w roku 2025 zyski na poziomie 30% średnich rocznych zysków z lat 2020-2024 (waga istotności: 15)
+b) The automotive industry in Europe (the top five trading partners of Atlantis are European countries) is very slow to shift to electric vehicle production; the European market is being flooded with cheap electric vehicles from East Asia; the European automotive industry will have profits at 30% of average annual profits from 2020-2024 in 2025 (importance weight: 15)
 
-c) PKB krajów strefy euro w roku 2025 spadnie średnio o 1,5% w stosunku do roku 2024 (waga istotności: 15)
+c) Eurozone countries' GDP will fall by an average of 1.5% in 2025 compared to 2024 (importance weight: 15)
 
-d) Na wschodzie Ukrainy trwa słaby rozejm; Rosja kontroluje dwie główne elektrownie ukraińskie, które pracują na potrzeby konsumentów rosyjskich; gospodarka ukraińska rozwija się w tempie 4% PKB, głównie dzięki inwestycjom w przemysł zbrojeniowy i odbudowę infrastruktury (waga istotności: 10)
+d) A fragile ceasefire continues in eastern Ukraine; Russia controls two major Ukrainian power plants that operate for Russian consumers; the Ukrainian economy is growing at 4% GDP, mainly due to investments in the defense industry and infrastructure reconstruction (importance weight: 10)
 
-e) Inwestycje amerykańskie w Ukrainie kierowane są do przemysłu wydobywczego (surowce krytyczne); roczne inwestycje UE w Ukrainie są na poziomie 3% ukraińskiego PKB i utrzymają się na takim poziomie do roku 2029 (waga istotności: 5)
+e) US investments in Ukraine are directed to the mining industry (critical raw materials); annual EU investments in Ukraine are at 3% of Ukrainian GDP and will remain at this level until 2029 (importance weight: 5)
 
-f) Mamy gwałtowny wzrost udziału energii z OZE w miksie energetycznym krajów UE oraz Chin od początku roku 2028; w połowie roku 2023 średniej wielkości kraj południowoamerykański odkrył ogromne i łatwe do eksploatacji złoża ropy naftowej i gazu ziemnego dorównujące wielkością złożom Arabii Saudyjskiej i Kataru, co przełoży się pod koniec roku 2027 na nadpodaż tych paliw na światowe rynki; wzrost podaży energii z OZE oraz nadpodaż paliw węglowodorowych przekładają się na znaczny spadek cen ropy: do poziomu 30-35 USD za baryłkę; będzie to miało wpływ na budżet Rosji oraz (w mniejszym stopniu) innych krajów producentów ropy i paliw ropopochodnych (waga istotności: 25)`;
+f) There is a sharp increase in the share of renewable energy in the energy mix of EU and China from early 2028; in mid-2023, a medium-sized South American country discovered huge and easily exploitable oil and natural gas deposits matching the size of Saudi Arabia and Qatar, which will translate into oversupply of these fuels on world markets by the end of 2027; the increase in renewable energy supply and oversupply of hydrocarbons translates into a significant drop in oil prices: to 30-35 USD per barrel; this will impact Russia's budget and (to a lesser extent) other oil and petroleum product producer countries (importance weight: 25)`;
+
+export const DEFAULT_CRITERIA = `The interests of the state of Atlantis`;
 

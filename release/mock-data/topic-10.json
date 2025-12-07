@@ -1,0 +1,18 @@
+{
+  "id": 10,
+  "session_id": 1,
+  "name": "Atlantis's Fiscal and Monetary Policy Responses to Regional Economic Downturn",
+  "keywords": [
+    "public debt management",
+    "deficit control",
+    "currency valuation",
+    "economic policy"
+  ],
+  "weight": 50,
+  "rationale": "Factor (c) The Eurozone downturn will put pressure on Atlantis's economy, requiring careful fiscal and monetary policy adjustments.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

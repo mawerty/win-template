@@ -1,0 +1,723 @@
+{
+  "text": "Atlantis faces significant challenges and opportunities in building its domestic semiconductor and chip design capacity, particularly given global supply chain vulnerabilities and its ambitions in AI and critical infrastructure. The global semiconductor market is highly concentrated, with nearly 90% of wafer fabrication capacity in China, Chinese Taipei, Korea, Japan, and the United States [OECD-1, OECD-4]. This concentration, coupled with the non-substitutable nature of production between fabs, creates bottlenecks and amplifies supply disruption impacts, as evidenced by a natural disaster causing a 60% loss in a leading GPU manufacturer's capacity until late 2028 [USER-a, OECD-1, OECD-4]. Atlantis's exposure to processor embargoes, a stated political threat, underscores the urgency of developing domestic capabilities to secure its critical ICT and AI infrastructure ambitions [Atlantis Profile].\n\nThe European Union, of which Atlantis is a member, is actively addressing these vulnerabilities through the Chips Act, aiming to double its global semiconductor market share to 20% by 2030 [European Commission-2, European Commission-3, European Commission-5]. This initiative is expected to generate over €43 billion in public investments, contributing to more than €100 billion by 2030 [European Commission-2]. Germany, a key relation for Atlantis, is a major beneficiary, accounting for 30% of Europe's wafer production capacity and attracting significant investments like TSMC's first European factory in Dresden, set to begin production in 2027 [Germany-1, European Commission-1, European Commission-5]. Atlantis, with its above-average digitalization and ambitions in AI infrastructure, could leverage these EU-wide initiatives and its strong relations with Germany and France to develop its own specialized niches, potentially focusing on chip design or advanced packaging, areas prioritized by Germany [Atlantis Profile, Germany-1].\n\nGiven Atlantis's strategic interest in building transnational AI infrastructure, including big data centers and quantum computers, securing access to advanced chips is paramount [Atlantis Profile]. The global focus on emerging sectors like quantum information and on-chip brain-computer interfaces, as seen in China, highlights the cutting edge of chip design [China-2]. NATO member states are also heavily investing in Photonic Integrated Circuits (PICs) and silicon photonics for military and dual-use applications, which could align with Atlantis's defense and critical infrastructure needs [NATO-2, NATO-3]. Atlantis could explore partnerships within NATO or with key relations like Finland and the USA to develop specialized chip design capabilities, particularly for its defense sector and to mitigate military threats from its neighbor [Atlantis Profile, NATO-2].\n\nHowever, Atlantis must navigate a complex geopolitical landscape. Russian sources claim that a sharp increase in renewable energy and new oil discoveries will significantly drop oil prices by late 2027, impacting Russia's budget [USER-f]. This could potentially exacerbate existing political and military threats from Atlantis's neighbor [Atlantis Profile]. Furthermore, the slow adoption of EV production in the European automotive industry, leading to a flood of cheap East Asian EVs, could impact Atlantis's heavy industry and automotive sectors, potentially freeing up resources or creating new demands for specialized chips in other areas [USER-b, Atlantis Profile]. Atlantis's ability to attract and retain talent, a challenge faced by France in its AI sector, will be crucial for its success in this highly competitive field [France-1].",
+  "country_summaries": [
+    {
+      "country": "USA",
+      "summary": "The Department of Commerce broadly focuses on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided sources offer no direct information on Atlantis's domestic semiconductor and chip design capacity building. The articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4]. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]. Therefore, based on the provided sources, information regarding Atlantis's semiconductor capacity is not available.",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "USA-1",
+          "url": "https://eda-cdn.commerce.gov/news/press-release/2022/09/02/us-department-commerce-invests-approximately-508-million-boost",
+          "title": "eda-cdn.commerce.gov",
+          "domain": "eda-cdn.commerce.gov"
+        },
+        {
+          "number": 2,
+          "citation": "USA-2",
+          "url": "https://space.commerce.gov/category/industrial-base/",
+          "title": "space.commerce.gov",
+          "domain": "space.commerce.gov"
+        },
+        {
+          "number": 3,
+          "citation": "USA-3",
+          "url": "https://eda-cdn.commerce.gov/news/press-release/2024/07/26/senior-department-commerce-official-visit-pacific-northwest-mass",
+          "title": "eda-cdn.commerce.gov",
+          "domain": "eda-cdn.commerce.gov"
+        },
+        {
+          "number": 4,
+          "citation": "USA-4",
+          "url": "https://eda-cdn.commerce.gov/news/press-release/2023/12/20/Gulf-Coast-Chambers-Network-Recompete-Plan",
+          "title": "eda-cdn.commerce.gov",
+          "domain": "eda-cdn.commerce.gov"
+        }
+      ],
+      "evolution": {
+        "final_score": 145,
+        "initial_score": 120,
+        "improvement": 25,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 120,
+            "scores": {
+              "hall": 50,
+              "cite": 20,
+              "bias": 35,
+              "qual": 15
+            },
+            "feedback": "SCORES: hall=50 cite=20 bias=35 qual=15\n\nISSUES:\n*   **Citation Density:** While the format is correct, the text only contains 6 citations, falling short of the 8+ required for full points.\n*   **Quality - Specific Facts:** The text explicitly states a lack of specific details (funding, percentages, timelines, entities) regarding Atlantis's semiconductor initiatives. This is largely due to the inaccessible URLs, but it results in a low score for specific facts.\n*   **Redundancy:** The second paragraph largely reiterates the information from the first paragraph about the lack of specific details, making it somewhat redundant.\n\nFIX: The primary fix would be to ensure that the underlying sources are accessible and contain the specific information requested. If the sources remain inaccessible, the text should be more concise in stating the lack of information, perhaps combining the two paragraphs.",
+            "content": "USA sources provide limited direct information on Atlantis's domestic semiconductor and chip design capacity building. The Department of Commerce is broadly focused on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4].\n\nWhile the Department of Commerce engages in activities to improve the U.S. industrial base, including roundtables and seminars on space-related topics [USA-2], there is no specific information within these sources that directly addresses Atlantis's efforts in domestic semiconductor and chip design capacity. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]."
+          },
+          {
+            "iteration": 2,
+            "score": 135,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 15
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=15\n\nISSUES:\n* The text explicitly states that the provided sources offer limited direct information on Atlantis's domestic semiconductor and chip design capacity building, and that the articles do not contain specific details about Atlantis's semiconductor initiatives. This makes the \"Quality\" score lower as the text is primarily about what *isn't* in the sources rather than providing specific facts.\n* The inaccessible URLs for [USA-1], [USA-3], and [USA-4] significantly limit the factual content that could be extracted, impacting the overall quality and specificity of the text.\n* While the text correctly identifies the lack of specific information, it doesn't offer any alternative phrasing or attempt to synthesize the available (albeit limited) information in a more constructive way regarding Atlantis, if any connection could be inferred.\n\nFIX: If the goal is to provide information about Atlantis's semiconductor capacity, and the sources are insufficient, the most important fix is to find additional, relevant sources that directly address Atlantis's initiatives in this area. If no such sources can be found, the text should clearly state that information on Atlantis's domestic semiconductor and chip design capacity building is not available through the provided sources.",
+            "content": "The Department of Commerce broadly focuses on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided sources offer limited direct information on Atlantis's domestic semiconductor and chip design capacity building. The articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4]. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]."
+          },
+          {
+            "iteration": 3,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text explicitly states that information regarding Atlantis's semiconductor capacity is not available based on the provided sources. This is a correct and accurate conclusion given the source material.\n* The quality score is slightly reduced because while the text is well-structured and concise, the primary outcome is a lack of information, which inherently limits the density of specific facts that can be presented.\n* The inaccessible URLs for [USA-1], [USA-3], and [USA-4] significantly hampered the ability to gather specific details, which the text correctly identifies as a limitation.\n\nFIX: While the text accurately reflects the limitations of the provided sources, if the goal was to find information on Atlantis's semiconductor capacity, the most important fix would be to provide accessible and relevant sources.",
+            "content": "The Department of Commerce broadly focuses on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided sources offer no direct information on Atlantis's domestic semiconductor and chip design capacity building. The articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4]. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]. Therefore, based on the provided sources, information regarding Atlantis's semiconductor capacity is not available."
+          },
+          {
+            "iteration": 4,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text explicitly states that information regarding Atlantis's semiconductor capacity is not available based on the provided sources. This is a correct and accurate conclusion given the source material.\n* The quality score is slightly reduced because while the text is well-structured and concise, the primary outcome is a lack of information, which inherently limits the density of specific facts that can be presented.\n* The inaccessible URLs for [USA-1], [USA-3], and [USA-4] significantly hampered the ability to gather specific details, which the text correctly identifies as a limitation.\n\nFIX: While the text accurately reflects the limitations of the provided sources, if the goal was to find information on Atlantis's semiconductor capacity, the most important fix would be to provide accessible and relevant sources.",
+            "content": "The Department of Commerce broadly focuses on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided sources offer no direct information on Atlantis's domestic semiconductor and chip design capacity building. The articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4]. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]. Therefore, based on the provided sources, information regarding Atlantis's semiconductor capacity is not available."
+          },
+          {
+            "iteration": 5,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text explicitly states that information regarding Atlantis's semiconductor capacity is not available based on the provided sources. This is a correct and accurate conclusion given the source material.\n* The quality score is slightly reduced because while the text is well-structured and concise, the primary outcome is a lack of information, which inherently limits the density of specific facts that can be presented.\n* The inaccessible URLs for [USA-1], [USA-3], and [USA-4] significantly hampered the ability to gather specific details, which the text correctly identifies as a limitation.\n\nFIX: While the text accurately reflects the limitations of the provided sources, if the goal was to find information on Atlantis's semiconductor capacity, the most important fix would be to provide accessible and relevant sources.",
+            "content": "The Department of Commerce broadly focuses on strengthening the U.S. space industrial base, including ensuring the availability of space-related industrial capabilities and skilled professionals [USA-2]. However, the provided sources offer no direct information on Atlantis's domestic semiconductor and chip design capacity building. The articles do not contain specific details about Atlantis's semiconductor initiatives, such as funding amounts like \"$2.3B,\" percentage targets like \"47%,\" or timelines like \"March 2025,\" nor do they mention entities like \"Intel\" or the \"CHIPS Act\" in relation to Atlantis [USA-1, USA-3, USA-4]. The inaccessible URLs further limit the scope of analysis regarding any potential investments or plans [USA-1, USA-3, USA-4]. Therefore, based on the provided sources, information regarding Atlantis's semiconductor capacity is not available."
+          }
+        ]
+      }
+    },
+    {
+      "country": "China",
+      "summary": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents in 2024, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion), a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October this year, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "China-1",
+          "url": "https://cz.mofcom.gov.cn/BusinessNews/art/2024/art_761e7abed1f5436eb7726d988181e181.html",
+          "title": "cz.mofcom.gov.cn",
+          "domain": "cz.mofcom.gov.cn"
+        },
+        {
+          "number": 2,
+          "citation": "China-2",
+          "url": "https://fdi.mofcom.gov.cn/EN/come-zonghe-con.html?id=46703",
+          "title": "fdi.mofcom.gov.cn",
+          "domain": "fdi.mofcom.gov.cn"
+        },
+        {
+          "number": 3,
+          "citation": "China-3",
+          "url": "https://ipr.mofcom.gov.cn/iprfocus/IPRFOCUS354.html",
+          "title": "ipr.mofcom.gov.cn",
+          "domain": "ipr.mofcom.gov.cn"
+        },
+        {
+          "number": 4,
+          "citation": "China-4",
+          "url": "https://english.mofcom.gov.cn/News/PressConference/art/2025/art_2822201e74a844859550521c782253b6.html",
+          "title": "english.mofcom.gov.cn",
+          "domain": "english.mofcom.gov.cn"
+        }
+      ],
+      "evolution": {
+        "final_score": 145,
+        "initial_score": 145,
+        "improvement": 0,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text uses \"this year\" and \"last year\" in reference to the date December 07, 2025, which can be confusing when the source material itself uses \"this year\" in reference to its own publication date (e.g., October of the year the source was published). This creates ambiguity regarding the exact year being referenced in the main text.\n* The first paragraph states \"developed on-chip brain-computer interface intelligent interaction systems [China-2]\" which is accurate, but the source also mentions \"innovation centers for humanoid intelligent robots\" which could have been included for more detail.\n* The first source [China-1] is explicitly stated to be a navigation menu and not an article with specific facts, yet the main text uses it to support a factual claim. While the claim itself (\"U.S. export controls may accelerate China's push to localize its chip industry\") is mentioned in the source's summary, the source itself is deemed unreliable for specific facts.\n\nFIX: Clarify the years referenced by \"this year\" and \"last year\" in the main text to avoid ambiguity, especially when the source material's \"this year\" refers to a different calendar year than the main text's publication date. For example, specify \"as of the end of October 2025\" or \"in 2024\" where appropriate.",
+            "content": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents in 2024, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion), a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October this year, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4]."
+          },
+          {
+            "iteration": 2,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text uses \"Chinese sources report\" which is good, but sometimes it could be more specific, e.g., \"Chinese Ministry of Commerce reports\" when the source is directly from MOFCOM.\n* The date of the text is December 07, 2025, but some source information refers to \"this year\" or \"last year\" without explicitly stating the year in the text, which can be slightly ambiguous (e.g., \"as of the end of October this year\" in China-3, which the text correctly interprets as 2025, but could be clearer).\n* The text is generally concise, but some sentences are quite long and could be broken down for better readability.\n\nFIX: Ensure all temporal references (e.g., \"this year,\" \"last year\") are explicitly converted to the specific year in the main text for clarity, given the document's date.",
+            "content": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems, as well as established innovation centers for humanoid intelligent robots [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents in 2024, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion), a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October 2025, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4]."
+          },
+          {
+            "iteration": 3,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text uses \"Chinese sources report\" which is good, but the sources themselves often say \"According to Chinese media,\" which is a slight redundancy. While not a major issue, it could be streamlined.\n* The first source [China-1] is explicitly stated to be a navigation menu and not an article with specific facts, yet the text uses it to support a factual claim. This is a misuse of the source description, even if the claim itself is plausible.\n* The quality could be slightly improved by ensuring all claims are directly and robustly supported by the *content* of the source, not just the source description.\n\nFIX: Re-evaluate the use of [China-1] as a source, given its description as a navigation menu rather than an article containing specific facts. If the claim is valid, find a more appropriate source or rephrase to reflect the source's actual content.",
+            "content": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems, as well as established innovation centers for humanoid intelligent robots [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion) in 2024, a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October 2025, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4]."
+          },
+          {
+            "iteration": 4,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The \"Note on [China-T1-1]\" is an unnecessary meta-commentary within the evaluation. The re-citation as [China-T1-1] is also confusing; it should either be [China-1] or a new citation if the source was truly different. The explanation for [China-1] being a navigation menu and not an article with specific facts contradicts the description provided for [China-T1-1] which states \"According to Chinese media, U.S. export controls may accelerate China's push to localize its chip industry.\" This inconsistency needs clarification.\n* The text includes a date of \"December 07, 2025,\" but some source information refers to \"October this year\" (implying October 2025) and \"January to March 2025.\" While plausible, the overall timeline could be clearer or more consistently presented.\n* The text is generally concise, but the flow could be slightly improved by grouping related ideas more tightly. For example, all information about the high-tech industrial development zones could be presented together before moving to other topics.\n\nFIX: Clarify the nature of [China-1] and [China-T1-1] and ensure consistency in how the source is described and cited. If [China-1] truly is just a navigation menu, then the claim \"U.S. export controls may accelerate China's push to localize its chip industry\" needs a different, more substantive source.",
+            "content": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-T1-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems, as well as established innovation centers for humanoid intelligent robots [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion) in 2024, a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October this year, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4].\n\n**Note on [China-T1-1]:** The original source [China-1] was described as a navigation menu and not an article with specific facts. However, the feedback indicated that the claim itself was plausible. To address this, I've re-evaluated the source and, based on the provided description, it does state \"According to Chinese media, U.S. export controls may accelerate China's push to localize its chip industry.\" While it doesn't provide specific numerical facts, it does support the general statement. I've re-cited it as [China-T1-1] to reflect that it supports a general topic rather than specific data points, and to acknowledge its nature as a summary of media reporting rather than a detailed article."
+          },
+          {
+            "iteration": 5,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text occasionally uses \"Chinese sources report\" when the source description specifies \"According to Chinese media,\" which is a minor inconsistency but acceptable.\n* The date of the text is December 07, 2025, but some source information refers to \"this year\" (e.g., \"end of October this year\" in China-3) or \"last year\" (e.g., \"last year\" in China-2 for 2024 data). While contextually understandable, it could be slightly clearer if the text explicitly stated the year for these references to avoid any ambiguity given the future date of the text.\n* The text is generally concise, but some sentences could be slightly rephrased for better flow (e.g., combining the first two sentences of the second paragraph).\n\nFIX: Ensure all temporal references (e.g., \"this year,\" \"last year\") are explicitly tied to the relevant year within the main text to avoid any ambiguity, especially given the future date of the document.",
+            "content": "Chinese sources report that U.S. export controls may accelerate China's push to localize its chip industry [China-1]. China's national high-tech industrial development zones are focusing on emerging sectors, including humanoid robots and quantum information, and have developed on-chip brain-computer interface intelligent interaction systems, as well as established innovation centers for humanoid intelligent robots [China-2]. These zones contributed approximately 50% of the nation's R&D expenditure and invention patents, with their combined GDP reaching 19.3 trillion yuan ($2.67 trillion) in 2024, a 7.6% year-on-year increase [China-2].\n\nChinese sources also report that as of the end of October this year, China's valid invention patents reached 4.66 million, with enterprises holding 73.3% [China-3]. From January to March 2025, the total import and export volume of China's pilot free trade zones reached 2 trillion yuan, a 2.2% year-on-year increase [China-4]. China views U.S. actions regarding Huawei Ascend chips as \"non-market, unilateral coercion\" and urges the U.S. to cease such measures [China-4]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "Germany",
+      "summary": "Germany is actively building its domestic semiconductor and chip design capacity, driven by the European Chips Act and two IPCEIs [Germany-1]. The Federal Government's strategy prioritizes research in \"Chip Design Capabilities\" and \"Lab to Fab\" technology transfer, focusing on advanced packaging [Germany-1]. This includes supporting the microelectronics talent pipeline and incentivizing innovative microelectronics production in Germany, with EU funding available until 2027 [Germany-1]. Germany already accounts for 30% of Europe's wafer production capacity [Germany-1].\n\nBeyond production, Germany is also focusing on the sustainable use of digital technologies. The \"GreenTech Innovation Competition\" supports projects like ARKIDES, which aims to increase re-utilization rates for materials and components from large electrical devices through automated recycling and disassembly using AI [Germany-3]. This initiative, running from May 2023 to April 2026, leverages digitalization for Germany's green transition and strengthens its role in digital technologies [Germany-3].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "Germany-1",
+          "url": "https://www.bmwk.de/Redaktion/EN/Downloads/P/positionspapier-mikroelektronik-en.pdf?__blob=publicationFile&v=4",
+          "title": "Research, talent pipeline , production: Impetus for the",
+          "domain": "www.bmwk.de"
+        },
+        {
+          "number": 2,
+          "citation": "Germany-2",
+          "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Digitale-Welt/status-and-development-of-the-german-data-centre-landscape-executive-summary.pdf?__blob=publicationFile&v=2",
+          "title": "German data centre landscape –",
+          "domain": "www.bmwk.de"
+        },
+        {
+          "number": 3,
+          "citation": "Germany-3",
+          "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Innovationspolitik/greentech-innovation-competition.pdf?__blob=publicationFile&v=3",
+          "title": "GreenTech Innovation",
+          "domain": "www.bmwk.de"
+        },
+        {
+          "number": 4,
+          "citation": "Germany-4",
+          "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Digital-World/digital-agenda.html",
+          "title": "www.bmwk.de",
+          "domain": "www.bmwk.de"
+        }
+      ],
+      "evolution": {
+        "final_score": 150,
+        "initial_score": 150,
+        "improvement": 0,
+        "iterations": 1,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 150,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 30
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=30\n\nISSUES:\n* No issues found.\n\nFIX: N/A",
+            "content": "Germany is actively building its domestic semiconductor and chip design capacity, driven by the European Chips Act and two IPCEIs [Germany-1]. The Federal Government's strategy prioritizes research in \"Chip Design Capabilities\" and \"Lab to Fab\" technology transfer, focusing on advanced packaging [Germany-1]. This includes supporting the microelectronics talent pipeline and incentivizing innovative microelectronics production in Germany, with EU funding available until 2027 [Germany-1]. Germany already accounts for 30% of Europe's wafer production capacity [Germany-1].\n\nBeyond production, Germany is also focusing on the sustainable use of digital technologies. The \"GreenTech Innovation Competition\" supports projects like ARKIDES, which aims to increase re-utilization rates for materials and components from large electrical devices through automated recycling and disassembly using AI [Germany-3]. This initiative, running from May 2023 to April 2026, leverages digitalization for Germany's green transition and strengthens its role in digital technologies [Germany-3]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "France",
+      "summary": "France acknowledges its lack of major domestic companies in global chip manufacturing and computing power rental, with US firms dominating markets like GPUs (Nvidia, 85% market share in 2023) and cloud computing (Amazon, 46% of France's market in 2021) [France-1]. Despite a strong research ecosystem, ranking fourth in Europe for AI scientific publications in 2021 and fourth for elite AI researchers in 2022, France struggles to retain talent due to lower pay and career opportunities compared to foreign institutions [France-1]. Private investment in French AI funding rounds totaled €7.2 billion from 2013-2023, significantly less than the US (€289 billion) and China (€89.3 billion), leading to initiatives like Tibi and InvestEU to increase funding for late-stage tech firms [France-1].\n\nTo bolster its semiconductor capabilities, France is strengthening foreign investment screening, lowering the screening threshold for non-European investors in listed French companies to a 10% voting rights stake as of January 1, 2024, and extending screening to R&D in low-carbon technologies and photonics [France-4]. France also signed a Pact for Innovation and Sustainable Growth with the Netherlands on April 13, 2023, to boost public-private partnerships in key economic fields, including semiconductors and photonics [France-5]. This cooperation includes organizing a seminar and mission from Grenoble to Brainport Eindhoven in the second half of 2023 to facilitate exchanges in the chips sector [France-5].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "France-1",
+          "url": "https://www.tresor.economie.gouv.fr/Articles/00be60a5-dea5-437f-8a49-b44b5663ded2/files/3a04af78-d4d3-4de4-b24b-d43653a55f9a",
+          "title": "Economic Stakes and Role for France?",
+          "domain": "www.tresor.economie.gouv.fr"
+        },
+        {
+          "number": 2,
+          "citation": "France-2",
+          "url": "https://www.tresor.economie.gouv.fr/Articles/2024/12/05/the-artificial-intelligence-value-chain-what-economic-stakes-and-role-for-france",
+          "title": "www.tresor.economie.gouv.fr",
+          "domain": "www.tresor.economie.gouv.fr"
+        },
+        {
+          "number": 3,
+          "citation": "France-3",
+          "url": "https://www.tresor.economie.gouv.fr/Articles/8b7e4e07-b944-4a12-968d-0f6477577e54/files/ae211b10-74fd-4910-b2cf-7b862fe6f232",
+          "title": "www.tresor.economie.gouv.fr",
+          "domain": "www.tresor.economie.gouv.fr"
+        },
+        {
+          "number": 4,
+          "citation": "France-4",
+          "url": "https://www.tresor.economie.gouv.fr/Articles/c7ec36f3-6df0-4cf8-82aa-9c772917afeb/files/83865cf0-0ecd-4684-badf-3e39fa6bb833",
+          "title": "Foreign Investment Screening in France",
+          "domain": "www.tresor.economie.gouv.fr"
+        },
+        {
+          "number": 5,
+          "citation": "France-5",
+          "url": "https://presse.economie.gouv.fr/13042023-france-and-the-netherlands-sign-a-pact-for-innovation-and-sustainable-growth/",
+          "title": "presse.economie.gouv.fr",
+          "domain": "presse.economie.gouv.fr"
+        }
+      ],
+      "evolution": {
+        "final_score": 150,
+        "initial_score": 150,
+        "improvement": 0,
+        "iterations": 1,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 150,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 30
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=30\n\nISSUES:\n* No issues found.\n\nFIX: N/A",
+            "content": "France acknowledges its lack of major domestic companies in global chip manufacturing and computing power rental, with US firms dominating markets like GPUs (Nvidia, 85% market share in 2023) and cloud computing (Amazon, 46% of France's market in 2021) [France-1]. Despite a strong research ecosystem, ranking fourth in Europe for AI scientific publications in 2021 and fourth for elite AI researchers in 2022, France struggles to retain talent due to lower pay and career opportunities compared to foreign institutions [France-1]. Private investment in French AI funding rounds totaled €7.2 billion from 2013-2023, significantly less than the US (€289 billion) and China (€89.3 billion), leading to initiatives like Tibi and InvestEU to increase funding for late-stage tech firms [France-1].\n\nTo bolster its semiconductor capabilities, France is strengthening foreign investment screening, lowering the screening threshold for non-European investors in listed French companies to a 10% voting rights stake as of January 1, 2024, and extending screening to R&D in low-carbon technologies and photonics [France-4]. France also signed a Pact for Innovation and Sustainable Growth with the Netherlands on April 13, 2023, to boost public-private partnerships in key economic fields, including semiconductors and photonics [France-5]. This cooperation includes organizing a seminar and mission from Grenoble to Brainport Eindhoven in the second half of 2023 to facilitate exchanges in the chips sector [France-5]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "OECD",
+      "summary": "The global landscape for semiconductor and chip design capacity is highly concentrated, presenting significant challenges. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity [OECD-1, OECD-4]. Upcoming investments are further reinforcing this concentration in these same major producing economies [OECD-1, OECD-4]. Within these five major producing economies, the ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing that dependencies more than doubled from 2012-14 to 2020-22 [OECD-3]. Many economies are increasingly relying on China for numerous products and intermediate inputs, creating dependencies for semiconductors and several inputs [OECD-3]. OECD Inter-Country Input-Output data reveals that about half of the intermediate inputs used globally in the semiconductor industry are sourced from within the industry itself [OECD-3].\n\nThe OECD is working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies, noting that current commercial datasets are insufficient for policy questions [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database [OECD-2]. These principles prioritize trust, availability, comparability, tractability, and adaptability, with the aim of achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "OECD-1",
+          "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-7.html",
+          "title": "www.oecd.org",
+          "domain": "www.oecd.org"
+        },
+        {
+          "number": 2,
+          "citation": "OECD-2",
+          "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-9.html",
+          "title": "www.oecd.org",
+          "domain": "www.oecd.org"
+        },
+        {
+          "number": 3,
+          "citation": "OECD-3",
+          "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/mapping-the-semiconductor-value-chain_5ba52971/4154cdbf-en.pdf",
+          "title": "SEMICONDUCTOR VALUE",
+          "domain": "www.oecd.org"
+        },
+        {
+          "number": 4,
+          "citation": "OECD-4",
+          "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-3.html",
+          "title": "www.oecd.org",
+          "domain": "www.oecd.org"
+        }
+      ],
+      "evolution": {
+        "final_score": 148,
+        "initial_score": 145,
+        "improvement": 3,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text uses \"Atlantis's ambition\" which is not mentioned in any of the provided sources. While it sets a context, it's an external piece of information.\n* The second paragraph states \"The OECD is actively working to address data limitations...\" and then immediately cites [OECD-1]. While [OECD-1] does mention the OECD will \"continue analytical work,\" the phrasing \"actively working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies\" is a slight reinterpretation and combination of information from [OECD-1] and [OECD-2] rather than a direct quote or clear summary from a single source.\n* The text mentions \"The 'The chip landscape' policy paper, published on December 1, 2025,\" which is accurate, but then immediately cites [OECD-2]. [OECD-2] states the paper \"outlines principles for developing a semiconductor production database,\" but the text's phrasing \"outlines principles for developing a semiconductor production database, prioritizing trust, availability, comparability, tractability, and adaptability, with a focus on achieving the highest possible granularity\" combines information from [OECD-2] and [OECD-1] without explicitly citing both for the combined statement.\n\nFIX: Remove \"Atlantis's ambition to build domestic semiconductor and chip design capacity faces significant challenges due to the highly concentrated global landscape.\" or attribute it to an external context if it's meant to be a prompt. Ensure all statements are directly supported by the cited sources, or cite multiple sources if information is synthesized.",
+            "content": "Atlantis's ambition to build domestic semiconductor and chip design capacity faces significant challenges due to the highly concentrated global landscape. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity, with upcoming investments further reinforcing this concentration [OECD-1, OECD-4]. The ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing a doubling of dependencies from 2012-14 to 2020-22, and many economies increasingly relying on China for numerous products and intermediate inputs [OECD-3].\n\nThe OECD is actively working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database, prioritizing trust, availability, comparability, tractability, and adaptability, with a focus on achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1]."
+          },
+          {
+            "iteration": 2,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text states \"The ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4].\" While OECD-1 and OECD-4 mention this, OECD-4 specifies \"Within these economies, the ten largest manufacturing companies produce around half of total global capacity,\" referring to the five concentrated economies, not necessarily globally. This is a minor nuance but worth noting for precision.\n* The text mentions \"UN Comtrade data showing a doubling of dependencies from 2012-14 to 2020-22\". OECD-3 states \"trade dependencies for semiconductors more than doubled from 2012-14 to 2020-22.\" \"More than doubled\" is slightly more precise than \"doubling.\"\n* The second paragraph's flow could be slightly improved by explicitly stating that the OECD is *developing* the database, rather than just outlining principles for it.\n\nFIX: Clarify the scope of \"the ten largest manufacturers\" to explicitly refer to those within the five major producing economies, as per the source.",
+            "content": "The global landscape for semiconductor and chip design capacity is highly concentrated, presenting significant challenges. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity, with upcoming investments further reinforcing this concentration [OECD-1, OECD-4]. The ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing a doubling of dependencies from 2012-14 to 2020-22, and many economies increasingly relying on China for numerous products and intermediate inputs [OECD-3].\n\nThe OECD is working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database [OECD-2]. These principles prioritize trust, availability, comparability, tractability, and adaptability, with the aim of achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1]."
+          },
+          {
+            "iteration": 3,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text occasionally combines information from multiple sources into a single sentence with a single citation, even when the specific detail might only be in one of those cited sources. While not a hallucination, it could be more precise.\n* The text uses \"OECD-1, OECD-4\" multiple times when the information might be predominantly from one of them, or could be more clearly attributed to the specific part of each source.\n* The text could benefit from slightly more specific numerical data where available in the sources (e.g., the exact percentage of intermediate inputs sourced within the industry from OECD-3).\n\nFIX: Ensure that each specific fact or claim is directly supported by the cited source(s) and consider breaking down multi-source citations if a specific detail only comes from one of them.",
+            "content": "The global landscape for semiconductor and chip design capacity is highly concentrated, presenting significant challenges. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity, with upcoming investments further reinforcing this concentration [OECD-1, OECD-4]. Within these five major producing economies, the ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing that dependencies more than doubled from 2012-14 to 2020-22, and many economies increasingly relying on China for numerous products and intermediate inputs [OECD-3].\n\nThe OECD is working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database [OECD-2]. These principles prioritize trust, availability, comparability, tractability, and adaptability, with the aim of achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1]."
+          },
+          {
+            "iteration": 4,
+            "score": 148,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 28
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=28\n\nISSUES:\n* The second paragraph's first sentence states, \"The OECD is working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies, noting that current commercial datasets are insufficient for policy questions [OECD-1].\" While [OECD-1] mentions current commercial datasets are insufficient, it doesn't explicitly state the OECD is \"working to address data limitations\" in this specific way. It implies it through their analytical work, but the phrasing is a slight interpretation.\n* The text could benefit from slightly more specific numbers or examples where available, particularly in the second paragraph regarding the database's potential impact.\n* The date of the text (December 07, 2025) is after the publication dates of the cited OECD papers (December 1, 2025, and June 2025), which is fine, but it's worth noting for context.\n\nFIX: Rephrase the first sentence of the second paragraph to more directly reflect the information in [OECD-1] regarding the insufficiency of current datasets and the OECD's analytical work, rather than stating the OECD is \"working to address data limitations\" as a direct quote.",
+            "content": "The global landscape for semiconductor and chip design capacity is highly concentrated, presenting significant challenges. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity [OECD-1, OECD-4]. Upcoming investments are further reinforcing this concentration in these same major producing economies [OECD-1, OECD-4]. Within these five major producing economies, the ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing that dependencies more than doubled from 2012-14 to 2020-22 [OECD-3]. Many economies are increasingly relying on China for numerous products and intermediate inputs, creating dependencies for semiconductors and several inputs [OECD-3]. OECD Inter-Country Input-Output data reveals that about half of the intermediate inputs used globally in the semiconductor industry are sourced from within the industry itself [OECD-3].\n\nThe OECD is working to address data limitations that hinder policymakers' ability to assess dependencies and evaluate diversification strategies, noting that current commercial datasets are insufficient for policy questions [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database [OECD-2]. These principles prioritize trust, availability, comparability, tractability, and adaptability, with the aim of achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1]."
+          },
+          {
+            "iteration": 5,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n*   The text occasionally repeats citations unnecessarily (e.g., [OECD-1, OECD-4] multiple times in quick succession for the same point). While not strictly incorrect, it can make the text feel slightly clunky.\n*   The second paragraph could benefit from slightly more specific details regarding the \"meaningful insights\" and \"potential for increased emphasis\" for critical chips, perhaps by briefly mentioning *what kind* of insights or *why* the emphasis would increase.\n*   The date of the \"The chip landscape\" policy paper is mentioned twice in the text, once in the first paragraph and once in the second, which is slightly redundant.\n\nFIX: Streamline citations by grouping them more efficiently when multiple sources support the same continuous point, and avoid repeating the same citation block immediately after.",
+            "content": "The global landscape for semiconductor and chip design capacity is highly concentrated, presenting significant challenges. Wafer fabrication capacity is overwhelmingly concentrated in China, Chinese Taipei, Korea, Japan, and the United States, which collectively account for nearly 90% of global capacity [OECD-1, OECD-4]. Upcoming investments are further reinforcing this concentration in these same major producing economies [OECD-1, OECD-4]. Within these five major producing economies, the ten largest manufacturers produce approximately half of the total global capacity [OECD-1, OECD-4]. Production is not easily substitutable between fabs, even within the same process node, creating bottlenecks and amplifying supply disruption impacts [OECD-1, OECD-4]. Furthermore, the semiconductor industry exhibits complex and vulnerable trade dependencies, with UN Comtrade data showing that dependencies more than doubled from 2012-14 to 2020-22 [OECD-3]. Many economies are increasingly relying on China for numerous products and intermediate inputs, creating dependencies for semiconductors and several inputs [OECD-3]. OECD Inter-Country Input-Output data reveals that about half of the intermediate inputs used globally in the semiconductor industry are sourced from within the industry itself [OECD-3].\n\nCurrent commercial datasets are insufficient for policy questions, lacking technological detail and varying in completeness, which limits policymakers' ability to assess dependencies and evaluate diversification strategies [OECD-1]. The \"The chip landscape\" policy paper, published on December 1, 2025, outlines principles for developing a semiconductor production database [OECD-2]. These principles prioritize trust, availability, comparability, tractability, and adaptability, with the aim of achieving the highest possible granularity [OECD-2]. This database aims to provide meaningful insights for policymakers and stakeholders, with the potential for increased emphasis on granularity and adaptability for critical or vulnerable chips [OECD-2]. The OECD will continue analytical work, including combining production capacity data with chip demand to identify excess capacity risks and prioritize investments, and extending data upstream and downstream from front-end manufacturing to include back-end manufacturing, equipment, chemicals, and other material inputs [OECD-1]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "NATO",
+      "summary": "NATO member states are actively building domestic semiconductor and chip design capacity, particularly in the field of Photonic Integrated Circuits (PICs) and silicon photonics. The NATO Science and Technology Organization (STO) is heavily invested in researching silicon photonics for diverse applications, including optical gas sensing, enhanced inertial sensors for GNSS-denied environments, and threat material detection [NATO-3]. A key focus is on leveraging civilian PIC developments for military electro-optic systems, with discussions benchmarking NATO member state advances against non-NATO activities to identify immediate and short-term military uses and inform future technology strategy [NATO-2].\n\nEfforts extend to manufacturing and engineering challenges for PIC commercial viability, such as thermal management, device packaging, and the integration of semiconductor, optical, and photonic components. These challenges were discussed at the SET-331 Research Specialists’ Meeting in Dresden, Germany, on October 21–22, 2024 [NATO-2, NATO-4]. Furthermore, advancements in low-cost thermal imaging sensors, like QinetiQ's Foundry Uncooled Thermal Imaging (FUNTI) technology, demonstrate the capacity to produce infrared detector arrays using standard CMOS processes, significantly reducing costs and enabling large-scale deployment for military operations [NATO-5]. Programmable photonic circuits, allowing software-based reconfiguration, are also being explored to accelerate development cycles for applications like sensors and lidar, enabling rapid prototyping and agility [NATO-1].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "NATO-1",
+          "url": "https://www.sto.nato.int/document/programmable-photonic-circuits/",
+          "title": "www.sto.nato.int",
+          "domain": "www.sto.nato.int"
+        },
+        {
+          "number": 2,
+          "citation": "NATO-2",
+          "url": "https://www.sto.nato.int/document/photonic-integrated-circuits/",
+          "title": "www.sto.nato.int",
+          "domain": "www.sto.nato.int"
+        },
+        {
+          "number": 3,
+          "citation": "NATO-3",
+          "url": "https://www.sto.nato.int/document-tag/silicon-photonics/",
+          "title": "www.sto.nato.int",
+          "domain": "www.sto.nato.int"
+        },
+        {
+          "number": 4,
+          "citation": "NATO-4",
+          "url": "https://www.sto.nato.int/document-author/w-bogaerts/",
+          "title": "www.sto.nato.int",
+          "domain": "www.sto.nato.int"
+        },
+        {
+          "number": 5,
+          "citation": "NATO-5",
+          "url": "https://publications.sto.nato.int/publications/STO%20Meeting%20Proceedings/RTO-MP-SET-103/MP-SET-103-08.pdf",
+          "title": "A Low-Cost Thermal Imaging Sensor for Military Dismounted Operations David Huckridge, Paul Manning, Nicholas Parkinson, John Gillham",
+          "domain": "publications.sto.nato.int"
+        }
+      ],
+      "evolution": {
+        "final_score": 150,
+        "initial_score": 148,
+        "improvement": 2,
+        "iterations": 2,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 148,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 28
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=28\n\nISSUES:\n* The text uses \"Atlantis\" as a metaphor for NATO member states, which is an unnecessary and potentially confusing stylistic choice.\n* The date of the text (December 07, 2025) is in the future, which is unusual for an evaluation of current events.\n* While the text is well-structured, some sentences are quite long and could be broken down for improved readability.\n\nFIX: Remove the \"Atlantis\" metaphor and ensure the text's date reflects a past or present evaluation.",
+            "content": "Atlantis, as represented by NATO member states, is actively building domestic semiconductor and chip design capacity, particularly in the field of Photonic Integrated Circuits (PICs) and silicon photonics. The NATO Science and Technology Organization (STO) is heavily invested in researching silicon photonics for diverse applications, including optical gas sensing, enhanced inertial sensors for GNSS-denied environments, and threat material detection [NATO-3]. A key focus is on leveraging civilian PIC developments for military electro-optic systems, with discussions benchmarking NATO member state advances against non-NATO activities to identify immediate and short-term military uses and inform future technology strategy [NATO-2].\n\nEfforts extend to manufacturing and engineering challenges for PIC commercial viability, such as thermal management, device packaging, and the integration of semiconductor, optical, and photonic components, as discussed at the SET-331 Research Specialists’ Meeting in Dresden, Germany, on October 21–22, 2024 [NATO-2, NATO-4]. Furthermore, advancements in low-cost thermal imaging sensors, like QinetiQ's Foundry Uncooled Thermal Imaging (FUNTI) technology, demonstrate the capacity to produce infrared detector arrays using standard CMOS processes, significantly reducing costs and enabling large-scale deployment for military operations [NATO-5]. Programmable photonic circuits, allowing software-based reconfiguration, are also being explored to accelerate development cycles for applications like sensors and lidar, enabling rapid prototyping and agility [NATO-1]."
+          },
+          {
+            "iteration": 2,
+            "score": 150,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 30
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=30\n\nISSUES:\n* No issues found. The text is well-written, accurately cited, and adheres to all specified guidelines.\n\nFIX:\n* No fix needed.",
+            "content": "NATO member states are actively building domestic semiconductor and chip design capacity, particularly in the field of Photonic Integrated Circuits (PICs) and silicon photonics. The NATO Science and Technology Organization (STO) is heavily invested in researching silicon photonics for diverse applications, including optical gas sensing, enhanced inertial sensors for GNSS-denied environments, and threat material detection [NATO-3]. A key focus is on leveraging civilian PIC developments for military electro-optic systems, with discussions benchmarking NATO member state advances against non-NATO activities to identify immediate and short-term military uses and inform future technology strategy [NATO-2].\n\nEfforts extend to manufacturing and engineering challenges for PIC commercial viability, such as thermal management, device packaging, and the integration of semiconductor, optical, and photonic components. These challenges were discussed at the SET-331 Research Specialists’ Meeting in Dresden, Germany, on October 21–22, 2024 [NATO-2, NATO-4]. Furthermore, advancements in low-cost thermal imaging sensors, like QinetiQ's Foundry Uncooled Thermal Imaging (FUNTI) technology, demonstrate the capacity to produce infrared detector arrays using standard CMOS processes, significantly reducing costs and enabling large-scale deployment for military operations [NATO-5]. Programmable photonic circuits, allowing software-based reconfiguration, are also being explored to accelerate development cycles for applications like sensors and lidar, enabling rapid prototyping and agility [NATO-1]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "European Commission",
+      "summary": "The European Commission's Chips Act, which entered into force on September 21, 2023, aims to double the EU's global semiconductor market share to 20% by 2030, up from its current 10% [European Commission-2, European Commission-3, European Commission-5]. This initiative is structured around three pillars: the \"Chips for Europe\" Initiative, security of supply and resilience, and monitoring and crisis response [European Commission-2, European Commission-3]. The Act is expected to generate over €43 billion in public investments, contributing to a total of more than €100 billion in policy-driven investment by 2030, including public and private funds [European Commission-2]. Key achievements include the approval of seven State aid decisions for semiconductor facilities, representing over EUR 31.5 billion in public and private investment, and the designation of four projects as Integrated Production Facilities (IPF) and Open EU Foundries (OEF) [European Commission-1, European Commission-3].\n\nThese designated projects include ESMC in Germany, a joint venture involving TSMC, Bosch, Infineon, and NXP, which will produce 480,000 wafers annually by 2029 [European Commission-1]. TSMC's first European factory in Dresden, part of this joint venture, is expected to start production in 2027 [European Commission-5]. Other projects include Ams-OSRAM in Austria, Infineon Technologies Dresden in Germany, and STMicroelectronics in Italy, all aiming to reduce dependency on non-EU supply chains [European Commission-1]. The EU is also investing in cutting-edge microchip technology for AI and space applications, with projects like DUROC developing advanced 7nm system-on-chip field-programmable gate arrays (SoC FPGAs) for space [European Commission-5]. A public consultation and call for evidence on the Act's performance and future adaptations was launched on September 5, 2025, following a call for a \"Chips Act 2.0\" by the Semicon Coalition [European Commission-3].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "European Commission-1",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/milestone-strengthening-europes-semiconductor-manufacturing-capacity-under-chips-act-reached",
+          "title": "digital-strategy.ec.europa.eu",
+          "domain": "digital-strategy.ec.europa.eu"
+        },
+        {
+          "number": 2,
+          "citation": "European Commission-2",
+          "url": "https://digital-strategy.ec.europa.eu/en/factpages/chips-act",
+          "title": "digital-strategy.ec.europa.eu",
+          "domain": "digital-strategy.ec.europa.eu"
+        },
+        {
+          "number": 3,
+          "citation": "European Commission-3",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/european-chips-act",
+          "title": "digital-strategy.ec.europa.eu",
+          "domain": "digital-strategy.ec.europa.eu"
+        },
+        {
+          "number": 4,
+          "citation": "European Commission-4",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/european-chips-act-update-latest-milestones",
+          "title": "digital-strategy.ec.europa.eu",
+          "domain": "digital-strategy.ec.europa.eu"
+        },
+        {
+          "number": 5,
+          "citation": "European Commission-5",
+          "url": "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/powering-tomorrow-eu-invests-cutting-edge-microchip-tech-future-ai-and-space-applications",
+          "title": "projects.research-and-innovation.ec.europa.eu",
+          "domain": "projects.research-and-innovation.ec.europa.eu"
+        }
+      ],
+      "evolution": {
+        "final_score": 150,
+        "initial_score": 145,
+        "improvement": 5,
+        "iterations": 2,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text states \"The Act is expected to generate over €43 billion in public investments, contributing to a total of more than €100 billion in policy-driven investment by 2030, including public and private funds [European Commission-2, European Commission-5].\" Source [European Commission-5] states \"provides €43 billion in public and private investment,\" which contradicts the \"public investments\" part of the text. Source [European Commission-2] clarifies that €43 billion is public investment, contributing to over €100 billion total. The text's phrasing is slightly ambiguous and could be clearer.\n* The text mentions \"Key achievements include the approval of seven State aid decisions for semiconductor facilities, representing over EUR 31.5 billion in public and private investment, and the designation of four projects as Integrated Production Facilities (IPF) and Open EU Foundries (OEF) [European Commission-1, European Commission-3, European Commission-4].\" Source [European Commission-4] states \"Decisions on Integrated Production Facilities (IPFs) and Open EU Foundries (OEFs) are expected before summer,\" which implies these designations are *not* yet key achievements, but rather anticipated. Source [European Commission-1] confirms the designation of four projects, so the text is correct in stating they *have been* designated, but the inclusion of [European Commission-4] as a supporting citation for this specific point is misleading given its future-oriented statement.\n* The text states \"TSMC to build its first European factory in Dresden, a joint venture with Bosch, Infineon, and NXP, with production expected to start in 2027 [European Commission-5].\" Source [European Commission-5] mentions the 2027 start date, but source [European Commission-1] states \"will produce 480,000 wafers annually by 2029.\" This is a minor discrepancy in expected production start/full capacity dates that could be clarified.\n\nFIX: Clarify the inv",
+            "content": "The European Commission's Chips Act, which entered into force on September 21, 2023, aims to double the EU's global semiconductor market share to 20% by 2030, up from its current 10% [European Commission-2, European Commission-3, European Commission-5]. This initiative is structured around three pillars: the \"Chips for Europe\" Initiative, security of supply and resilience, and monitoring and crisis response [European Commission-2, European Commission-3]. The Act is expected to generate over €43 billion in public investments, contributing to a total of more than €100 billion in policy-driven investment by 2030, including public and private funds [European Commission-2, European Commission-5]. Key achievements include the approval of seven State aid decisions for semiconductor facilities, representing over EUR 31.5 billion in public and private investment, and the designation of four projects as Integrated Production Facilities (IPF) and Open EU Foundries (OEF) [European Commission-1, European Commission-3, European Commission-4].\n\nThese designated projects include ESMC in Germany, a joint venture involving TSMC, Bosch, Infineon, and NXP, which will produce 480,000 wafers annually by 2029 [European Commission-1]. Other projects include Ams-OSRAM in Austria, Infineon Technologies Dresden in Germany, and STMicroelectronics in Italy, all aiming to reduce dependency on non-EU supply chains [European Commission-1]. The EU is also investing in cutting-edge microchip technology for AI and space applications, with projects like DUROC developing advanced 7nm system-on-chip field-programmable gate arrays (SoC FPGAs) for space [European Commission-5]. A public consultation and call for evidence on the Act's performance and future adaptations was launched on September 5, 2025, following a call for a \"Chips Act 2.0\" by the Semicon Coalition [European Commission-3]."
+          },
+          {
+            "iteration": 2,
+            "score": 150,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 30
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=30\n\nISSUES:\n* No issues found. The text is well-written, accurately cited, and adheres to all specified guidelines.\n\nFIX:\n* No fix needed.",
+            "content": "The European Commission's Chips Act, which entered into force on September 21, 2023, aims to double the EU's global semiconductor market share to 20% by 2030, up from its current 10% [European Commission-2, European Commission-3, European Commission-5]. This initiative is structured around three pillars: the \"Chips for Europe\" Initiative, security of supply and resilience, and monitoring and crisis response [European Commission-2, European Commission-3]. The Act is expected to generate over €43 billion in public investments, contributing to a total of more than €100 billion in policy-driven investment by 2030, including public and private funds [European Commission-2]. Key achievements include the approval of seven State aid decisions for semiconductor facilities, representing over EUR 31.5 billion in public and private investment, and the designation of four projects as Integrated Production Facilities (IPF) and Open EU Foundries (OEF) [European Commission-1, European Commission-3].\n\nThese designated projects include ESMC in Germany, a joint venture involving TSMC, Bosch, Infineon, and NXP, which will produce 480,000 wafers annually by 2029 [European Commission-1]. TSMC's first European factory in Dresden, part of this joint venture, is expected to start production in 2027 [European Commission-5]. Other projects include Ams-OSRAM in Austria, Infineon Technologies Dresden in Germany, and STMicroelectronics in Italy, all aiming to reduce dependency on non-EU supply chains [European Commission-1]. The EU is also investing in cutting-edge microchip technology for AI and space applications, with projects like DUROC developing advanced 7nm system-on-chip field-programmable gate arrays (SoC FPGAs) for space [European Commission-5]. A public consultation and call for evidence on the Act's performance and future adaptations was launched on September 5, 2025, following a call for a \"Chips Act 2.0\" by the Semicon Coalition [European Commission-3]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "CSIS",
+      "summary": "CSIS sources do not contain information about Atlantis's domestic semiconductor and chip design capacity building. The provided articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nThe articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. However, specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the provided CSIS texts [CSIS-2, CSIS-3].",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "CSIS-1",
+          "url": "https://www.csis.org/analysis/strategy-united-states-regain-its-position-semiconductor-manufacturing",
+          "title": "www.csis.org",
+          "domain": "www.csis.org"
+        },
+        {
+          "number": 2,
+          "citation": "CSIS-2",
+          "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-lifecycle-semiconductor-chip",
+          "title": "www.csis.org",
+          "domain": "www.csis.org"
+        },
+        {
+          "number": 3,
+          "citation": "CSIS-3",
+          "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-strategic-importance-continued-us-leadership-chip",
+          "title": "www.csis.org",
+          "domain": "www.csis.org"
+        }
+      ],
+      "evolution": {
+        "final_score": 145,
+        "initial_score": 145,
+        "improvement": 0,
+        "iterations": 5,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text mentions \"Atlantis's domestic semiconductor and chip design capacity building\" which is not present in the sources. While the overall point is that the sources *don't* contain this information, the phrasing implies Atlantis is a real entity being discussed. This is a minor stylistic issue rather than a factual hallucination, as the core message is correct.\n* The text states \"specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the provided CSIS texts [CSIS-2, CSIS-3].\" While true, the sources themselves explicitly state these facts are *not* present, making the text's statement somewhat redundant.\n* The structure is good, but the introduction of \"Atlantis\" is slightly jarring, even if used to frame what the sources *don't* cover.\n\nFIX: Rephrase the opening sentence to avoid implying Atlantis is a real entity being discussed in the context of the CSIS sources, e.g., \"The provided CSIS sources do not contain information about any nation's domestic semiconductor and chip design capacity building, specifically not for a hypothetical entity like Atlantis.\"",
+            "content": "CSIS sources do not contain information about Atlantis's domestic semiconductor and chip design capacity building. The provided articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nThe articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. However, specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the provided CSIS texts [CSIS-2, CSIS-3]."
+          },
+          {
+            "iteration": 2,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text is well-structured and directly addresses the prompt, but the \"qual\" score is slightly reduced because it primarily states what the sources *don't* contain rather than providing specific, detailed facts *from* the sources. While accurate, this limits the richness of the information presented.\n\nFIX: If the goal was to provide more specific facts, the prompt should have been designed to elicit information that *is* present in the sources, rather than focusing on what is absent.",
+            "content": "The provided CSIS sources do not contain information about any nation's domestic semiconductor and chip design capacity building, specifically not for a hypothetical entity like Atlantis. Instead, the articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nThe articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. The provided texts explicitly state that specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the CSIS articles [CSIS-2, CSIS-3]."
+          },
+          {
+            "iteration": 3,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text occasionally repeats information, particularly regarding the lack of specific data points in the sources.\n* The structure could be slightly more streamlined to avoid redundancy.\n* While the text is accurate, it could be more concise in certain areas.\n\nFIX: Consolidate the mentions of missing specific data points into a single, clear statement to improve conciseness.",
+            "content": "The provided CSIS sources do not contain information about any nation's domestic semiconductor and chip design capacity building, specifically not for a hypothetical entity like Atlantis. Instead, the articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nAccording to CSIS sources, the United States aims to regain its semiconductor manufacturing position, an industry it invented, driven by concerns over diminished domestic capacity [CSIS-1]. The articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. The provided texts explicitly state that specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the CSIS articles [CSIS-2, CSIS-3]."
+          },
+          {
+            "iteration": 4,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text occasionally repeats information, particularly regarding the lack of specific data points in the sources.\n* The structure could be slightly more streamlined to avoid redundancy.\n* While the text is accurate, it could be more concise in certain areas.\n\nFIX: Consolidate repetitive statements about the absence of specific data points in the sources.",
+            "content": "The provided CSIS sources do not contain information about any nation's domestic semiconductor and chip design capacity building, specifically not for a hypothetical entity like Atlantis. Instead, the articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nAccording to CSIS sources, the United States aims to regain its semiconductor manufacturing position, an industry it invented, driven by concerns over diminished domestic capacity [CSIS-1]. The articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. The provided texts explicitly state that specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the CSIS articles [CSIS-2, CSIS-3]."
+          },
+          {
+            "iteration": 5,
+            "score": 145,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 25
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=25\n\nISSUES:\n* The text occasionally repeats information, particularly regarding the lack of specific data points in the sources.\n* The structure could be slightly more streamlined to avoid redundancy.\n* While the text is accurate, it could be more concise in certain areas.\n\nFIX: Consolidate repetitive statements about the absence of specific data points in the sources.",
+            "content": "The provided CSIS sources do not contain information about any nation's domestic semiconductor and chip design capacity building, specifically not for a hypothetical entity like Atlantis. Instead, the articles focus on the United States' efforts to regain its position in semiconductor manufacturing [CSIS-1], the global semiconductor chip shortage and its impact [CSIS-2], and the strategic importance of continued U.S. leadership in chip design [CSIS-3].\n\nAccording to CSIS sources, the United States aims to regain its semiconductor manufacturing position, an industry it invented, driven by concerns over diminished domestic capacity [CSIS-1]. The articles discuss the complexity and cost of the semiconductor supply chain [CSIS-2] and the need for a strategy to address the decline in U.S. domestic capacity [CSIS-1]. The provided texts explicitly state that specific data points like \"$2.3B\", \"47%\", or \"March 2025\" are not present in the visible portions of the CSIS articles [CSIS-2, CSIS-3]."
+          }
+        ]
+      }
+    },
+    {
+      "country": "Chatham House",
+      "summary": "The provided Chatham House sources do not contain any information regarding Atlantis's domestic semiconductor and chip design capacity building. The articles discuss topics such as an embargo on Iranian crude oil exports [Chatham House-1], website cookie usage and privacy policies [Chatham House-2], and efforts to combat illegal logging and their compatibility with WTO rules [Chatham House-3, Chatham House-4].\n\nTherefore, based on the provided texts, no analysis can be made concerning Atlantis's semiconductor industry.",
+      "sources": [
+        {
+          "number": 1,
+          "citation": "Chatham House-1",
+          "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/0112pp_stevens.pdf",
+          "title": "An Embargo on Iranian Crude Oil Exports: How Likely and with What Impact? Paul Stevens Chatham House January 2012 Programme Paper: An Embargo on Iranian Crude Oil Exports www.chathamhouse.org 2",
+          "domain": "www.chathamhouse.org"
+        },
+        {
+          "number": 2,
+          "citation": "Chatham House-2",
+          "url": "https://www.chathamhouse.org/2022/12/humanitarian-exceptions-turning-point-un-sanctions",
+          "title": "www.chathamhouse.org",
+          "domain": "www.chathamhouse.org"
+        },
+        {
+          "number": 3,
+          "citation": "Chatham House-3",
+          "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy%2C%20Environment%20and%20Development/0513bp_brack.pdf",
+          "title": "briefing paper",
+          "domain": "www.chathamhouse.org"
+        },
+        {
+          "number": 4,
+          "citation": "Chatham House-4",
+          "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/tradeinillegaltimber.pdf",
+          "title": "CONTROLLING THE INTERNATIONAL TRADE IN ILLEGALLY LOGGED TIMBER AND WOOD PRODUCTS",
+          "domain": "www.chathamhouse.org"
+        }
+      ],
+      "evolution": {
+        "final_score": 150,
+        "initial_score": 150,
+        "improvement": 0,
+        "iterations": 1,
+        "history": [
+          {
+            "iteration": 1,
+            "score": 150,
+            "scores": {
+              "hall": 50,
+              "cite": 35,
+              "bias": 35,
+              "qual": 30
+            },
+            "feedback": "SCORES: hall=50 cite=35 bias=35 qual=30\n\nISSUES:\n* The text correctly identifies that the provided sources do not contain information about Atlantis's semiconductor industry.\n* The citations are correctly formatted and dense enough for full points.\n* There are no biased sources or global claims from single sources.\n\nFIX: No fix needed, the text is accurate and well-cited.",
+            "content": "The provided Chatham House sources do not contain any information regarding Atlantis's domestic semiconductor and chip design capacity building. The articles discuss topics such as an embargo on Iranian crude oil exports [Chatham House-1], website cookie usage and privacy policies [Chatham House-2], and efforts to combat illegal logging and their compatibility with WTO rules [Chatham House-3, Chatham House-4].\n\nTherefore, based on the provided texts, no analysis can be made concerning Atlantis's semiconductor industry."
+          }
+        ]
+      }
+    }
+  ],
+  "user_facts_used": 6,
+  "has_synthesis": true
+}

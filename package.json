@@ -8,6 +8,7 @@
     "dev:be": "lsof -ti:8000 | xargs kill -9 2>/dev/null; cd backend && uv run uvicorn app.main:app --reload --port 8000",
     "dev:fe": "pnpm -C frontend dev",
     "build": "pnpm -C frontend build",
+    "build:mock": "cd frontend && cross-env VITE_MOCK_MODE=true npm run build",
     "api": "openapi-codegen gen api && biome check --fix frontend/src/api",
     "lint": "biome check .",
     "lint:fix": "biome check --fix .",
@@ -16,7 +17,8 @@
     "db:reset": "rm -f backend/app.db && pnpm seed",
     "dev:desktop": "concurrently -n be,fe,electron -c blue,green,yellow \"pnpm dev:be\" \"pnpm dev:fe\" \"pnpm electron:dev\"",
     "electron:dev": "wait-on http://localhost:5173 && electron electron/main.cjs",
-    "electron:build": "pnpm build && electron-builder"
+    "electron:build": "pnpm build && electron-builder",
+    "electron:build:mock": "pnpm build:mock && electron-builder --config electron-builder-mock.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

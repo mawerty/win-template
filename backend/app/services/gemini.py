@@ -96,7 +96,7 @@ RULES:
 Return ONLY the JSON array, no other text."""
 
     try:
-        text = await call_gemini_with_prompt(prompt, temperature=0.1, max_tokens=2000)
+        text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=2000)
         
         # Clean response
         text = text.strip()
@@ -150,51 +150,72 @@ def _parse_facts_regex(text: str) -> list[dict]:
     return facts
 
 
-async def generate_topics(country_profile: dict, situation: str) -> list[dict]:
-    """Generate 5-10 specific research topics with keywords and weights based on input."""
+async def generate_topics(country_profile: dict, situation: str, criteria: str | None = None) -> list[dict]:
+    """Generate 20-30 specific research topics with keywords and weights based on input."""
     
-    prompt = f"""Jesteś starszym analitykiem geopolitycznym MSZ. Ambasador przekazał ci dane o państwie Atlantis 
-i opis aktualnej sytuacji międzynarodowej. Na podstawie TYCH KONKRETNYCH danych wygeneruj 7-8 PRECYZYJNYCH 
-tematów badawczych, które są BEZPOŚREDNIO związane z podanymi informacjami.
+    criteria_section = ""
+    if criteria:
+        criteria_section = f"""
+SUCCESS CRITERIA (what outcomes we want to achieve):
+{criteria}
+"""
+    
+    prompt = f"""You are a senior geopolitical analyst. Generate research topics for Atlantis based on the situation description and success criteria.
 
-PROFIL PAŃSTWA ATLANTIS:
+ATLANTIS COUNTRY PROFILE:
 {json.dumps(country_profile, ensure_ascii=False, indent=2)}
 
-OPIS SYTUACJI MIĘDZYNARODOWEJ (z wagami):
+INTERNATIONAL SITUATION DESCRIPTION (with importance weights):
 {situation}
+{criteria_section}
+=== YOUR TASK ===
 
-INSTRUKCJE:
-1. Przeanalizuj KONKRETNE problemy i wyzwania wymienione w opisie sytuacji
-2. Wygeneruj 7-8 tematów badawczych, które BEZPOŚREDNIO odnoszą się do podanych zagadnień
-3. Każdy temat powinien mieć WAGĘ (1-100) odzwierciedlającą jego znaczenie dla Atlantis
-4. Wagi powinny być zgodne z priorytetami podanymi w opisie sytuacji
-5. Suma wag nie musi być równa 100
+Generate 20-30 SPECIFIC research topics that:
+1. DIRECTLY relate to factors mentioned in the situation description
+2. Help achieve the success criteria
+3. Are relevant to Atlantis's profile and interests
 
-Dla każdego tematu podaj:
-- "name": Konkretna, specyficzna nazwa tematu po polsku (max 80 znaków)
-- "keywords": 4-5 słów kluczowych do wyszukiwania (po angielsku)
-- "weight": Waga tematu od 1 do 100 (większa = ważniejsze dla Atlantis)
-- "rationale": Krótkie uzasadnienie dlaczego ten temat (1 zdanie)
+RULES:
+- Each situation factor (a, b, c, d, e, f...) should generate 3-5 related topics
+- Topics must be CONCRETE and ACTIONABLE (not vague like "international trade")
+- Each topic should explore a SPECIFIC angle of the situation
+- Topic weights (1-100) should reflect:
+  * The importance weight from situation description
+  * How much it impacts success criteria
+  * Relevance to Atlantis
 
-Odpowiedz TYLKO w formacie JSON (bez markdown):
+For each topic provide:
+- "name": Specific, searchable topic name in English (max 80 chars)
+- "keywords": 4-5 English search keywords for news/government sites
+- "weight": 1-100 (based on situation weights + criteria importance)
+- "rationale": One sentence linking to situation factor AND criteria
+- "situation_factor": Which factor (a/b/c/d/e/f) this relates to
+
+EXAMPLE (if situation mentions GPU shortage with weight 30):
+{{
+  "name": "GPU Supply Chain Recovery Timeline 2028",
+  "keywords": ["GPU shortage", "semiconductor production", "TSMC capacity", "AI chip supply"],
+  "weight": 85,
+  "rationale": "Factor (a) GPU shortage impacts AI infrastructure criteria",
+  "situation_factor": "a"
+}}
+
+Respond ONLY in JSON format (no markdown):
 {{
   "topics": [
-    {{
-      "name": "Konkretny temat powiązany z opisem sytuacji",
-      "keywords": ["keyword1", "keyword2", "keyword3", "keyword4"],
-      "weight": 85,
-      "rationale": "Bezpośrednio odnosi się do wyzwania X z opisu sytuacji"
-    }}
+    {{ "name": "...", "keywords": [...], "weight": N, "rationale": "...", "situation_factor": "X" }},
+    ...
   ]
 }}
 
-WAŻNE:
-- Tematy muszą być SPECYFICZNE (nie "handel międzynarodowy" ale "Wpływ embarga na chipy na eksport elektroniki Atlantis")
-- Nawiązuj do KONKRETNYCH elementów z opisu sytuacji ambasadora
-- Wagi powinny odzwierciedlać priorytety z opisu (jeśli coś ma wagę 30, temat o tym powinien mieć wysoką wagę)
-- Generuj TYLKO 7-8 tematów, nie więcej"""
+IMPORTANT:
+- Generate 20-30 topics, covering ALL situation factors
+- Higher situation weights = more topics about that factor
+- Topics should help achieve success criteria
+- Be specific: "EU EV tariffs on Chinese imports" not "automotive industry"
+- Each topic should be distinct and searchable"""
 
-    text = await call_gemini_with_prompt(prompt, temperature=0.7, max_tokens=4096)
+    text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=8192)
     
     # Parse JSON from response (handle markdown code blocks)
     if "```json" in text:
@@ -203,7 +224,11 @@ WAŻNE:
         text = text.split("```")[1].split("```")[0]
     
     text = text.strip()
-    return json.loads(text)["topics"]
+    topics = json.loads(text)["topics"]
+    
+    # Ensure we have at least 20 topics
+    print(f"[TOPICS] Generated {len(topics)} topics")
+    return topics
 
 
 async def generate_scenarios(
@@ -264,54 +289,54 @@ async def generate_scenarios(
             lines.append(f"\n--- Topic #{topic_id}: {topic_name} ---\n{synthesis}")
         syntheses_section = "\n".join(lines)
     
-    prompt = f"""Jesteś starszym analitykiem MSZ. Przygotuj raport dla ambasadora państwa Atlantis przy UE.
+    prompt = f"""You are a senior analyst. Prepare a report for the ambassador of Atlantis to the EU.
 
-PROFIL PAŃSTWA ATLANTIS:
+ATLANTIS COUNTRY PROFILE:
 {json.dumps(country_profile, ensure_ascii=False, indent=2)}
 
 {user_facts_section}
 
-OPIS AKTUALNEJ SYTUACJI MIĘDZYNARODOWEJ:
+CURRENT INTERNATIONAL SITUATION DESCRIPTION:
 {situation}
 
-WYBRANE TEMATY DO ANALIZY:
+SELECTED TOPICS FOR ANALYSIS:
 {topics_text}
 
 {syntheses_section}
 
-Wygeneruj 4 scenariusze rozwoju sytuacji międzynarodowej z perspektywy interesów państwa Atlantis:
-1. Perspektywa 12 miesięcy - wariant POZYTYWNY dla Atlantis
-2. Perspektywa 12 miesięcy - wariant NEGATYWNY dla Atlantis
-3. Perspektywa 36 miesięcy - wariant POZYTYWNY dla Atlantis  
-4. Perspektywa 36 miesięcy - wariant NEGATYWNY dla Atlantis
+Generate 4 scenarios for international situation development from Atlantis interests perspective:
+1. 12-month perspective - POSITIVE variant for Atlantis
+2. 12-month perspective - NEGATIVE variant for Atlantis
+3. 36-month perspective - POSITIVE variant for Atlantis  
+4. 36-month perspective - NEGATIVE variant for Atlantis
 
-Dla każdego scenariusza podaj:
-- "content": Szczegółowy opis przewidywanego rozwoju sytuacji (400-500 słów). KAŻDE twierdzenie musi mieć cytowanie!
-- "chain_of_thought": Wyjaśnienie logiki analitycznej (200-300 słów) z cytowaniami.
-- "reasoning_steps": STRUKTURALNA ścieżka wnioskowania jako tablica kroków. Każdy krok pokazuje: fakt źródłowy → wniosek → wpływ na scenariusz.
+For each scenario provide:
+- "content": Detailed description of predicted situation development (400-500 words). EVERY claim must have citation!
+- "chain_of_thought": Explanation of analytical logic (200-300 words) with citations.
+- "reasoning_steps": STRUCTURAL inference path as array of steps. Each step shows: source fact → conclusion → impact on scenario.
 
-KRYTYCZNE - CYTOWANIA W CONTENT (używaj DOKŁADNIE tych formatów):
-- [USER-X] dla faktów bazowych od użytkownika (np. [USER-a], [USER-b])
-- [Country-T#-N] dla konkretnych źródeł z syntez (np. [USA-T5-1], [Germany-T3-2])
-- [Country-T#] dla ogólnego odwołania do całego tematu (np. [USA-T5], [Germany-T3])
-- KAŻDE twierdzenie musi mieć minimum jedno cytowanie
-- Przykład: "Due to GPU shortage [USER-a], the AI sector will... According to German data [Germany-T3-1], EV sales..."
+CRITICAL - CITATIONS IN CONTENT (use EXACTLY these formats):
+- [USER-X] for user baseline facts (e.g., [USER-a], [USER-b])
+- [Country-T#-N] for specific sources from syntheses (e.g., [USA-T5-1], [Germany-T3-2])
+- [Country-T#] for general reference to entire topic (e.g., [USA-T5], [Germany-T3])
+- EVERY claim must have at least one citation
+- Example: "Due to GPU shortage [USER-a], the AI sector will... According to German data [Germany-T3-1], EV sales..."
 
-WAŻNE dla reasoning_steps - każdy krok musi mieć:
-- "fact": konkretny fakt z cytowaniem [USER-X] lub [Country-T#-N]
-- "source_weight": waga źródłowa tego faktu (1-100)
-- "inference": wniosek wyciągnięty z tego faktu
-- "impact": jak wpływa na scenariusz ("positive"/"negative"/"neutral")
-- "confidence": pewność wnioskowania ("high"/"medium"/"low")
+IMPORTANT for reasoning_steps - each step must have:
+- "fact": specific fact with citation [USER-X] or [Country-T#-N]
+- "source_weight": source weight of this fact (1-100)
+- "inference": conclusion drawn from this fact
+- "impact": how it affects the scenario ("positive"/"negative"/"neutral")
+- "confidence": inference certainty ("high"/"medium"/"low")
 
-Odpowiedz TYLKO w formacie JSON (bez markdown):
+Respond ONLY in JSON format (no markdown):
 {{
   "scenarios": [
     {{
       "timeframe": "12_months",
       "variant": "positive", 
-      "content": "Treść scenariusza...",
-      "chain_of_thought": "Wyjaśnienie logiki...",
+      "content": "Scenario content...",
+      "chain_of_thought": "Logic explanation...",
       "reasoning_steps": [
         {{
           "fact": "GPU production recovery by end of 2028",
@@ -332,30 +357,30 @@ Odpowiedz TYLKO w formacie JSON (bez markdown):
     {{
       "timeframe": "12_months",
       "variant": "negative", 
-      "content": "Treść scenariusza...",
-      "chain_of_thought": "Wyjaśnienie logiki...",
+      "content": "Scenario content...",
+      "chain_of_thought": "Logic explanation...",
       "reasoning_steps": [...]
     }},
     {{
       "timeframe": "36_months",
       "variant": "positive", 
-      "content": "Treść scenariusza...",
-      "chain_of_thought": "Wyjaśnienie logiki...",
+      "content": "Scenario content...",
+      "chain_of_thought": "Logic explanation...",
       "reasoning_steps": [...]
     }},
     {{
       "timeframe": "36_months",
       "variant": "negative", 
-      "content": "Treść scenariusza...",
-      "chain_of_thought": "Wyjaśnienie logiki...",
+      "content": "Scenario content...",
+      "chain_of_thought": "Logic explanation...",
       "reasoning_steps": [...]
     }}
   ]
 }}
 
-Pamiętaj o zasadzie "chain of thought" - każdy wniosek musi być logicznie uzasadniony. Reasoning_steps muszą pokazywać PEŁNĄ ścieżkę: fakt → wniosek → wpływ."""
+Remember the "chain of thought" principle - every conclusion must be logically justified. Reasoning_steps must show FULL path: fact → conclusion → impact."""
 
-    text = await call_gemini_with_prompt(prompt, temperature=0.4, max_tokens=8192)
+    text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=8192)
     
     if "```json" in text:
         text = text.split("```json")[1].split("```")[0]
@@ -375,7 +400,7 @@ Pamiętaj o zasadzie "chain of thought" - każdy wniosek musi być logicznie uza
         
         # Build context for evolution (situation + topics + syntheses)
         evolution_context = f"""
-SYTUACJA:
+SITUATION:
 {situation}
 
 TEMATY:
@@ -432,31 +457,31 @@ async def generate_topics_with_feedback(
 ) -> list[dict]:
     """Generate topics based on user feedback to go in a different direction."""
     
-    prompt = f"""Jesteś starszym analitykiem geopolitycznym MSZ. Ambasador przekazał ci dane i FEEDBACK - prosi o zmianę kierunku analizy.
+    prompt = f"""You are a senior geopolitical analyst. You received data and FEEDBACK - requesting a change in analysis direction.
 
-PROFIL PAŃSTWA ATLANTIS:
+ATLANTIS COUNTRY PROFILE:
 {json.dumps(country_profile, ensure_ascii=False, indent=2)}
 
-OPIS SYTUACJI MIĘDZYNARODOWEJ:
+INTERNATIONAL SITUATION DESCRIPTION:
 {situation}
 
-FEEDBACK OD UŻYTKOWNIKA (BARDZO WAŻNE - dostosuj tematy do tego):
+USER FEEDBACK (VERY IMPORTANT - adjust topics based on this):
 "{feedback}"
 
-Na podstawie feedbacku wygeneruj 7-8 NOWYCH tematów badawczych, które lepiej odpowiadają oczekiwaniom użytkownika.
+Based on the feedback, generate 7-8 NEW research topics that better match user expectations.
 
-Dla każdego tematu podaj:
-- "name": Konkretna, specyficzna nazwa tematu po polsku (max 80 znaków)
-- "keywords": 4-5 słów kluczowych do wyszukiwania (po angielsku)
-- "weight": Waga tematu od 1 do 100
-- "rationale": Krótkie uzasadnienie + jak odnosi się do feedbacku
+For each topic provide:
+- "name": Specific topic name in English (max 80 characters)
+- "keywords": 4-5 search keywords (in English)
+- "weight": Topic weight from 1 to 100
+- "rationale": Short justification + how it relates to feedback
 
-Odpowiedz TYLKO w formacie JSON:
+Respond ONLY in JSON format:
 {{
   "topics": [...]
 }}"""
 
-    text = await call_gemini_with_prompt(prompt, temperature=0.7, max_tokens=4096)
+    text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=4096)
     
     if "```json" in text:
         text = text.split("```json")[1].split("```")[0]
@@ -477,7 +502,7 @@ TOPIC: {topic_name}
 Return ONLY a JSON array of 5 keywords in English, good for searching news and government websites:
 ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]"""
 
-    text = await call_gemini_with_prompt(prompt, temperature=0.3, max_tokens=200)
+    text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=200)
     
     # Clean up response
     text = text.strip()
@@ -564,77 +589,77 @@ async def generate_backcast(
     years_to_cover = list(range(target_year, current_year - 1, -1))
     years_text = ", ".join(map(str, years_to_cover))
 
-    prompt = f"""Jesteś starszym analitykiem strategicznym MSZ. Wykonujesz analizę BACKCASTING - wsteczne prognozowanie.
+    prompt = f"""You are a senior strategic analyst. You are performing BACKCASTING analysis - reverse forecasting.
 
-CZYM JEST BACKCASTING:
-Backcasting to metoda analityczna, w której zaczynamy od POŻĄDANEGO STANU PRZYSZŁEGO i cofamy się krok po kroku do teraźniejszości, określając co musi się wydarzyć na każdym etapie, aby osiągnąć cel.
+WHAT IS BACKCASTING:
+Backcasting is an analytical method where we start from the DESIRED FUTURE STATE and work backwards step by step to the present, determining what must happen at each stage to achieve the goal.
 
-PROFIL PAŃSTWA ATLANTIS:
+ATLANTIS COUNTRY PROFILE:
 {json.dumps(country_profile, ensure_ascii=False, indent=2)}
 
-AKTUALNA SYTUACJA MIĘDZYNARODOWA:
+CURRENT INTERNATIONAL SITUATION:
 {situation}
 
-WYBRANE TEMATY ANALIZY:
+SELECTED ANALYSIS TOPICS:
 {topics_text}
 
-{f"SYNTEZY TEMATÓW:{chr(10)}{syntheses_context}" if syntheses_context else ""}
+{f"TOPIC SYNTHESES:{chr(10)}{syntheses_context}" if syntheses_context else ""}
 
-STAN DOCELOWY (rok {target_year}):
+TARGET STATE (year {target_year}):
 "{target_state}"
 
-ZADANIE:
-Wykonaj analizę backcasting od roku {target_year} do {current_year}.
-Dla każdego roku określ: co musi być prawdą, jakie działania są wymagane, jakie kamienie milowe muszą być osiągnięte.
+TASK:
+Perform backcasting analysis from year {target_year} to {current_year}.
+For each year determine: what must be true, what actions are required, what milestones must be achieved.
 
-Odpowiedz TYLKO w formacie JSON (bez markdown):
+Respond ONLY in JSON format (no markdown):
 {{
   "backcast_steps": [
     {{
       "year": {target_year},
-      "state": "Opis osiągniętego stanu docelowego",
-      "prerequisites_met": ["Warunek 1 który musiał być spełniony", "Warunek 2"],
-      "reasoning": "Dlaczego te warunki są kluczowe"
+      "state": "Description of achieved target state",
+      "prerequisites_met": ["Prerequisite 1 that had to be met", "Prerequisite 2"],
+      "reasoning": "Why these prerequisites are crucial"
     }},
     {{
       "year": {target_year - 1},
-      "state": "Co musi być prawdą w tym roku",
-      "actions_required": ["Działanie 1", "Działanie 2"],
-      "key_milestones": ["Kamień milowy 1"],
-      "reasoning": "Logika przejścia do następnego roku"
+      "state": "What must be true this year",
+      "actions_required": ["Action 1", "Action 2"],
+      "key_milestones": ["Milestone 1"],
+      "reasoning": "Logic for transition to next year"
     }},
     {{
       "year": {target_year - 2},
-      "state": "Co musi być prawdą",
+      "state": "What must be true",
       "actions_required": ["..."],
       "key_milestones": ["..."],
       "reasoning": "..."
     }},
     {{
       "year": {current_year},
-      "state": "Stan obecny - punkt wyjścia",
-      "immediate_actions": ["Natychmiastowe działanie 1", "Działanie 2"],
-      "critical_path": "Najważniejszy pierwszy krok który określi sukces całej ścieżki",
-      "reasoning": "Dlaczego to jest krytyczne"
+      "state": "Current state - starting point",
+      "immediate_actions": ["Immediate action 1", "Action 2"],
+      "critical_path": "Most important first step that will determine success of entire path",
+      "reasoning": "Why this is critical"
     }}
   ],
   "feasibility_assessment": {{
     "score": 65,
-    "main_obstacles": ["Przeszkoda 1", "Przeszkoda 2"],
-    "enablers": ["Czynnik wspierający 1", "Czynnik 2"],
-    "recommendation": "Ogólna ocena wykonalności i rekomendacja"
+    "main_obstacles": ["Obstacle 1", "Obstacle 2"],
+    "enablers": ["Supporting factor 1", "Factor 2"],
+    "recommendation": "Overall feasibility assessment and recommendation"
   }},
-  "chain_of_thought": "Pełne wyjaśnienie logiki analitycznej backcastingu - jak poszczególne kroki łączą się w spójną ścieżkę od teraźniejszości do celu (300-400 słów)"
+  "chain_of_thought": "Full explanation of backcasting analytical logic - how individual steps connect into coherent path from present to goal (300-400 words)"
 }}
 
-WAŻNE:
-1. Każdy krok musi logicznie wynikać z poprzedniego (idąc wstecz)
-2. Uwzględnij realne ograniczenia i możliwości Atlantis
-3. Bądź konkretny - podawaj daty, liczby, nazwy programów
-4. Ocena wykonalności (feasibility_assessment.score) powinna być realistyczna
-5. Kroki muszą uwzględniać wagi tematów - ważniejsze tematy = więcej uwagi"""
+IMPORTANT:
+1. Each step must logically follow from the previous one (going backwards)
+2. Consider real constraints and capabilities of Atlantis
+3. Be specific - provide dates, numbers, program names
+4. Feasibility assessment (feasibility_assessment.score) should be realistic
+5. Steps must consider topic weights - more important topics = more attention"""
 
-    text = await call_gemini_with_prompt(prompt, temperature=0.4, max_tokens=8192)
+    text = await call_gemini_with_prompt(prompt, temperature=0.2, max_tokens=8192)
     
     if "```json" in text:
         text = text.split("```json")[1].split("```")[0]

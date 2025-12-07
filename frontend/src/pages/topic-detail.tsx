@@ -240,7 +240,7 @@ export default function TopicDetailPage() {
       
     } catch (error) {
       console.error("Error loading topic:", error);
-      toast.error("Nie można załadować tematu");
+      toast.error("Unable to load topic");
       navigate("/");
     } finally {
       setIsLoading(false);
@@ -258,9 +258,9 @@ export default function TopicDetailPage() {
       if (!response.ok) throw new Error("Failed");
       const data = await response.json();
       setTopic(prev => prev ? { ...prev, ...data } : data);
-      toast.success(`Pobrano ${data.fetched_urls?.stats?.total_urls || 0} linków!`);
+      toast.success(`Fetched ${data.fetched_urls?.stats?.total_urls || 0} URLs!`);
     } catch {
-      toast.error("Błąd pobierania linków");
+      toast.error("Error fetching URLs");
     } finally {
       setIsFetching(false);
     }
@@ -277,9 +277,9 @@ export default function TopicDetailPage() {
       if (!response.ok) throw new Error("Failed");
       const data = await response.json();
       setArticlesData(data);
-      toast.success(`Przetworzono ${data.articles_processed} artykułów!`);
+      toast.success(`Processed ${data.articles_processed} articles!`);
     } catch {
-      toast.error("Błąd przetwarzania artykułów");
+      toast.error("Error processing articles");
     } finally {
       setIsProcessing(false);
     }
@@ -302,9 +302,9 @@ export default function TopicDetailPage() {
       const data = await response.json();
       setCountrySummaries(data.country_summaries);
       setActiveTab("countries");
-      toast.success(`Wygenerowano podsumowania dla ${data.countries_count} krajów!`);
+      toast.success(`Generated summaries for ${data.countries_count} countries!`);
     } catch (error: unknown) {
-      const msg = error instanceof Error ? error.message : "Błąd";
+      const msg = error instanceof Error ? error.message : "Error";
       toast.error(msg);
     } finally {
       setIsGeneratingCountries(false);
@@ -329,9 +329,9 @@ export default function TopicDetailPage() {
       setSynthesisText(data.synthesis);
       setSynthesisEvolution(data.evolution || null);
       setActiveTab("synthesis");
-      toast.success("Wygenerowano syntezę!");
+      toast.success("Synthesis generated!");
     } catch (error: unknown) {
-      const msg = error instanceof Error ? error.message : "Błąd";
+      const msg = error instanceof Error ? error.message : "Error";
       toast.error(msg);
     } finally {
       setIsGeneratingSynthesis(false);
@@ -340,7 +340,7 @@ export default function TopicDetailPage() {
 
   // Reset handlers
   const handleResetAll = async () => {
-    if (!topicId || !confirm("Czy na pewno chcesz zresetować WSZYSTKO dla tego tematu?")) return;
+    if (!topicId || !confirm("Are you sure you want to reset ALL data for this topic?")) return;
     try {
       const response = await fetch(`/api/topics/${topicId}/reset-all`, { method: "DELETE" });
       if (!response.ok) throw new Error("Failed");
@@ -353,7 +353,7 @@ export default function TopicDetailPage() {
       setActiveTab("urls");
       toast.success("Zresetowano wszystkie dane!");
     } catch {
-      toast.error("Błąd resetowania");
+      toast.error("Reset error");
     }
   };
 
@@ -364,29 +364,29 @@ export default function TopicDetailPage() {
       setTopic(prev => prev ? { ...prev, fetched_urls: undefined } : prev);
       toast.success("Linki zresetowane!");
     } catch {
-      toast.error("Błąd");
+      toast.error("Error");
     }
   };
 
   const handleResetSummaries = async () => {
-    if (!topicId || !confirm("Zresetować streszczenia artykułów?")) return;
+    if (!topicId || !confirm("Reset article summaries?")) return;
     try {
       await fetch(`/api/topics/${topicId}/reset-summaries`, { method: "DELETE" });
       setArticlesData(null);
       toast.success("Streszczenia zresetowane!");
     } catch {
-      toast.error("Błąd");
+      toast.error("Error");
     }
   };
 
   const handleResetCountries = async () => {
-    if (!topicId || !confirm("Zresetować podsumowania krajów?")) return;
+    if (!topicId || !confirm("Reset country summaries?")) return;
     try {
       await fetch(`/api/topics/${topicId}/reset-countries`, { method: "DELETE" });
       setCountrySummaries([]);
-      toast.success("Podsumowania krajów zresetowane!");
+      toast.success("Country summaries reset!");
     } catch {
-      toast.error("Błąd");
+      toast.error("Error");
     }
   };
 
@@ -398,7 +398,7 @@ export default function TopicDetailPage() {
       setSynthesisEvolution(null);
       toast.success("Synteza zresetowana!");
     } catch {
-      toast.error("Błąd");
+      toast.error("Error");
     }
   };
 
@@ -480,7 +480,7 @@ export default function TopicDetailPage() {
                 </div>
                 {selectedArticle.key_facts && selectedArticle.key_facts.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-slate-700">
-                    <h4 className="text-sm font-medium text-slate-300 mb-2">Kluczowe fakty:</h4>
+                    <h4 className="text-sm font-medium text-slate-300 mb-2">Key facts:</h4>
                     <ul className="space-y-1">
                       {selectedArticle.key_facts.map((fact, i) => (
                         <li key={i} className="text-xs text-slate-400 flex items-start gap-2">
@@ -514,7 +514,7 @@ export default function TopicDetailPage() {
             className="text-slate-400 hover:text-slate-100 mb-6"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
-            {topic.session_id ? "Wróć do sesji" : "Powrót"}
+            {topic.session_id ? "Back to session" : "Back"}
           </Button>
 
           {/* Topic Info */}
@@ -527,7 +527,7 @@ export default function TopicDetailPage() {
             </div>
             <div className="text-right">
               <div className="text-2xl font-bold text-violet-400">{topic.weight}</div>
-              <div className="text-xs text-slate-500">waga</div>
+              <div className="text-xs text-slate-500">weight</div>
             </div>
           </div>
         </CardHeader>
@@ -541,91 +541,14 @@ export default function TopicDetailPage() {
             ))}
           </div>
           
-          {/* Action Buttons - 4 steps */}
-          <div className="flex items-center gap-2 flex-wrap">
-            {/* 1. Fetch URLs */}
-            <Button
-              onClick={() => handleFetchUrls(hasUrls)}
-              disabled={isAnyLoading}
-              size="sm"
-              className={hasUrls ? "bg-slate-600" : "bg-emerald-500 hover:bg-emerald-600"}
-            >
-              {isFetching ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Search className="mr-2 h-4 w-4" />}
-              {hasUrls ? "1. ✓" : "1. Linki"}
-            </Button>
-            
-            {/* 2. Process Articles */}
-            <Button
-              onClick={handleProcessArticles}
-              disabled={isAnyLoading || !hasUrls}
-              size="sm"
-              className={hasArticles ? "bg-slate-600" : "bg-blue-500 hover:bg-blue-600"}
-            >
-              {isProcessing ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Brain className="mr-2 h-4 w-4" />}
-              {hasArticles ? "2. ✓" : "2. Streść"}
-            </Button>
-            
-            {/* 3. Country Summaries */}
-            <Button
-              onClick={() => handleGenerateCountrySummaries(hasCountrySummaries)}
-              disabled={isAnyLoading || !hasArticles}
-              size="sm"
-              className={hasCountrySummaries ? "bg-slate-600" : "bg-orange-500 hover:bg-orange-600"}
-            >
-              {isGeneratingCountries ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Flag className="mr-2 h-4 w-4" />}
-              {hasCountrySummaries ? "3. ✓" : "3. Kraje"}
-            </Button>
-            
-            {/* 4. Final Synthesis */}
-            <Button
-              onClick={() => handleGenerateSynthesis(hasSynthesis)}
-              disabled={isAnyLoading || !hasCountrySummaries}
-              size="sm"
-              className={hasSynthesis ? "bg-slate-600" : "bg-gradient-to-r from-violet-500 to-purple-500"}
-            >
-              {isGeneratingSynthesis ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-              {hasSynthesis ? "4. ✓" : "4. Synteza"}
-            </Button>
-          </div>
           
           {/* Stats */}
           {(hasUrls || hasArticles || hasCountrySummaries) && (
             <div className="flex items-center gap-4 mt-4 text-xs text-slate-500">
-              {hasUrls && <span className="flex items-center gap-1"><Link2 className="h-3 w-3" />{topic.fetched_urls?.stats.total_urls} linków</span>}
-              {hasArticles && <span className="flex items-center gap-1"><FileText className="h-3 w-3" />{articlesData.articles_processed} artykułów</span>}
-              {hasCountrySummaries && <span className="flex items-center gap-1 text-orange-400"><Flag className="h-3 w-3" />{countrySummaries.length} krajów</span>}
-              {hasSynthesis && <span className="flex items-center gap-1 text-violet-400"><Sparkles className="h-3 w-3" />Synteza ✓</span>}
-            </div>
-          )}
-          
-          {/* Reset buttons */}
-          {(hasUrls || hasArticles || hasCountrySummaries || hasSynthesis) && (
-            <div className="flex items-center gap-2 mt-4 pt-4 border-t border-slate-700">
-              <span className="text-xs text-slate-500 mr-2">Resetuj:</span>
-              {hasUrls && (
-                <Button variant="ghost" size="sm" onClick={handleResetUrls} className="text-slate-500 hover:text-red-400 h-7 px-2">
-                  <RotateCcw className="h-3 w-3 mr-1" />Linki
-                </Button>
-              )}
-              {hasArticles && (
-                <Button variant="ghost" size="sm" onClick={handleResetSummaries} className="text-slate-500 hover:text-red-400 h-7 px-2">
-                  <RotateCcw className="h-3 w-3 mr-1" />Streszczenia
-                </Button>
-              )}
-              {hasCountrySummaries && (
-                <Button variant="ghost" size="sm" onClick={handleResetCountries} className="text-slate-500 hover:text-red-400 h-7 px-2">
-                  <RotateCcw className="h-3 w-3 mr-1" />Kraje
-                </Button>
-              )}
-              {hasSynthesis && (
-                <Button variant="ghost" size="sm" onClick={handleResetSynthesis} className="text-slate-500 hover:text-red-400 h-7 px-2">
-                  <RotateCcw className="h-3 w-3 mr-1" />Synteza
-                </Button>
-              )}
-              <div className="flex-1" />
-              <Button variant="ghost" size="sm" onClick={handleResetAll} className="text-red-500 hover:text-red-400 hover:bg-red-500/10 h-7 px-2">
-                <Trash2 className="h-3 w-3 mr-1" />Wszystko
-              </Button>
+              {hasUrls && <span className="flex items-center gap-1"><Link2 className="h-3 w-3" />{topic.fetched_urls?.stats.total_urls} URLs</span>}
+              {hasArticles && <span className="flex items-center gap-1"><FileText className="h-3 w-3" />{articlesData.articles_processed} articles</span>}
+              {hasCountrySummaries && <span className="flex items-center gap-1 text-orange-400"><Flag className="h-3 w-3" />{countrySummaries.length} countries</span>}
+              {hasSynthesis && <span className="flex items-center gap-1 text-violet-400"><Sparkles className="h-3 w-3" />Synthesis ✓</span>}
             </div>
           )}
         </CardContent>
@@ -640,7 +563,7 @@ export default function TopicDetailPage() {
             size="sm" 
             className={activeTab === "urls" ? "bg-slate-700" : "border-slate-600"}
           >
-            <Globe className="mr-2 h-4 w-4" />Linki
+            <Globe className="mr-2 h-4 w-4" />URLs
           </Button>
           <Button 
             variant={activeTab === "countries" ? "default" : "outline"} 
@@ -648,7 +571,7 @@ export default function TopicDetailPage() {
             size="sm" 
             className={activeTab === "countries" ? "bg-orange-600" : "border-slate-600"}
           >
-            <Flag className="mr-2 h-4 w-4" />Kraje {hasCountrySummaries && "✓"}
+            <Flag className="mr-2 h-4 w-4" />Countries {hasCountrySummaries && "✓"}
           </Button>
           <Button 
             variant={activeTab === "synthesis" ? "default" : "outline"} 
@@ -656,7 +579,7 @@ export default function TopicDetailPage() {
             size="sm" 
             className={activeTab === "synthesis" ? "bg-violet-600" : "border-slate-600"}
           >
-            <Sparkles className="mr-2 h-4 w-4" />Synteza {hasSynthesis && "✓"}
+            <Sparkles className="mr-2 h-4 w-4" />Synthesis {hasSynthesis && "✓"}
           </Button>
         </div>
       )}
@@ -678,7 +601,7 @@ export default function TopicDetailPage() {
                         : "bg-slate-700 text-slate-300 hover:bg-slate-600"
                     )}
                   >
-                    Wszystkie ({countrySummaries.length})
+                    All ({countrySummaries.length})
                   </Link>
                   {countrySummaries.map((cs) => (
                     <Link
@@ -704,7 +627,7 @@ export default function TopicDetailPage() {
                   className="border-slate-600"
                 >
                   <RefreshCw className={cn("h-3 w-3 mr-1", isGeneratingCountries && "animate-spin")} />
-                  Odśwież
+                  Refresh
                 </Button>
               </div>
               
@@ -717,7 +640,7 @@ export default function TopicDetailPage() {
                     return (
                       <Card className="border-slate-700 bg-slate-800/50">
                         <CardContent className="py-8 text-center text-slate-500">
-                          Nie znaleziono kraju: {highlightCountry}
+                          Country not found: {highlightCountry}
                         </CardContent>
                       </Card>
                     );
@@ -757,9 +680,9 @@ export default function TopicDetailPage() {
             <Card className="border-slate-700 bg-slate-800/50">
               <CardContent className="py-12 text-center">
                 <Flag className="h-12 w-12 mx-auto mb-4 text-slate-600" />
-                <h3 className="text-lg font-medium text-slate-300 mb-2">Gotowe do generowania</h3>
+                <h3 className="text-lg font-medium text-slate-300 mb-2">Ready to generate</h3>
                 <p className="text-slate-500 mb-6">
-                  Masz {articlesData.articles_processed} artykułów z {articlesData.sources_count} źródeł.
+                  You have {articlesData.articles_processed} articles from {articlesData.sources_count} sources.
                 </p>
                 <Button 
                   onClick={() => handleGenerateCountrySummaries(false)} 
@@ -767,14 +690,14 @@ export default function TopicDetailPage() {
                   className="bg-orange-500 hover:bg-orange-600"
                 >
                   {isGeneratingCountries ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Flag className="mr-2 h-4 w-4" />}
-                  Generuj podsumowania krajów
+                  Generate country summaries
                 </Button>
               </CardContent>
             </Card>
           ) : (
             <EmptyState
               icon={<Brain className="h-12 w-12" />}
-              title="Brak artykułów"
+              title="No articles"
               description="Najpierw pobierz i streść artykuły."
             />
           )}
@@ -803,7 +726,7 @@ export default function TopicDetailPage() {
                   </Button>
                 </div>
                 <CardDescription>
-                  Analiza porównawcza z {countrySummaries.length} perspektyw krajowych
+                  Comparative analysis from {countrySummaries.length} country perspectives
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -815,7 +738,7 @@ export default function TopicDetailPage() {
                 {/* Evolution history */}
                 <EvolutionHistory 
                   evolution={synthesisEvolution} 
-                  title="Historia ewolucji syntezy"
+                  title="Synthesis evolution history"
                 />
                 
                 {/* User Facts (Ground Truth) */}
@@ -823,7 +746,7 @@ export default function TopicDetailPage() {
                   <div className="mt-8 pt-6 border-t border-slate-700">
                     <h3 className="text-sm font-semibold text-amber-300 mb-4 flex items-center gap-2">
                       <Sparkles className="h-4 w-4" />
-                      Fakty Bazowe (Ground Truth)
+                      Ground Truth Facts
                     </h3>
                     <div className="space-y-2">
                       {userFacts.map((fact) => (
@@ -848,7 +771,7 @@ export default function TopicDetailPage() {
                 <div className="mt-8 pt-6 border-t border-slate-700">
                   <h3 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
                     <BookOpen className="h-4 w-4 text-violet-400" />
-                    Źródła według krajów
+                    Sources by country
                   </h3>
                   <div className="space-y-4">
                     {countrySummaries.map((cs) => (
@@ -897,9 +820,9 @@ export default function TopicDetailPage() {
             <Card className="border-slate-700 bg-slate-800/50">
               <CardContent className="py-12 text-center">
                 <Layers className="h-12 w-12 mx-auto mb-4 text-slate-600" />
-                <h3 className="text-lg font-medium text-slate-300 mb-2">Gotowe do syntezy</h3>
+                <h3 className="text-lg font-medium text-slate-300 mb-2">Ready for synthesis</h3>
                 <p className="text-slate-500 mb-6">
-                  Masz podsumowania z {countrySummaries.length} krajów. Wygeneruj finalną syntezę.
+                  You have summaries from {countrySummaries.length} countries. Generate final synthesis.
                 </p>
                 <Button 
                   onClick={() => handleGenerateSynthesis(false)} 
@@ -907,15 +830,15 @@ export default function TopicDetailPage() {
                   className="bg-gradient-to-r from-violet-500 to-purple-500"
                 >
                   {isGeneratingSynthesis ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-                  Generuj syntezę
+                  Generate synthesis
                 </Button>
               </CardContent>
             </Card>
           ) : (
             <EmptyState
               icon={<Sparkles className="h-12 w-12" />}
-              title="Brak danych"
-              description="Najpierw wygeneruj podsumowania krajów."
+              title="No data"
+              description="Generate country summaries first."
             />
           )}
         </div>
@@ -934,7 +857,7 @@ export default function TopicDetailPage() {
 
           {topic.fetched_urls?.by_country && Object.keys(topic.fetched_urls.by_country).length > 0 && (
             <Card className="border-slate-700 bg-slate-800/50">
-              <CardHeader><CardTitle className="text-base flex items-center gap-2"><Globe className="h-4 w-4 text-blue-400" />Ministerstwa</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-base flex items-center gap-2"><Globe className="h-4 w-4 text-blue-400" />Ministries</CardTitle></CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {Object.entries(topic.fetched_urls.by_country).map(([country, urls]) => (
@@ -966,7 +889,7 @@ export default function TopicDetailPage() {
 
           {topic.fetched_urls?.by_institution && Object.keys(topic.fetched_urls.by_institution).length > 0 && (
             <Card className="border-slate-700 bg-slate-800/50">
-              <CardHeader><CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-violet-400" />Instytucje</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-violet-400" />Institutions</CardTitle></CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {Object.entries(topic.fetched_urls.by_institution).map(([inst, urls]) => (
@@ -999,12 +922,12 @@ export default function TopicDetailPage() {
           {!hasUrls && activeTab === "urls" && (
             <EmptyState
               icon={<Search className="h-12 w-12" />}
-              title="Brak linków"
-              description="Pobierz linki ze źródeł."
+              title="No URLs"
+              description="Fetch URLs from sources."
               action={
                 <Button onClick={() => handleFetchUrls(false)} disabled={isFetching} className="bg-emerald-500">
                   {isFetching ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Search className="mr-2 h-4 w-4" />}
-                  Pobierz linki
+                  Fetch URLs
                 </Button>
               }
             />
@@ -1141,7 +1064,7 @@ function CountrySummaryCard({
             <div className="border-t border-slate-700 pt-4">
               <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-violet-400" />
-                Źródła ({countrySummary.sources.length})
+                Sources ({countrySummary.sources.length})
               </h4>
               <div className="space-y-2">
                 {countrySummary.sources.map((source) => (
@@ -1193,7 +1116,7 @@ function CountrySummaryContent({
   countryName?: string;
 }) {
   if (!text?.trim()) {
-    return <p className="text-slate-500 italic">Brak treści</p>;
+    return <p className="text-slate-500 italic">No content</p>;
   }
   
   // Parse citations [Country-N] and make them clickable
@@ -1242,7 +1165,7 @@ function CountrySummaryContent({
 
 function SynthesisContent({ text, countrySummaries }: { text: string; countrySummaries: CountrySummary[] }) {
   if (!text?.trim()) {
-    return <p className="text-slate-500 italic">Brak syntezy</p>;
+    return <p className="text-slate-500 italic">No synthesis</p>;
   }
   
   // Parse citations [Country-N] or [USER-x] and make them clickable
@@ -1329,7 +1252,7 @@ function ArticleModal({ article, onClose }: { article: ArticleSummary; onClose: 
           
           {article.key_facts?.length > 0 && (
             <div className="mt-6 pt-6 border-t border-slate-700">
-              <h3 className="text-sm font-semibold text-emerald-400 mb-3">Kluczowe fakty</h3>
+                  <h3 className="text-sm font-semibold text-emerald-400 mb-3">Key facts</h3>
               <ul className="space-y-2">
                 {article.key_facts.map((fact, i) => (
                   <li key={i} className="text-sm text-slate-300 flex gap-3">

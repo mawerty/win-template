@@ -1,0 +1,18 @@
+{
+  "id": 5,
+  "session_id": 1,
+  "name": "Atlantis Automotive Industry Adaptation to European EV Slowdown",
+  "keywords": [
+    "automotive exports",
+    "EV transition",
+    "European market share",
+    "heavy industry diversification"
+  ],
+  "weight": 65,
+  "rationale": "Factor (b) European automotive slowdown and EV market saturation directly threaten Atlantis's heavy industry and automotive sector exports.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

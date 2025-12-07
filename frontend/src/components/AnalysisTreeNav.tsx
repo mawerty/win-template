@@ -271,10 +271,10 @@ export function AnalysisTreeNav({
                   {/* Status Icons */}
                   <div className="flex items-center gap-0.5 opacity-60">
                     {topic.has_urls && (
-                      <Link2 className="h-2.5 w-2.5 text-emerald-400" title="Ma URLe" />
+                      <span title="Ma URLe"><Link2 className="h-2.5 w-2.5 text-emerald-400" /></span>
                     )}
                     {topic.has_synthesis && (
-                      <BookOpen className="h-2.5 w-2.5 text-violet-400" title="Ma syntezę" />
+                      <span title="Ma syntezę"><BookOpen className="h-2.5 w-2.5 text-violet-400" /></span>
                     )}
                   </div>
                 </div>

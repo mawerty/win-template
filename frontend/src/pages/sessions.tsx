@@ -50,7 +50,7 @@ export default function SessionsPage() {
     e.preventDefault();
     e.stopPropagation();
     
-    if (!confirm("Czy na pewno chcesz usunąć tę sesję?")) return;
+    if (!confirm("Are you sure you want to delete this session?")) return;
     
     try {
       await fetch(`/api/sessions/${sessionId}`, { method: "DELETE" });
@@ -63,7 +63,7 @@ export default function SessionsPage() {
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString("pl-PL", {
+    return date.toLocaleDateString("en-US", {
       day: "numeric",
       month: "short",
       year: "numeric",
@@ -84,8 +84,8 @@ export default function SessionsPage() {
           Atlantis Analyst
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-          Narzędzie analityczne dla ambasadora państwa Atlantis przy UE.
-          Generuj scenariusze geopolityczne z pełnym wyjaśnieniem logiki analizy.
+          Analytical tool for the Atlantis ambassador to the EU.
+          Generate geopolitical scenarios with full analysis logic explanation.
         </p>
       </div>
 
@@ -97,7 +97,7 @@ export default function SessionsPage() {
           className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-8 py-6 text-lg font-semibold shadow-lg shadow-emerald-500/25"
         >
           <Plus className="mr-2 h-5 w-5" />
-          Nowa Analiza
+          New Analysis
         </Button>
       </div>
 
@@ -107,10 +107,10 @@ export default function SessionsPage() {
           <CardHeader className="pb-3">
             <CardTitle className="text-base text-slate-100 flex items-center gap-2">
               <TrendingUp className="h-4 w-4 text-violet-400" />
-              Ostatnie Tematy
+              Recent Topics
             </CardTitle>
             <CardDescription className="text-slate-400">
-              Najważniejsze tematy ze wszystkich analiz (kliknij aby otworzyć)
+              Top topics from all analyses (click to open)
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -128,10 +128,10 @@ export default function SessionsPage() {
         <CardHeader>
           <CardTitle className="text-lg text-slate-100 flex items-center gap-2">
             <FileText className="h-5 w-5 text-violet-400" />
-            Historia Analiz
+            Analysis History
           </CardTitle>
           <CardDescription className="text-slate-400">
-            Wszystkie zapisane sesje analityczne
+            All saved analysis sessions
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -142,8 +142,8 @@ export default function SessionsPage() {
           ) : sessions.length === 0 ? (
             <div className="text-center py-12 text-slate-400">
               <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p>Brak zapisanych analiz</p>
-              <p className="text-sm mt-2">Kliknij "Nowa Analiza" aby rozpocząć</p>
+              <p>No saved analyses</p>
+              <p className="text-sm mt-2">Click "New Analysis" to start</p>
             </div>
           ) : (
             <div className="space-y-4">
@@ -168,14 +168,14 @@ export default function SessionsPage() {
                             {formatDate(session.created_at)}
                           </span>
                           <span>
-                            {session.topics_count} tematów
+                            {session.topics_count} topics
                             {session.selected_topics_count > 0 && (
-                              <span className="text-emerald-400"> ({session.selected_topics_count} wybranych)</span>
+                              <span className="text-emerald-400"> ({session.selected_topics_count} selected)</span>
                             )}
                           </span>
                           {session.has_scenarios && (
                             <span className="text-violet-400">
-                              {session.scenarios_count} scenariuszy
+                              {session.scenarios_count} scenarios
                             </span>
                           )}
                         </div>
@@ -199,7 +199,7 @@ export default function SessionsPage() {
                     <div className="px-4 pb-4 pt-0">
                       <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
                         <Hash className="h-3 w-3" />
-                        Tematy:
+                        Topics:
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {session.recent_topics.map((topic) => (

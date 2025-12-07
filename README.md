@@ -1,291 +1,477 @@
-# 🔥 HyperStack Pro
+# 🔮 Scenariusze Jutra | Atlantis Analyst
 
-Next-generation fullstack framework with AI-powered code generation and real-time sync.
+> **Narzędzie analityczne dla MSZ do prognozowania geopolitycznego z wykorzystaniem AI**
 
-## Stack
+<div align="center">
 
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | SolidJS 2.0 + Vite 6 + TypeScript 5.4 |
-| **State** | TanStack Store + Nano Stores |
-| **Backend** | Hono.js + Bun Runtime |
-| **Database** | TursoDB (libSQL) + Drizzle ORM |
-| **Auth** | Oslo + Arctic (OAuth 2.0) |
-| **Realtime** | PartyKit WebSockets |
+![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google&logoColor=white)
 
-## Prerequisites
+</div>
 
-- **Bun** 1.1.30+ (`curl -fsSL https://bun.sh/install | bash`)
-- **TursoDB CLI** (`brew install tursodb/tap/turso`)
-- **Node.js** 22+ (for Vite compatibility layer)
+---
 
-## Quick Start
+## 📋 Spis treści
 
-```bash
-# 1. Initialize TursoDB (required first!)
-turso db create hyperstack-dev --location waw
-turso db tokens create hyperstack-dev > .turso-token
+- [**Demo - Gotowa wersja**](#-demo---gotowa-wersja-do-uruchomienia) ⭐
+- [O projekcie](#-o-projekcie)
+- [Kluczowe funkcje](#-kluczowe-funkcje)
+- [Architektura](#-architektura)
+- [Szybki start (pełna wersja)](#-szybki-start-pełna-wersja-z-backendem)
+- [Jak używać](#-jak-używać)
+- [Struktura projektu](#-struktura-projektu)
+- [Potencjał rozwojowy](#-potencjał-rozwojowy)
+- [Bezpieczeństwo](#-bezpieczeństwo)
 
-# 2. Install dependencies
-bun install --frozen-lockfile
-cd services && bun install
+---
 
-# 3. Generate Drizzle schemas
-bun run db:generate
-bun run db:push
+## 🎯 O projekcie
 
-# 4. Start development
-bun run dev:all
+**Scenariusze Jutra** to prototyp skalowalnego narzędzia analitycznego stworzonego dla Ministerstwa Spraw Zagranicznych RP. Wykorzystuje zaawansowane technologie NLP, analizy danych i modelowania scenariuszy do typowania prawdopodobnych wydarzeń i trendów w polityce międzynarodowej.
+
+### Wyzwanie
+
+Światowa polityka zmienia się coraz szybciej, a tradycyjne metody analizy nie nadążają za wolumenem danych. Pracownicy MSZ spędzają tysiące godzin rocznie na:
+- Przetwarzaniu informacji z setek źródeł
+- Ustalaniu związków przyczynowo-skutkowych
+- Formułowaniu scenariuszy i rekomendacji
+
+### Rozwiązanie
+
+Narzędzie automatyzuje i wspomaga proces analizy foresightowej poprzez:
+- **Automatyczne zbieranie danych** z oficjalnych źródeł (ministerstwa, think tanki, instytucje międzynarodowe)
+- **Inteligentną syntezę** informacji z zachowaniem pełnej ścieżki cytowań
+- **Generowanie scenariuszy** w 4 wariantach (12/36 miesięcy × pozytywny/negatywny)
+- **Wyjaśnialność (XAI)** - pełna transparentność ścieżki wnioskowania
+
+---
+
+## ✨ Kluczowe funkcje
+
+### 1. 📊 Generowanie tematów badawczych
+- AI analizuje profil kraju i opis sytuacji międzynarodowej
+- Generuje 20-30 tematów z wagami istotności (1-100)
+- Każdy temat powiązany z czynnikiem sytuacyjnym (a/b/c/d/e/f)
+
+### 2. 🔍 Zbieranie źródeł (Deep Research)
+- Automatyczne przeszukiwanie stron rządowych 8 krajów:
+  - USA, Niemcy, Francja, UK, Rosja, Chiny, Indie, Arabia Saudyjska
+- Instytucje międzynarodowe: NATO, UE, ONZ, OECD, think tanki
+- Generowanie zapytań wyszukiwania dla każdego tematu
+
+### 3. 📝 Synteza tematów z cytowaniami
+- Agregacja informacji z wielu krajów
+- System cytowań: `[Country-N]` np. `[Germany-1]`, `[USA-3]`
+- Wykrywanie i oznaczanie źródeł potencjalnie stronniczych (Rosja, Chiny)
+
+### 4. 🎭 Generowanie scenariuszy
+4 scenariusze dla państwa Atlantis:
+| Perspektywa | Wariant pozytywny | Wariant negatywny |
+|-------------|-------------------|-------------------|
+| 12 miesięcy | ✅ Optymistyczny | ⚠️ Pesymistyczny |
+| 36 miesięcy | ✅ Długoterminowy pozytywny | ⚠️ Długoterminowy negatywny |
+
+### 5. 🧬 AlphaEvolve - Ewolucja jakości
+Inspirowane podejściem AlphaEvolve (DeepMind):
+- **5 iteracji** ulepszania każdego output'u
+- **Ocena 4-wymiarowa** (0-150 punktów):
+  - `hall` (0-50): Halucynacje - czy są wymyślone fakty?
+  - `cite` (0-35): Cytowania - format i gęstość
+  - `bias` (0-35): Stronniczość źródeł
+  - `qual` (0-30): Jakość merytoryczna
+- **Automatyczne poprawianie** na podstawie feedbacku
+
+### 6. 🔙 Backcasting (Prognozowanie wsteczne)
+Alternatywna metoda analityczna:
+- Definiowanie pożądanego stanu przyszłego (np. rok 2028)
+- Cofanie się krok po kroku do stanu obecnego
+- Identyfikacja kamieni milowych i działań krytycznych
+- Ocena wykonalności (0-100%)
+
+### 7. 🛤️ Ścieżka wnioskowania (Chain of Thought)
+Pełna transparentność procesu analitycznego:
 ```
-
-**Important:** The dev server requires the TursoDB token to be set. Create `.env.local`:
-
-```env
-TURSO_DATABASE_URL=libsql://hyperstack-dev-<your-username>.turso.io
-TURSO_AUTH_TOKEN=<token from step 1>
-VITE_WS_ENDPOINT=ws://localhost:4567/party
-OSLO_SECRET=<generate with: openssl rand -hex 32>
-```
-
-## Development URLs
-
-| Service | URL | Port |
-|---------|-----|------|
-| Frontend | http://localhost:3333 | 3333 |
-| API Gateway | http://localhost:4000 | 4000 |
-| WebSocket Server | ws://localhost:4567 | 4567 |
-| Drizzle Studio | http://localhost:4983 | 4983 |
-
-## Project Structure
-
-```
-hyperstack/
-├── apps/
-│   ├── web/                 # SolidJS frontend
-│   │   ├── src/
-│   │   │   ├── routes/      # File-based routing
-│   │   │   ├── islands/     # Interactive components
-│   │   │   └── stores/      # Nano stores
-│   │   └── solid.config.ts
-│   └── api/                 # Hono.js backend
-│       ├── src/
-│       │   ├── routes/      # API routes
-│       │   ├── middleware/  # Auth, CORS, etc.
-│       │   └── db/          # Drizzle schemas
-│       └── drizzle.config.ts
-├── packages/
-│   ├── shared/              # Shared types & utils
-│   └── ui/                  # Component library
-├── services/
-│   └── realtime/            # PartyKit server
-└── turbo.json               # Turborepo config
-```
-
-## Authentication Setup
-
-This template uses Oslo for authentication with Arctic adapters.
-
-### 1. Configure OAuth Provider
-
-```typescript
-// apps/api/src/auth/providers.ts
-import { GitHub, Google } from "arctic";
-
-export const github = new GitHub(
-  process.env.GITHUB_CLIENT_ID!,
-  process.env.GITHUB_CLIENT_SECRET!
-);
-
-export const google = new Google(
-  process.env.GOOGLE_CLIENT_ID!,
-  process.env.GOOGLE_CLIENT_SECRET!,
-  "http://localhost:4000/auth/google/callback"
-);
-```
-
-### 2. Add environment variables
-
-```env
-GITHUB_CLIENT_ID=...
-GITHUB_CLIENT_SECRET=...
-GOOGLE_CLIENT_ID=...
-GOOGLE_CLIENT_SECRET=...
-```
-
-### 3. Use auth in frontend
-
-```tsx
-import { createAuthClient } from "@hyperstack/auth-client";
-
-const auth = createAuthClient({
-  baseUrl: "http://localhost:4000",
-});
-
-// In component
-const user = auth.useSession();
-
-// Login
-auth.signIn("github");
-```
-
-## Database
-
-### Schema Definition
-
-```typescript
-// apps/api/src/db/schema.ts
-import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
-
-export const users = sqliteTable("users", {
-  id: text("id").primaryKey(),
-  email: text("email").notNull().unique(),
-  name: text("name"),
-  createdAt: integer("created_at", { mode: "timestamp" }).defaultNow(),
-});
-
-export const posts = sqliteTable("posts", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  title: text("title").notNull(),
-  content: text("content"),
-  authorId: text("author_id").references(() => users.id),
-});
-```
-
-### Migrations
-
-```bash
-# Generate migration
-bun run db:generate
-
-# Apply to TursoDB
-bun run db:push
-
-# Open Drizzle Studio
-bun run db:studio
-```
-
-## Real-time (PartyKit)
-
-### Server Setup
-
-```typescript
-// services/realtime/src/server.ts
-import type { PartyKitServer } from "partykit/server";
-
-export default {
-  onConnect(connection, room) {
-    connection.send(JSON.stringify({ type: "connected", roomId: room.id }));
-  },
-
-  onMessage(message, connection, room) {
-    room.broadcast(message, [connection.id]);
-  },
-} satisfies PartyKitServer;
-```
-
-### Client Usage
-
-```tsx
-import { usePartySocket } from "partysocket/react";
-
-function Chat() {
-  const socket = usePartySocket({
-    host: "localhost:4567",
-    room: "main",
-  });
-
-  socket.send(JSON.stringify({ type: "message", text: "Hello!" }));
-}
-```
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `bun run dev` | Start frontend only |
-| `bun run dev:api` | Start API server |
-| `bun run dev:all` | Start everything (turborepo) |
-| `bun run db:generate` | Generate Drizzle migrations |
-| `bun run db:push` | Push schema to TursoDB |
-| `bun run db:studio` | Open Drizzle Studio |
-| `bun run build` | Production build |
-| `bun run typecheck` | Type checking |
-| `bun run test` | Run Vitest |
-
-## Deployment
-
-### Vercel (Frontend)
-
-```bash
-cd apps/web
-bunx vercel --prod
-```
-
-### Fly.io (API)
-
-```bash
-cd apps/api
-fly launch
-fly deploy
-```
-
-### PartyKit (Realtime)
-
-```bash
-cd services/realtime
-npx partykit deploy
-```
-
-## Environment Variables Reference
-
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `TURSO_DATABASE_URL` | Yes | TursoDB connection URL |
-| `TURSO_AUTH_TOKEN` | Yes | TursoDB auth token |
-| `OSLO_SECRET` | Yes | Session encryption key |
-| `GITHUB_CLIENT_ID` | No | GitHub OAuth |
-| `GITHUB_CLIENT_SECRET` | No | GitHub OAuth |
-| `GOOGLE_CLIENT_ID` | No | Google OAuth |
-| `GOOGLE_CLIENT_SECRET` | No | Google OAuth |
-| `VITE_WS_ENDPOINT` | Yes | PartyKit WebSocket URL |
-
-## Troubleshooting
-
-### "TursoDB connection failed"
-
-Make sure you've created the database and token:
-
-```bash
-turso db create hyperstack-dev --location waw
-turso db tokens create hyperstack-dev
-```
-
-### "Drizzle schema mismatch"
-
-```bash
-bun run db:generate --force
-bun run db:push --force
-```
-
-### "PartyKit not connecting"
-
-Check that the realtime service is running:
-
-```bash
-cd services/realtime
-bun run dev
-```
-
-### Reset everything
-
-```bash
-turso db destroy hyperstack-dev
-rm -rf node_modules apps/*/node_modules .turbo
-bun install
-turso db create hyperstack-dev --location waw
-bun run db:push
+FAKT [USER-a] GPU shortage 60% → WNIOSEK: AI infrastructure delayed
+   ↓ (waga: 30, pewność: wysoka)
+FAKT [Germany-T3-1] EV production down → WNIOSEK: Supply chain risk
+   ↓ (waga: 15, pewność: średnia)
+→ SCENARIUSZ: Economic slowdown affects Atlantis exports
 ```
 
 ---
 
-Built with Bun 🥟 | TursoDB ⚡ | SolidJS 💎
+## 🏗️ Architektura
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        FRONTEND (React)                          │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │
+│  │ InputForm   │  │ TopicGrid   │  │ ScenarioReport          │  │
+│  │ (profil,    │  │ (wybór      │  │ (4 scenariusze,         │  │
+│  │  sytuacja)  │  │  tematów)   │  │  rekomendacje)          │  │
+│  └─────────────┘  └─────────────┘  └─────────────────────────┘  │
+│                                                                  │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │ ReasoningPath - wizualizacja ścieżki wnioskowania          ││
+│  │ BackcastView - analiza wsteczna                            ││
+│  │ EvolutionHistory - historia ewolucji jakości               ││
+│  └─────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────┘
+                              │ REST API
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       BACKEND (FastAPI)                          │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │                      Routes Layer                           ││
+│  │  /api/sessions  /api/analysis  /api/topics  /api/articles  ││
+│  └─────────────────────────────────────────────────────────────┘│
+│                              │                                   │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │                     Services Layer                          ││
+│  │  ┌──────────┐  ┌───────────┐  ┌──────────┐  ┌───────────┐  ││
+│  │  │ gemini   │  │ evolution │  │ scraper  │  │ sources   │  ││
+│  │  │ (LLM)    │  │ (quality) │  │ (web)    │  │ (search)  │  ││
+│  │  └──────────┘  └───────────┘  └──────────┘  └───────────┘  ││
+│  └─────────────────────────────────────────────────────────────┘│
+│                              │                                   │
+│  ┌────────────────────────────────────────────────────────────┐ │
+│  │                    Data Layer (SQLite)                      │ │
+│  │  AnalysisSession → Topic → Scenario → ArticleSummary       │ │
+│  └────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                     EXTERNAL SERVICES                            │
+│  ┌──────────────────┐         ┌──────────────────────────────┐  │
+│  │ Google Gemini AI │         │ Serper API (Google Search)   │  │
+│  │ gemini-2.5-flash │         │ Web scraping                 │  │
+│  └──────────────────┘         └──────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Przepływ danych
+
+```
+1. INPUT
+   ├── Profil kraju Atlantis (28M ludności, NATO/UE, przemysł)
+   ├── Opis sytuacji (a-f z wagami istotności)
+   └── Kryterium sukcesu ("interes państwa Atlantis")
+         │
+         ▼
+2. TOPIC GENERATION
+   └── Gemini generuje 20-30 tematów badawczych
+         │
+         ▼
+3. SOURCE COLLECTION
+   ├── Generowanie zapytań wyszukiwania
+   ├── Pobieranie URL z wyszukiwarek (Serper API)
+   └── Scraping treści artykułów
+         │
+         ▼
+4. SYNTHESIS
+   ├── Podsumowanie per kraj z cytowaniami [Country-N]
+   ├── Synteza krzyżowa tematów
+   └── AlphaEvolve: 5 iteracji poprawy jakości
+         │
+         ▼
+5. SCENARIO GENERATION
+   ├── 4 scenariusze (12/36m × +/-)
+   ├── Reasoning steps (fakt → wnioski → wpływ)
+   └── Rekomendacje dla Atlantis
+         │
+         ▼
+6. OUTPUT
+   ├── Raport 2000-3000 słów
+   ├── Ścieżka wnioskowania (Chain of Thought)
+   └── Pełna atrybucja źródeł
+```
+
+---
+
+## 🎮 Demo - Gotowa wersja do uruchomienia
+
+> ⚡ **Chcesz tylko zobaczyć jak to działa? Użyj gotowego release!**
+
+W folderze znajduje się plik **`Atlantis-Analyst-Demo.zip`** - to w pełni działająca wersja demo z przykładowo wygenerowaną analizą (bez potrzeby kluczy API, backendu, itp.)
+
+### Jak uruchomić demo:
+
+1. **Zainstaluj Node.js** - https://nodejs.org (wersja LTS)
+2. **Rozpakuj** `Atlantis-Analyst-Demo.zip`
+3. **Uruchom:**
+   - **Windows:** kliknij dwukrotnie `START-Windows.bat`
+   - **Mac/Linux:** uruchom `./START-Mac-Linux.sh`
+4. **Otwórz przeglądarkę:** http://localhost:8080
+
+To jest bezpieczna wersja z zapisanymi danymi (mock data) - nie wymaga połączenia z internetem ani żadnych kluczy API. Działa na każdym komputerze z Node.js.
+
+> ⚠️ **Uwaga:** Pełna wersja z backendem (poniżej) może wymagać dodatkowej konfiguracji. Jeśli masz problemy z uruchomieniem pełnej wersji, użyj wersji demo powyżej - ta na pewno zadziała!
+
+---
+
+## 🚀 Szybki start (pełna wersja z backendem)
+
+### Wymagania
+
+- **Python** 3.12+
+- **Node.js** 20+
+- **uv** (Python package manager) - `pip install uv`
+- **pnpm** (Node package manager) - `npm install -g pnpm`
+
+### Klucze API
+
+Utwórz plik `backend/.env`:
+
+```env
+# Google Gemini API - https://aistudio.google.com/
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# Serper API (opcjonalne, do wyszukiwania) - https://serper.dev/
+SERPER_API_KEY=your_serper_api_key_here
+```
+
+### Instalacja
+
+```bash
+# 1. Klonowanie repozytorium
+git clone https://github.com/your-org/scenariusze-jutra.git
+cd scenariusze-jutra
+
+# 2. Backend
+cd backend
+uv sync
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# 3. Frontend (w nowym terminalu)
+cd frontend
+pnpm install
+```
+
+### Uruchomienie
+
+```bash
+# Terminal 1 - Backend (port 8000)
+cd backend
+uv run uvicorn app.main:app --reload
+
+# Terminal 2 - Frontend (port 5173)
+cd frontend
+pnpm dev
+```
+
+Otwórz http://localhost:5173 w przeglądarce.
+
+---
+
+## 📖 Jak używać
+
+### 1. Nowa sesja analizy
+
+1. Kliknij **"Nowa analiza"**
+2. Wypełnij/zmodyfikuj **profil kraju Atlantis**
+3. Wprowadź **opis sytuacji międzynarodowej** z wagami (a-f)
+4. Wybierz tryb: **Forecast** (prognoza) lub **Backcast** (analiza wsteczna)
+5. Kliknij **"Generuj tematy"**
+
+### 2. Wybór tematów
+
+1. Przejrzyj wygenerowane tematy (20-30)
+2. Zaznacz tematy istotne dla analizy
+3. Opcjonalnie: modyfikuj wagi tematów
+4. Kliknij **"Analizuj wybrane"**
+
+### 3. Pobieranie źródeł
+
+1. System generuje zapytania dla źródeł rządowych
+2. Kliknij **"Pobierz artykuły"** by scrape'ować treści
+3. Poczekaj na syntezę (może potrwać kilka minut)
+
+### 4. Generowanie scenariuszy
+
+1. System generuje 4 scenariusze automatycznie
+2. Każdy scenariusz przechodzi przez **AlphaEvolve** (5 iteracji)
+3. Przeglądaj **ścieżkę wnioskowania** dla transparentności
+4. Eksportuj raport do formatu tekstowego
+
+### 5. Modyfikacja wag
+
+Możesz "ręcznie" modyfikować:
+- Wagi tematów (1-100)
+- Priorytety czynników sytuacyjnych
+- Poziom "temperatury" LLM (realizm vs kreatywność)
+
+---
+
+## 📁 Struktura projektu
+
+```
+scenariusze-jutra/
+├── backend/                    # Python FastAPI
+│   ├── app/
+│   │   ├── main.py            # Entry point
+│   │   ├── config.py          # Konfiguracja (API keys)
+│   │   ├── db.py              # SQLite connection
+│   │   ├── models/
+│   │   │   └── analysis.py    # SQLModel schemas
+│   │   ├── routes/
+│   │   │   ├── analysis.py    # Główne endpointy API
+│   │   │   ├── articles.py    # Artykuły/scraping
+│   │   │   └── health.py      # Health checks
+│   │   └── services/
+│   │       ├── gemini.py      # Gemini AI integration
+│   │       ├── evolution.py   # AlphaEvolve quality loop
+│   │       ├── scraper.py     # Web scraping
+│   │       ├── sources.py     # Source generation
+│   │       └── article_processor.py  # Article processing
+│   ├── pyproject.toml
+│   └── .env                   # API keys (nie commitować!)
+│
+├── frontend/                   # React + TypeScript
+│   ├── src/
+│   │   ├── App.tsx            # Router
+│   │   ├── api/               # API client
+│   │   ├── components/
+│   │   │   ├── InputForm.tsx       # Formularz wejściowy
+│   │   │   ├── TopicGrid.tsx       # Siatka tematów
+│   │   │   ├── ScenarioReport.tsx  # Raport scenariuszy
+│   │   │   ├── ReasoningPath.tsx   # Ścieżka wnioskowania
+│   │   │   ├── BackcastView.tsx    # Widok backcasting
+│   │   │   └── EvolutionHistory.tsx # Historia ewolucji
+│   │   ├── pages/
+│   │   │   ├── sessions.tsx        # Lista sesji
+│   │   │   ├── session-detail.tsx  # Szczegóły sesji
+│   │   │   ├── new-session.tsx     # Nowa analiza
+│   │   │   └── topic-detail.tsx    # Szczegóły tematu
+│   │   └── types/
+│   │       └── analysis.ts    # TypeScript types
+│   ├── package.json
+│   └── vite.config.ts
+│
+└── README.md
+```
+
+---
+
+## 🔧 Potencjał rozwojowy
+
+Narzędzie zaprojektowano z myślą o skalowalności:
+
+### Planowane rozszerzenia
+
+| Funkcja | Wersja podstawowa | Wersja rozszerzona |
+|---------|-------------------|-------------------|
+| **Wolumen danych** | 50M słów | 5 miliardów słów |
+| **Kraje** | 8 | 50 krajów |
+| **Języki** | EN, PL | 30 języków |
+| **Formaty** | Tekst | +PDF, MP3, MP4, obrazy |
+| **Źródła** | Internet | +kontenery offline |
+
+### Roadmapa techniczna
+
+```
+v1.0 (Hackathon)
+├── ✅ Generowanie tematów
+├── ✅ Zbieranie źródeł (8 krajów)
+├── ✅ Synteza z cytowaniami
+├── ✅ 4 scenariusze forecast
+├── ✅ Backcasting
+└── ✅ AlphaEvolve quality loop
+
+v2.0 (3 miesiące)
+├── 🔲 Wielojęzyczna analiza (30 języków)
+├── 🔲 Rozbudowane scraping (50 krajów)
+├── 🔲 PDF/audio/video processing
+└── 🔲 Pamięć 10 ostatnich promptów
+
+v3.0 (6 miesięcy)
+├── 🔲 Kontenery offline (air-gapped)
+├── 🔲 Data poisoning detection
+├── 🔲 Custom LLM integration
+└── 🔲 5 miliardów słów/operację
+```
+
+---
+
+## 🔒 Bezpieczeństwo
+
+### Architektura bezpieczeństwa
+
+```
+┌─────────────────────────────────────────┐
+│           WARSTWA PUBLICZNA             │
+│  (Brak dostępu do promptów/wyników)     │
+└─────────────────────────────────────────┘
+                    │ 🔒 Auth
+                    ▼
+┌─────────────────────────────────────────┐
+│         DOMENA MSZ (Zalogowani)         │
+│  ├── Prompty                            │
+│  ├── Wyniki analiz                      │
+│  └── Historia sesji                     │
+└─────────────────────────────────────────┘
+                    │ 🔒 Encrypted
+                    ▼
+┌─────────────────────────────────────────┐
+│            CHMURA (Gemini API)          │
+│  ├── Zapytania szyfrowane               │
+│  └── Brak retencji danych               │
+└─────────────────────────────────────────┘
+```
+
+### Zasady bezpieczeństwa
+
+1. **Izolacja promptów** - żaden użytkownik spoza domeny MSZ nie ma dostępu
+2. **Szyfrowanie w tranzycie** - HTTPS dla wszystkich połączeń
+3. **Brak retencji w chmurze** - Gemini API nie przechowuje zapytań
+4. **Audyt źródeł** - pełna atrybucja każdej informacji
+5. **Wykrywanie bias** - automatyczne oznaczanie źródeł potencjalnie stronniczych
+
+### Przyszłe funkcje bezpieczeństwa
+
+- 🔲 **Data Poisoning Detection** - wykrywanie celowo zanieczyszczonych danych
+- 🔲 **Air-gapped deployment** - praca bez połączenia z internetem publicznym
+- 🔲 **HSM integration** - sprzętowe zarządzanie kluczami
+
+---
+
+## 📊 Przykładowy output
+
+### Scenariusz 12 miesięcy (pozytywny)
+
+> W perspektywie 12 miesięcy Atlantis może wykorzystać obecną sytuację geopolityczną do wzmocnienia swojej pozycji [USER-a]. Według danych niemieckiego Ministerstwa Gospodarki [Germany-T3-1], europejski przemysł motoryzacyjny rozpoczął restrukturyzację, co otwiera możliwości dla producentów z Atlantis [Germany-T3-2]. 
+>
+> Jednocześnie, inwestycje USA w ukraiński przemysł wydobywczy [USER-e] tworzą potencjał dla firm z Atlantis jako partnerów logistycznych. Rosja twierdzi [Russia-T5-1], że sankcje są nieskuteczne, jednak dane OECD [OECD-T7-2] wskazują na 15% spadek rosyjskiego eksportu energetycznego.
+
+### Ścieżka wnioskowania
+
+| Fakt | Waga | Wniosek | Wpływ | Pewność |
+|------|------|---------|-------|---------|
+| [USER-a] GPU shortage 60% | 30 | Opóźnienia w AI infrastructure | ⚠️ Negatywny | Wysoka |
+| [Germany-T3-1] EV production -30% | 15 | Szansa dla motoryzacji Atlantis | ✅ Pozytywny | Średnia |
+| [USER-f] Oil prices 30-35 USD | 25 | Osłabienie budżetu Rosji | ✅ Pozytywny | Wysoka |
+
+---
+
+## 👥 Zespół
+
+Projekt stworzony na hackathon Ministerstwa Spraw Zagranicznych RP "Scenariusze jutra" 2025.
+
+---
+
+## 📄 Licencja
+
+Projekt wykorzystuje wyłącznie licencje bezpłatne zgodnie z wymaganiami wyzwania.
+
+---
+
+<div align="center">
+
+**🇵🇱 Ministerstwo Spraw Zagranicznych RP**
+
+*"Scenariusze jutra" - bo przyszłość można przewidzieć*
+
+</div>

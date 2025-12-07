@@ -14,6 +14,7 @@ class Topic(SQLModel, table=True):
     keywords: str  # JSON array stored as string
     weight: int = Field(default=50)  # Weight 1-100, higher = more important
     rationale: str = Field(default="")  # Why this topic is relevant
+    situation_factor: str = Field(default="")  # Which situation factor (a/b/c/d/e/f) this relates to
     selected: bool = False
     
     # Cached sources data
@@ -192,6 +193,7 @@ class AnalysisSession(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     country_profile: str  # JSON
     situation_description: str  # The 6 weighted factors
+    criteria: str = Field(default="")  # Success criteria for scenarios
     created_at: datetime = Field(default_factory=datetime.utcnow)
     current_scenario_version: int = Field(default=0)
     

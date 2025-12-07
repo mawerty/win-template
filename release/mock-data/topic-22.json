@@ -1,0 +1,18 @@
+{
+  "id": 22,
+  "session_id": 1,
+  "name": "Countering State-Sponsored Negative Image Campaigns Against Atlantis",
+  "keywords": [
+    "disinformation",
+    "cyber warfare",
+    "public diplomacy",
+    "national branding"
+  ],
+  "weight": 45,
+  "rationale": "Negative image campaigns are a political threat to Atlantis, requiring proactive strategies to protect its international standing and economic interests.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

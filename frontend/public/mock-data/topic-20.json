@@ -1,0 +1,18 @@
+{
+  "id": 20,
+  "session_id": 1,
+  "name": "Opportunities for Atlantis in Critical Raw Materials Processing from Energy Transition",
+  "keywords": [
+    "critical raw materials",
+    "renewable energy supply chain",
+    "green technology",
+    "industrial diversification"
+  ],
+  "weight": 60,
+  "rationale": "Factor (f) The global shift to renewables creates demand for critical raw materials processing, aligning with Atlantis's economic ambitions.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

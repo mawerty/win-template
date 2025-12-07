@@ -133,9 +133,9 @@ function EvolutionHistoryPanel({
         className="flex items-center gap-2 text-sm text-slate-400 hover:text-slate-200 transition-colors"
       >
         <Sparkles className="h-4 w-4 text-violet-400" />
-        <span>Historia Ewolucji</span>
+        <span>Evolution History</span>
         <span className="text-xs bg-slate-700 px-2 py-0.5 rounded-full">
-          {evolution.iterations} wersji
+          {evolution.iterations} versions
         </span>
         {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
       </button>
@@ -193,7 +193,7 @@ function EvolutionHistoryPanel({
                   <div key={step.iteration}>
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="font-medium text-slate-200">
-                        Wersja {step.iteration} - Ocena Reviewera
+                        Version {step.iteration} - Reviewer Score
                       </h4>
                       <span className={cn("font-mono text-lg", getScoreColor(step.score))}>
                         {step.score}/150
@@ -205,26 +205,26 @@ function EvolutionHistoryPanel({
                       <div className="flex flex-wrap gap-3 mb-3 text-xs">
                         <div className="flex items-center gap-1 bg-violet-500/20 px-2 py-1 rounded">
                           <span className="text-slate-400">🛡️ hall:</span>
-                          <span className={step.scores.hall >= 40 ? "text-emerald-400" : "text-amber-400"}>
-                            {step.scores.hall || 0}/50
+                          <span className={(step.scores.hall ?? 0) >= 40 ? "text-emerald-400" : "text-amber-400"}>
+                            {step.scores.hall ?? 0}/50
                           </span>
                         </div>
                         <div className="flex items-center gap-1 bg-emerald-500/20 px-2 py-1 rounded">
                           <span className="text-slate-400">📝 cite:</span>
-                          <span className={step.scores.cite >= 25 ? "text-emerald-400" : "text-amber-400"}>
-                            {step.scores.cite || 0}/35
+                          <span className={(step.scores.cite ?? 0) >= 25 ? "text-emerald-400" : "text-amber-400"}>
+                            {step.scores.cite ?? 0}/35
                           </span>
                         </div>
                         <div className="flex items-center gap-1 bg-cyan-500/20 px-2 py-1 rounded">
                           <span className="text-slate-400">🔍 bias:</span>
-                          <span className={step.scores.bias >= 25 ? "text-emerald-400" : "text-amber-400"}>
-                            {step.scores.bias || 0}/35
+                          <span className={(step.scores.bias ?? 0) >= 25 ? "text-emerald-400" : "text-amber-400"}>
+                            {step.scores.bias ?? 0}/35
                           </span>
                         </div>
                         <div className="flex items-center gap-1 bg-amber-500/20 px-2 py-1 rounded">
                           <span className="text-slate-400">✨ qual:</span>
-                          <span className={step.scores.qual >= 20 ? "text-emerald-400" : "text-amber-400"}>
-                            {step.scores.qual || 0}/30
+                          <span className={(step.scores.qual ?? 0) >= 20 ? "text-emerald-400" : "text-amber-400"}>
+                            {step.scores.qual ?? 0}/30
                           </span>
                         </div>
                       </div>
@@ -235,7 +235,7 @@ function EvolutionHistoryPanel({
                       <div className="bg-slate-900/50 rounded p-3 mb-3">
                         <div className="text-xs text-violet-400 mb-1 flex items-center gap-1">
                           <MessageSquare className="h-3 w-3" />
-                          Priorytet do poprawy:
+                          Priority fix:
                         </div>
                         <p className="text-sm text-slate-300 italic">"{priority}"</p>
                       </div>
@@ -244,7 +244,7 @@ function EvolutionHistoryPanel({
                     {/* Full feedback (collapsible) */}
                     <details className="text-xs">
                       <summary className="text-slate-500 cursor-pointer hover:text-slate-300">
-                        Zobacz pełny feedback reviewera...
+                        View full reviewer feedback...
                       </summary>
                       <pre className="mt-2 p-3 bg-slate-900/50 rounded text-slate-400 whitespace-pre-wrap text-[11px] max-h-60 overflow-y-auto">
                         {step.feedback}
@@ -265,7 +265,8 @@ export default function SessionDetailPage() {
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
   
-  const [session, setSession] = useState<AnalysisSession | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [session, setSession] = useState<any>(null);
   const [topics, setTopics] = useState<Topic[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
@@ -368,7 +369,7 @@ export default function SessionDetailPage() {
       }
     } catch (error) {
       console.error("Error loading session:", error);
-      toast.error("Nie można załadować sesji");
+      toast.error("Unable to load session");
       navigate("/");
     } finally {
       setIsLoading(false);
@@ -440,7 +441,7 @@ export default function SessionDetailPage() {
 
   const handleRegenerateTopics = async () => {
     if (!feedback.trim()) {
-      toast.error("Podaj feedback do zmiany kierunku analizy");
+      toast.error("Provide feedback to change analysis direction");
       return;
     }
     
@@ -457,10 +458,10 @@ export default function SessionDetailPage() {
       const data = await response.json();
       setTopics(data.topics);
       setFeedback("");
-      toast.success(`Wygenerowano ${data.topics.length} nowych tematów!`);
+      toast.success(`Generated ${data.topics.length} new topics!`);
     } catch (error) {
       console.error("Error regenerating:", error);
-      toast.error("Błąd podczas regeneracji tematów");
+      toast.error("Error regenerating topics");
     } finally {
       setIsRegenerating(false);
     }
@@ -468,7 +469,7 @@ export default function SessionDetailPage() {
 
   const handleAddCustomTopic = async () => {
     if (!newTopicName.trim()) {
-      toast.error("Podaj nazwę tematu");
+      toast.error("Enter topic name");
       return;
     }
     
@@ -486,10 +487,10 @@ export default function SessionDetailPage() {
       setTopics(prev => [...prev, data.topic]);
       setSelectedIds(prev => new Set([...prev, data.topic.id]));
       setNewTopicName("");
-      toast.success("Dodano temat!");
+      toast.success("Topic added!");
     } catch (error) {
       console.error("Error adding topic:", error);
-      toast.error("Błąd podczas dodawania tematu");
+      toast.error("Error adding topic");
     } finally {
       setIsAddingTopic(false);
     }
@@ -497,7 +498,7 @@ export default function SessionDetailPage() {
 
   const handleProcessAll = async () => {
     if (selectedIds.size === 0) {
-      toast.error("Wybierz co najmniej jeden temat");
+      toast.error("Select at least one topic");
       return;
     }
     
@@ -509,7 +510,7 @@ export default function SessionDetailPage() {
       current: 0,
       total: selectedIds.size * 4,
       percent: 0,
-      message: "Inicjalizacja...",
+      message: "Initializing...",
       sub_step: ""
     });
     setProcessingStatus({
@@ -519,7 +520,7 @@ export default function SessionDetailPage() {
       articles_summarized: 0,
       countries_processed: 0,
       syntheses_generated: 0,
-      current_step: "Inicjalizacja...",
+      current_step: "Initializing...",
       topic_results: [],
     });
     
@@ -551,7 +552,7 @@ export default function SessionDetailPage() {
       const result = await response.json();
       setProcessingStatus(result);
       setProgress(null);
-      toast.success(`Przetworzono ${result.topics_processed} tematów!`);
+      toast.success(`Processed ${result.topics_processed} topics!`);
       
       // Refresh session to get updated topics with syntheses
       const sessionData = await getSession(Number(sessionId));
@@ -559,7 +560,7 @@ export default function SessionDetailPage() {
     } catch (error) {
       clearInterval(pollInterval);
       console.error("Error processing:", error);
-      toast.error("Błąd podczas przetwarzania");
+      toast.error("Error processing");
     } finally {
       setIsProcessing(false);
       setProgress(null);
@@ -589,7 +590,7 @@ export default function SessionDetailPage() {
       toast.success("Raport wygenerowany!");
     } catch (error) {
       console.error("Error generating report:", error);
-      toast.error("Błąd podczas generowania raportu");
+      toast.error("Error generating report");
     } finally {
       setIsGeneratingReport(false);
     }
@@ -598,7 +599,7 @@ export default function SessionDetailPage() {
   // Update report with modified topics (only process new ones)
   const handleUpdateReport = async () => {
     if (selectedIds.size === 0) {
-      toast.error("Wybierz co najmniej jeden temat");
+      toast.error("Select at least one topic");
       return;
     }
     
@@ -642,10 +643,10 @@ export default function SessionDetailPage() {
         setSourcesData(sourcesJson);
       }
       
-      toast.success(`Raport zaktualizowany! Przetworzono ${result.new_topics_processed} nowych tematów.`);
+      toast.success(`Report updated! Processed ${result.new_topics_processed} new topics.`);
     } catch (error) {
       console.error("Error updating report:", error);
-      toast.error(error instanceof Error ? error.message : "Błąd podczas aktualizacji raportu");
+      toast.error(error instanceof Error ? error.message : "Error updating report");
     } finally {
       setIsUpdatingReport(false);
     }
@@ -675,10 +676,10 @@ export default function SessionDetailPage() {
       // Auto-select the new topic
       setSelectedIds(prev => new Set([...prev, newTopic.id]));
       
-      toast.success(`Dodano temat: ${newTopic.name}`);
+      toast.success(`Added topic: ${newTopic.name}`);
     } catch (error) {
       console.error("Error adding topic:", error);
-      toast.error(error instanceof Error ? error.message : "Błąd podczas dodawania tematu");
+      toast.error(error instanceof Error ? error.message : "Error adding topic");
     } finally {
       setIsAddingTopic(false);
     }
@@ -731,21 +732,21 @@ export default function SessionDetailPage() {
                   className="text-slate-400 hover:text-slate-100"
                 >
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Powrót
+                  Back
                 </Button>
                 <div>
                   <h1 className="text-xl font-bold text-slate-100">
                     {session?.name || `Sesja #${sessionId}`}
                   </h1>
                   <p className="text-sm text-slate-400">
-                    Wybierz tematy do analizy
+                    Select topics for analysis
                   </p>
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
                 <span className="text-sm text-slate-400">
-                  {selectedIds.size} / {topics.length} wybranych
+                  {selectedIds.size} / {topics.length} selected
                 </span>
                 <Button
                   onClick={handleProcessAll}
@@ -754,7 +755,7 @@ export default function SessionDetailPage() {
                   className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600"
                 >
                   <Play className="mr-2 h-5 w-5" />
-                  Rozpocznij Analizę
+                  Start Analysis
                 </Button>
               </div>
             </div>
@@ -767,10 +768,10 @@ export default function SessionDetailPage() {
           <div className="flex items-center gap-4 mb-6">
             <Button variant="outline" size="sm" onClick={handleSelectAll} className="border-slate-700">
               <Check className="mr-2 h-4 w-4" />
-              Zaznacz wszystkie
+              Select all
             </Button>
             <Button variant="outline" size="sm" onClick={handleDeselectAll} className="border-slate-700">
-              Odznacz wszystkie
+              Deselect all
             </Button>
             
             {finalReport && (
@@ -781,7 +782,7 @@ export default function SessionDetailPage() {
                 className="border-violet-500/50 text-violet-400"
               >
                 <FileText className="mr-2 h-4 w-4" />
-                Zobacz Raport
+                View Report
               </Button>
             )}
           </div>
@@ -821,12 +822,19 @@ export default function SessionDetailPage() {
                       {/* Content */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start justify-between gap-2 mb-2">
-                          <h3 className={cn(
-                            "text-sm font-medium leading-tight",
-                            isSelected ? "text-emerald-100" : "text-slate-200"
-                          )}>
-                            {topic.name}
-                          </h3>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            {topic.situation_factor && (
+                              <span className="px-1.5 py-0.5 text-[10px] font-bold rounded bg-amber-500/20 text-amber-400 uppercase">
+                                {topic.situation_factor}
+                              </span>
+                            )}
+                            <h3 className={cn(
+                              "text-sm font-medium leading-tight",
+                              isSelected ? "text-emerald-100" : "text-slate-200"
+                            )}>
+                              {topic.name}
+                            </h3>
+                          </div>
                           
                           {/* Weight */}
                           {isEditing ? (
@@ -877,12 +885,12 @@ export default function SessionDetailPage() {
                         <div className="flex items-center gap-3 text-[10px]">
                           {topic.has_cached_urls && (
                             <span className="text-emerald-400 flex items-center gap-1">
-                              <LinkIcon className="h-3 w-3" /> URLe
+                              <LinkIcon className="h-3 w-3" /> URLs
                             </span>
                           )}
                           {topic.synthesis && (
                             <span className="text-violet-400 flex items-center gap-1">
-                              <FileText className="h-3 w-3" /> Synteza
+                              <FileText className="h-3 w-3" /> Synthesis
                             </span>
                           )}
                           <Link
@@ -890,7 +898,7 @@ export default function SessionDetailPage() {
                             onClick={(e) => e.stopPropagation()}
                             className="text-slate-500 hover:text-violet-400 flex items-center gap-1"
                           >
-                            Szczegóły <ChevronRight className="h-3 w-3" />
+                            Details <ChevronRight className="h-3 w-3" />
                           </Link>
                         </div>
                       </div>
@@ -906,7 +914,7 @@ export default function SessionDetailPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm text-slate-100 flex items-center gap-2">
                 <Plus className="h-4 w-4 text-emerald-400" />
-                Dodaj Własny Temat
+                Add Custom Topic
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -915,7 +923,7 @@ export default function SessionDetailPage() {
                   type="text"
                   value={newTopicName}
                   onChange={(e) => setNewTopicName(e.target.value)}
-                  placeholder="Nazwa tematu (np. 'Wpływ AI na rynek pracy w UE')"
+                  placeholder="Topic name (e.g. 'Impact of AI on EU labor market')"
                   className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   onKeyDown={(e) => e.key === "Enter" && handleAddCustomTopic()}
                 />
@@ -939,10 +947,10 @@ export default function SessionDetailPage() {
             <CardHeader className="pb-3">
               <CardTitle className="text-sm text-slate-100 flex items-center gap-2">
                 <MessageSquare className="h-4 w-4 text-violet-400" />
-                Zmień Kierunek Analizy
+                Change Analysis Direction
               </CardTitle>
               <CardDescription>
-                Jeśli tematy nie odpowiadają potrzebom, opisz czego szukasz
+                If topics don't match your needs, describe what you're looking for
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -950,7 +958,7 @@ export default function SessionDetailPage() {
                 <textarea
                   value={feedback}
                   onChange={(e) => setFeedback(e.target.value)}
-                  placeholder="np. 'Więcej tematów o bezpieczeństwie energetycznym, mniej o handlu. Skup się na relacjach z Chinami.'"
+                  placeholder="e.g. 'More topics on energy security, less on trade. Focus on China relations.'"
                   className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-violet-500 min-h-[80px] resize-none"
                 />
                 <Button
@@ -964,7 +972,7 @@ export default function SessionDetailPage() {
                   ) : (
                     <RefreshCw className="mr-2 h-4 w-4" />
                   )}
-                  Regeneruj
+                  Regenerate
                 </Button>
               </div>
             </CardContent>
@@ -990,12 +998,12 @@ export default function SessionDetailPage() {
               )}
             </div>
             <CardTitle className="text-2xl text-slate-100">
-              {isProcessing ? "Przetwarzanie Tematów..." : "Przetwarzanie Zakończone!"}
+              {isProcessing ? "Processing Topics..." : "Processing Complete!"}
             </CardTitle>
             <CardDescription>
               {isProcessing 
-                ? progress?.message || "Inicjalizacja..."
-                : `Przetworzono ${processingStatus?.topics_processed || 0} tematów`
+                ? progress?.message || "Initializing..."
+                : `Processed ${processingStatus?.topics_processed || 0} topics`
               }
             </CardDescription>
           </CardHeader>
@@ -1027,32 +1035,32 @@ export default function SessionDetailPage() {
                     <div className="text-3xl font-bold text-emerald-400">
                       {processingStatus.urls_fetched}
                     </div>
-                    <div className="text-xs text-slate-500">URLi pobranych</div>
+                    <div className="text-xs text-slate-500">URLs fetched</div>
                   </div>
                   <div className="bg-slate-900/50 rounded-lg p-4 text-center">
                     <div className="text-3xl font-bold text-blue-400">
                       {processingStatus.articles_summarized}
                     </div>
-                    <div className="text-xs text-slate-500">Artykułów streszczonych</div>
+                    <div className="text-xs text-slate-500">Articles summarized</div>
                   </div>
                   <div className="bg-slate-900/50 rounded-lg p-4 text-center">
                     <div className="text-3xl font-bold text-orange-400">
                       {processingStatus.countries_processed}
                     </div>
-                    <div className="text-xs text-slate-500">Krajów przeanalizowanych</div>
+                    <div className="text-xs text-slate-500">Countries analyzed</div>
                   </div>
                   <div className="bg-slate-900/50 rounded-lg p-4 text-center">
                     <div className="text-3xl font-bold text-violet-400">
                       {processingStatus.syntheses_generated}
                     </div>
-                    <div className="text-xs text-slate-500">Syntez wygenerowanych</div>
+                    <div className="text-xs text-slate-500">Syntheses generated</div>
                   </div>
                 </div>
 
                 {/* Topic Results */}
                 {processingStatus.topic_results.length > 0 && (
                   <div className="space-y-2">
-                    <h4 className="text-sm font-medium text-slate-300">Wyniki per temat:</h4>
+                    <h4 className="text-sm font-medium text-slate-300">Results per topic:</h4>
                     <div className="max-h-48 overflow-y-auto space-y-1">
                       {processingStatus.topic_results.map((tr) => (
                         <div 
@@ -1066,7 +1074,7 @@ export default function SessionDetailPage() {
                           <div className="flex items-center gap-3 text-slate-500">
                             <span>{tr.urls_count} URL</span>
                             <span>{tr.articles_count} art.</span>
-                            <span>{tr.countries_count} kraj.</span>
+                            <span>{tr.countries_count} ctry.</span>
                             {tr.synthesis_generated && (
                               <Check className="h-4 w-4 text-emerald-400" />
                             )}
@@ -1090,7 +1098,7 @@ export default function SessionDetailPage() {
                 className="flex-1 border-slate-700"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Wróć do Tematów
+                Back to Topics
               </Button>
               <Button
                 onClick={handleGenerateReport}
@@ -1102,7 +1110,7 @@ export default function SessionDetailPage() {
                 ) : (
                   <FileText className="mr-2 h-4 w-4" />
                 )}
-                Generuj Raport Końcowy
+                Generate Final Report
               </Button>
             </div>
           </CardContent>
@@ -1157,14 +1165,14 @@ export default function SessionDetailPage() {
                     className="text-slate-400 hover:text-slate-100"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Tematy
+                    Topics
                   </Button>
                   <div>
                     <h1 className="text-xl font-bold text-slate-100">
-                      📊 Raport Końcowy
+                      📊 Final Report
                     </h1>
                     <p className="text-sm text-slate-400">
-                      Na podstawie {finalReport.topics_used.length} tematów
+                      Based on {finalReport.topics_used.length} topics
                     </p>
                   </div>
                 </div>
@@ -1180,7 +1188,7 @@ export default function SessionDetailPage() {
                   ) : (
                     <RefreshCw className="mr-2 h-4 w-4" />
                   )}
-                  Regeneruj
+                  Regenerate
                 </Button>
               </div>
             </div>
@@ -1223,7 +1231,7 @@ export default function SessionDetailPage() {
 
             {/* Generated at */}
             <div className="mt-8 text-center text-xs text-slate-500">
-              Wygenerowano: {new Date(finalReport.generated_at).toLocaleString("pl-PL")}
+              Generated: {new Date(finalReport.generated_at).toLocaleString("en-US")}
             </div>
 
             {/* === SOURCES LEGEND with anchors === */}
@@ -1236,7 +1244,7 @@ export default function SessionDetailPage() {
                   >
                     <CardTitle className="text-lg text-slate-100 flex items-center gap-3">
                       <LinkIcon className="h-5 w-5 text-cyan-400" />
-                      📚 Legenda Źródeł
+                      📚 Sources Legend
                       <span className="text-xs font-normal px-2 py-1 rounded-full bg-cyan-500/20 text-cyan-300">
                         {sourcesData.total_sources} źródeł
                       </span>
@@ -1248,7 +1256,7 @@ export default function SessionDetailPage() {
                     )}
                   </button>
                   <CardDescription className="text-slate-400 text-sm mt-2">
-                    Kliknij na cytowanie w tekście aby tu przejść. Format: [Country-T#-N] np. [USA-T5-1]
+                    Click on citation in text to navigate here. Format: [Country-T#-N] e.g. [USA-T5-1]
                   </CardDescription>
                 </CardHeader>
                 
@@ -1274,7 +1282,7 @@ export default function SessionDetailPage() {
                               <div className="flex-1">
                                 <p className="text-sm text-slate-200">{src.content}</p>
                                 {src.weight && (
-                                  <span className="text-xs text-slate-500">waga: {src.weight}</span>
+                                  <span className="text-xs text-slate-500">weight: {src.weight}</span>
                                 )}
                               </div>
                             </div>
@@ -1428,7 +1436,7 @@ function ReportContent({
                     <button 
                       onClick={() => citationId && scrollToSource(citationId)}
                       className={`font-mono text-xs ${bgClass} px-0.5 rounded cursor-pointer hover:opacity-80 transition-colors border`}
-                      title="Kliknij aby przejść do źródła"
+                      title="Click to go to source"
                     >
                       {cite}
                     </button>
@@ -1450,7 +1458,7 @@ function ReportContent({
               key={i}
               onClick={() => citationId && scrollToSource(citationId)}
               className="font-mono text-xs bg-amber-500/20 text-amber-300 px-1 rounded cursor-pointer hover:bg-amber-500/40 transition-colors border border-amber-500/30"
-              title="Kliknij aby przejść do źródła"
+              title="Click to go to source"
             >
               {part}
             </button>
@@ -1464,7 +1472,7 @@ function ReportContent({
               key={i}
               onClick={() => scrollToSource(citationId)}
               className="font-mono text-xs bg-cyan-500/20 text-cyan-300 px-1 rounded cursor-pointer hover:bg-cyan-500/40 transition-colors border border-cyan-500/30"
-              title="Kliknij aby przejść do źródła"
+              title="Click to go to source"
             >
               {part}
             </button>
@@ -1537,11 +1545,11 @@ function ReportModificationPanel({
         <div className="flex items-center justify-between">
           <CardTitle className="text-base flex items-center gap-2">
             <RefreshCw className="h-4 w-4 text-violet-400" />
-            Modyfikuj Raport
+            Modify Report
           </CardTitle>
           <div className="flex items-center gap-3">
             <span className="text-xs text-slate-500">
-              {selectedIds.size} wybranych • {selectedWithoutSynthesis.length} do przetworzenia
+              {selectedIds.size} selected • {selectedWithoutSynthesis.length} to process
             </span>
             {isExpanded ? (
               <ChevronUp className="h-4 w-4 text-slate-500" />
@@ -1557,7 +1565,7 @@ function ReportModificationPanel({
           {/* Add new topic */}
           <div>
             <label className="text-sm font-medium text-slate-300 mb-2 block">
-              Dodaj nowy temat
+              Add new topic
             </label>
             <div className="flex gap-2">
               <input
@@ -1565,7 +1573,7 @@ function ReportModificationPanel({
                 value={newTopicName}
                 onChange={(e) => setNewTopicName(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAddTopic()}
-                placeholder="np. 'Wpływ AI na rynek pracy w UE'"
+                placeholder="e.g. 'Impact of AI on EU labor market'"
                 className="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-4 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-violet-500"
               />
               <Button
@@ -1589,10 +1597,10 @@ function ReportModificationPanel({
           <div>
             <div className="flex items-center justify-between mb-3">
               <label className="text-sm font-medium text-slate-300">
-                Zarządzaj tematami
+                Manage topics
               </label>
               <div className="text-xs text-slate-500">
-                🟢 gotowy • 🟣 do przetworzenia
+                🟢 ready • 🟣 to process
               </div>
             </div>
             
@@ -1637,7 +1645,7 @@ function ReportModificationPanel({
                         {topic.name}
                       </div>
                       <div className="text-xs text-slate-500">
-                        waga: {topic.weight}
+                        weight: {topic.weight}
                       </div>
                     </div>
                     
@@ -1645,11 +1653,11 @@ function ReportModificationPanel({
                     <div className="flex items-center gap-2 text-xs">
                       {hasSynthesis ? (
                         <span className="text-emerald-400 flex items-center gap-1">
-                          <Sparkles className="h-3 w-3" /> gotowy
+                          <Sparkles className="h-3 w-3" /> ready
                         </span>
                       ) : (
                         <span className="text-slate-500">
-                          nowy
+                          new
                         </span>
                       )}
                     </div>
@@ -1664,17 +1672,17 @@ function ReportModificationPanel({
             <div className="text-sm text-slate-400">
               {selectedWithSynthesis.length > 0 && (
                 <span className="text-emerald-400 mr-3">
-                  ✓ {selectedWithSynthesis.length} gotowych
+                  ✓ {selectedWithSynthesis.length} ready
                 </span>
               )}
               {selectedWithoutSynthesis.length > 0 && (
                 <span className="text-violet-400">
-                  ⟳ {selectedWithoutSynthesis.length} do przetworzenia
+                  ⟳ {selectedWithoutSynthesis.length} to process
                 </span>
               )}
               {unselectedWithSynthesis.length > 0 && (
                 <span className="text-slate-500 ml-3">
-                  ({unselectedWithSynthesis.length} nieużywanych)
+                  ({unselectedWithSynthesis.length} unused)
                 </span>
               )}
             </div>
@@ -1687,15 +1695,15 @@ function ReportModificationPanel({
               {isUpdating ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Aktualizuję...
+                  Updating...
                 </>
               ) : (
                 <>
                   <RefreshCw className="mr-2 h-4 w-4" />
-                  Zaktualizuj Raport
+                  Update Report
                   {selectedWithoutSynthesis.length > 0 && (
                     <span className="ml-2 text-xs opacity-75">
-                      (+{selectedWithoutSynthesis.length} nowych)
+                      (+{selectedWithoutSynthesis.length} new)
                     </span>
                   )}
                 </>

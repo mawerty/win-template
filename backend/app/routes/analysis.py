@@ -4,10 +4,10 @@ import re
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.db import get_db
-from app.models.analysis import AnalysisSession, Topic, Scenario, ScenarioHistory
+from app.models.analysis import AnalysisSession, Topic, Scenario, ScenarioHistory, ArticleSummary
 from app.services import gemini
 from app.services.sources import generate_search_queries, generate_all_topic_sources
 from app.services.scraper import fetch_urls_for_topic, fetch_urls_for_all_topics
@@ -19,6 +19,7 @@ router = APIRouter()
 class CreateSessionRequest(BaseModel):
     country_profile: dict
     situation_description: str
+    criteria: str | None = None
     name: str = ""
     analysis_mode: str = "forecast"  # "forecast" | "backcast"
     backcast_target_state: str | None = None
@@ -128,13 +129,14 @@ async def create_session(req: CreateSessionRequest, db: Session = Depends(get_db
     elif req.analysis_mode == "backcast":
         session_name = f"Backcast {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     else:
-        session_name = f"Analiza {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+        session_name = f"Analysis {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     
     # Create session
-    async with timed_step(logger, "Zapisywanie sesji do bazy"):
+    async with timed_step(logger, "Saving session to database"):
         session = AnalysisSession(
             country_profile=json.dumps(req.country_profile, ensure_ascii=False),
             situation_description=req.situation_description,
+            criteria=req.criteria or "",
             name=session_name,
             analysis_mode=req.analysis_mode,
             backcast_target_state=req.backcast_target_state if req.analysis_mode == "backcast" else None,
@@ -156,17 +158,21 @@ async def create_session(req: CreateSessionRequest, db: Session = Depends(get_db
             logger.warning(f"Błąd parsowania faktów: {str(e)[:100]}")
     
     # Generate topics using Gemini
-    async with timed_step(logger, "Generowanie tematów przez Gemini AI"):
+    async with timed_step(logger, "Generating topics via Gemini AI"):
         try:
-            topics_data = await gemini.generate_topics(req.country_profile, req.situation_description)
-            logger.success(f"Wygenerowano {len(topics_data)} tematów")
+            topics_data = await gemini.generate_topics(
+                req.country_profile, 
+                req.situation_description,
+                req.criteria
+            )
+            logger.success(f"Generated {len(topics_data)} topics")
         except Exception as e:
             logger.warning(f"Gemini API error: {str(e)[:100]}")
-            logger.substep("Używam danych zastępczych")
+            logger.substep("Using fallback data")
             topics_data = _get_fallback_topics()
     
     # Save topics
-    async with timed_step(logger, "Zapisywanie tematów do bazy"):
+    async with timed_step(logger, "Saving topics to database"):
         for t in topics_data:
             topic = Topic(
                 session_id=session.id,
@@ -174,13 +180,14 @@ async def create_session(req: CreateSessionRequest, db: Session = Depends(get_db
                 keywords=json.dumps(t["keywords"], ensure_ascii=False),
                 weight=t.get("weight", 50),
                 rationale=t.get("rationale", ""),
+                situation_factor=t.get("situation_factor", ""),
                 selected=False
             )
             db.add(topic)
         
         db.commit()
         db.refresh(session)
-        logger.substep(f"Zapisano {len(topics_data)} tematów")
+        logger.substep(f"Saved {len(topics_data)} topics")
     
     logger.finish(f"Sesja {session.id} z {len(session.topics)} tematami")
     
@@ -1871,4 +1878,315 @@ Output as JSON:
         },
         "new_topics_processed": new_topics_processed,
         "total_topics_in_report": len(topics_used)
+    }
+
+
+# ============================================================================
+# EXPORT SESSION TO JSON FILES (for static frontend demo)
+# ============================================================================
+
+import os
+from pathlib import Path
+
+@router.post("/sessions/{session_id}/export")
+async def export_session_to_json(session_id: int, db: Session = Depends(get_db)):
+    """
+    Export ALL session data to JSON files in frontend/public/mock-data/.
+    This creates a complete snapshot that can be used for static frontend demo.
+    """
+    
+    logger = StepLogger(f"Eksport sesji #{session_id} do JSON")
+    
+    session = db.get(AnalysisSession, session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+    
+    # Create mock-data directory
+    # Go up from backend/app/routes to project root, then to frontend/public/mock-data
+    project_root = Path(__file__).parent.parent.parent.parent
+    mock_dir = project_root / "frontend" / "public" / "mock-data"
+    mock_dir.mkdir(parents=True, exist_ok=True)
+    
+    exported_files = []
+    
+    # 1. Export sessions list
+    logger.step("Eksport listy sesji")
+    sessions_data = {
+        "sessions": [],
+        "recent_topics": []
+    }
+    
+    # Get current session for the list
+    session_list_item = {
+        "id": session.id,
+        "name": session.name or f"Sesja #{session.id}",
+        "created_at": session.created_at.isoformat() if session.created_at else datetime.utcnow().isoformat(),
+        "topics_count": len(session.topics),
+        "selected_topics_count": len([t for t in session.topics if t.selected]),
+        "has_scenarios": bool(session.scenarios),
+        "scenarios_count": len(session.scenarios) if session.scenarios else 0,
+        "recent_topics": [
+            {
+                "id": t.id,
+                "name": t.name,
+                "weight": t.weight,
+                "selected": t.selected,
+                "has_synthesis": bool(t.synthesis),
+                "has_cached_urls": t.has_cached_urls,
+            }
+            for t in sorted(session.topics, key=lambda x: x.weight, reverse=True)[:5]
+        ]
+    }
+    sessions_data["sessions"].append(session_list_item)
+    
+    # Recent topics for homepage
+    for t in sorted(session.topics, key=lambda x: x.weight, reverse=True)[:10]:
+        sessions_data["recent_topics"].append({
+            "id": t.id,
+            "name": t.name,
+            "weight": t.weight,
+            "selected": t.selected,
+            "has_synthesis": bool(t.synthesis),
+            "has_cached_urls": t.has_cached_urls,
+            "session_id": session.id,
+            "session_name": session.name or f"Sesja #{session.id}",
+        })
+    
+    with open(mock_dir / "sessions.json", "w", encoding="utf-8") as f:
+        json.dump(sessions_data, f, ensure_ascii=False, indent=2)
+    exported_files.append("sessions.json")
+    
+    # 2. Export session details
+    logger.step("Eksport szczegółów sesji")
+    session_data = {
+        "id": session.id,
+        "name": session.name or f"Sesja #{session.id}",
+        "country_profile": json.loads(session.country_profile) if session.country_profile else {},
+        "situation_description": session.situation_description,
+        "criteria": session.criteria,
+        "user_facts": session.get_user_facts() if hasattr(session, 'get_user_facts') else [],
+        "final_report": session.final_report,
+        "topics": [
+            {
+                "id": t.id,
+                "name": t.name,
+                "keywords": json.loads(t.keywords) if t.keywords else [],
+                "weight": t.weight,
+                "rationale": t.rationale,
+                "selected": t.selected,
+                "has_cached_urls": t.has_cached_urls,
+                "synthesis": t.synthesis,
+                "situation_factor": t.situation_factor,
+            }
+            for t in session.topics
+        ],
+        "scenarios": [
+            {
+                "id": s.id,
+                "timeframe": s.timeframe,
+                "variant": s.variant,
+                "content": s.content,
+                "chain_of_thought": s.chain_of_thought,
+            }
+            for s in (session.scenarios or [])
+        ],
+    }
+    
+    with open(mock_dir / f"session-{session.id}.json", "w", encoding="utf-8") as f:
+        json.dump(session_data, f, ensure_ascii=False, indent=2)
+    exported_files.append(f"session-{session.id}.json")
+    
+    # 3. Export report if exists
+    if session.final_report:
+        logger.step("Eksport raportu")
+        report_data = json.loads(session.final_report)
+        report_data["has_report"] = True
+        
+        with open(mock_dir / f"session-{session.id}-report.json", "w", encoding="utf-8") as f:
+            json.dump(report_data, f, ensure_ascii=False, indent=2)
+        exported_files.append(f"session-{session.id}-report.json")
+    
+    # 4. Export sources
+    logger.step("Eksport źródeł")
+    user_facts = session.get_user_facts() if hasattr(session, 'get_user_facts') else []
+    user_sources = [
+        {
+            "id": f"USER-{f['id']}",
+            "citation": f"[USER-{f['id']}]",
+            "type": "user_fact",
+            "content": f["fact"],
+            "weight": f["weight"],
+            "url": None,
+        }
+        for f in user_facts
+    ]
+    
+    sources_by_topic = {}
+    all_citations = {}
+    
+    for topic in session.topics:
+        if not topic.synthesis or not topic.selected:
+            continue
+        
+        topic_tag = f"T{topic.id}"
+        topic_sources = {
+            "topic_id": topic.id,
+            "topic_name": topic.name,
+            "topic_citation": f"[{topic_tag}]",
+            "countries": {}
+        }
+        
+        try:
+            synthesis_data = json.loads(topic.synthesis)
+            country_summaries = synthesis_data.get("country_summaries", [])
+            
+            for cs in country_summaries:
+                country = cs.get("country", "Unknown")
+                sources = cs.get("sources", [])
+                
+                if country not in topic_sources["countries"]:
+                    topic_sources["countries"][country] = []
+                
+                for src in sources:
+                    num = src.get("number", "?")
+                    citation_id = f"{country}-{topic_tag}-{num}"
+                    citation = f"[{citation_id}]"
+                    
+                    source_data = {
+                        "id": citation_id,
+                        "citation": citation,
+                        "type": "country_source",
+                        "country": country,
+                        "topic_id": topic.id,
+                        "topic_name": topic.name,
+                        "title": src.get("title", "Untitled"),
+                        "url": src.get("url"),
+                        "domain": src.get("domain", ""),
+                    }
+                    
+                    topic_sources["countries"][country].append(source_data)
+                    all_citations[citation_id] = source_data
+        except Exception:
+            continue
+        
+        if topic_sources["countries"]:
+            sources_by_topic[topic.id] = topic_sources
+    
+    for uf in user_sources:
+        all_citations[uf["id"]] = uf
+    
+    sources_data = {
+        "user_facts": user_sources,
+        "sources_by_topic": sources_by_topic,
+        "all_citations": all_citations,
+        "total_sources": len(all_citations),
+    }
+    
+    with open(mock_dir / f"session-{session.id}-sources.json", "w", encoding="utf-8") as f:
+        json.dump(sources_data, f, ensure_ascii=False, indent=2)
+    exported_files.append(f"session-{session.id}-sources.json")
+    
+    # 5. Export each topic with all data
+    logger.step("Eksport tematów")
+    for topic in session.topics:
+        topic_data = _serialize_topic(topic)
+        
+        # Add cached URLs if available
+        if topic.cached_urls:
+            topic_data["fetched_urls"] = topic.get_cached_urls()
+        
+        # Add cached sources if available
+        if topic.cached_sources:
+            topic_data["sources"] = topic.get_cached_sources()
+        
+        with open(mock_dir / f"topic-{topic.id}.json", "w", encoding="utf-8") as f:
+            json.dump(topic_data, f, ensure_ascii=False, indent=2)
+        exported_files.append(f"topic-{topic.id}.json")
+        
+        # Export synthesis separately
+        if topic.synthesis:
+            try:
+                synthesis_data = json.loads(topic.synthesis)
+                synthesis_data["has_synthesis"] = True
+                
+                with open(mock_dir / f"topic-{topic.id}-synthesis.json", "w", encoding="utf-8") as f:
+                    json.dump(synthesis_data, f, ensure_ascii=False, indent=2)
+                exported_files.append(f"topic-{topic.id}-synthesis.json")
+            except Exception:
+                pass
+        
+        # Export cached summaries from ArticleSummary table
+        if topic.cached_urls:
+            try:
+                urls_data = topic.get_cached_urls()
+                all_urls = urls_data.get("all_urls", [])
+                
+                by_source: dict = {}
+                all_summaries = []
+                
+                for url_data in all_urls:
+                    url = url_data.get("url", "")
+                    if not url:
+                        continue
+                    
+                    article = db.exec(
+                        select(ArticleSummary).where(ArticleSummary.url == url)
+                    ).first()
+                    
+                    if article and article.scrape_status == "success":
+                        source = article.source_country or url_data.get("country") or "Unknown"
+                        
+                        summary_data = {
+                            "id": article.id,
+                            "url": article.url,
+                            "domain": article.domain,
+                            "title": article.title,
+                            "source_country": source,
+                            "summary": article.summary,
+                            "key_facts": article.get_key_facts(),
+                        }
+                        
+                        if source not in by_source:
+                            by_source[source] = []
+                        by_source[source].append(summary_data)
+                        all_summaries.append(summary_data)
+                
+                if all_summaries:
+                    summaries_data = {
+                        "topic_id": topic.id,
+                        "has_summaries": True,
+                        "by_source": by_source,
+                        "all_summaries": all_summaries,
+                        "articles_processed": len(all_summaries),
+                        "sources_count": len(by_source),
+                    }
+                    
+                    with open(mock_dir / f"topic-{topic.id}-cached-summaries.json", "w", encoding="utf-8") as f:
+                        json.dump(summaries_data, f, ensure_ascii=False, indent=2)
+                    exported_files.append(f"topic-{topic.id}-cached-summaries.json")
+            except Exception as e:
+                print(f"Error exporting summaries for topic {topic.id}: {e}")
+    
+    # 6. Export progress endpoint mock (always returns not processing)
+    progress_data = {
+        "is_processing": False,
+        "step": "done",
+        "current": 0,
+        "total": 0,
+        "percent": 100,
+        "message": "Ready",
+        "sub_step": ""
+    }
+    with open(mock_dir / f"session-{session.id}-progress.json", "w", encoding="utf-8") as f:
+        json.dump(progress_data, f, ensure_ascii=False, indent=2)
+    exported_files.append(f"session-{session.id}-progress.json")
+    
+    logger.finish(f"Wyeksportowano {len(exported_files)} plików")
+    
+    return {
+        "success": True,
+        "session_id": session.id,
+        "export_path": str(mock_dir),
+        "files": exported_files,
+        "files_count": len(exported_files),
     }

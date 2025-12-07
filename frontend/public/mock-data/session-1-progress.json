@@ -1,0 +1,9 @@
+{
+  "is_processing": false,
+  "step": "done",
+  "current": 0,
+  "total": 0,
+  "percent": 100,
+  "message": "Ready",
+  "sub_step": ""
+}

@@ -6,6 +6,7 @@ const API_BASE = "/api";
 export interface CreateSessionRequest {
   country_profile: CountryProfile;
   situation_description: string;
+  criteria?: string;
 }
 
 export interface CreateSessionResponse {
@@ -32,14 +33,16 @@ export interface GenerateScenariosResponse {
 
 export async function createSession(
   countryProfile: CountryProfile,
-  situationDescription: string
+  situationDescription: string,
+  criteria?: string
 ): Promise<CreateSessionResponse> {
   const payload: CreateSessionRequest = {
     country_profile: countryProfile,
     situation_description: situationDescription,
+    criteria,
   };
   
-  const response = await fetcher(`${API_BASE}/sessions`, {
+  const response = await fetcher<CreateSessionResponse>(`${API_BASE}/sessions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

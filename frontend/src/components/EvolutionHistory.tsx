@@ -28,7 +28,7 @@ interface Props {
   title?: string;
 }
 
-export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Props) {
+export function EvolutionHistory({ evolution, title = "Evolution history" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedStep, setSelectedStep] = useState<number | null>(null);
 
@@ -37,7 +37,7 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
       <div className="mt-4 border border-slate-700/50 rounded-lg bg-slate-800/20 px-4 py-3">
         <div className="flex items-center gap-3 text-slate-500">
           <GitBranch className="h-4 w-4" />
-          <span className="text-sm">Brak historii ewolucji - odśwież syntezę 🔄</span>
+          <span className="text-sm">No evolution history - refresh synthesis 🔄</span>
         </div>
       </div>
     );
@@ -108,17 +108,17 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
                     {step.score}/150
                   </span>
                   {hasHallIssue && (
-                    <span title="Problem z halucynacjami">
+                    <span title="Hallucination issue">
                       <AlertTriangle className="h-3 w-3 text-red-400" />
                     </span>
                   )}
                   {hasCiteIssue && (
-                    <span title="Za mało cytowań">
+                    <span title="Insufficient citations">
                       <AlertTriangle className="h-3 w-3 text-emerald-400" />
                     </span>
                   )}
                   {hasBiasIssue && (
-                    <span title="Problem z wiarygodnością źródeł">
+                    <span title="Source credibility issue">
                       <AlertTriangle className="h-3 w-3 text-cyan-400" />
                     </span>
                   )}
@@ -135,10 +135,10 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
                 {history[selectedStep].scores && Object.entries(history[selectedStep].scores).map(([key, value]) => {
                   const getLabel = (k: string) => {
                     switch (k) {
-                      case "hall": return "🛡️ halucynacje";
-                      case "cite": return "📝 cytowania";
-                      case "bias": return "🔍 wiarygodność";
-                      case "qual": return "✨ jakość";
+                      case "hall": return "🛡️ hallucinations";
+                      case "cite": return "📝 citations";
+                      case "bias": return "🔍 credibility";
+                      case "qual": return "✨ quality";
                       default: return k;
                     }
                   };
@@ -198,7 +198,7 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
                 <div className="bg-slate-900/50 rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2 text-sm text-slate-400">
                     <MessageSquare className="h-4 w-4" />
-                    <span>Feedback agenta</span>
+                    <span>Agent feedback</span>
                   </div>
                   <pre className="text-sm text-slate-300 whitespace-pre-wrap font-sans leading-relaxed">
                     {history[selectedStep].feedback}
@@ -217,7 +217,7 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
                     className="text-sm text-violet-400 hover:text-violet-300 flex items-center gap-1"
                   >
                     <Sparkles className="h-3 w-3" />
-                    Pokaż/ukryj tekst v{history[selectedStep].iteration}
+                    Show/hide v{history[selectedStep].iteration} text
                   </button>
                   <div 
                     id={`content-${selectedStep}`}
@@ -235,10 +235,10 @@ export function EvolutionHistory({ evolution, title = "Historia ewolucji" }: Pro
           {/* Summary at bottom */}
           <div className="px-4 py-3 bg-slate-900/30 border-t border-slate-700 flex items-center justify-between">
             <span className="text-xs text-slate-500">
-              {history.length} iteracji • AlphaEvolve + Anti-Poisoning
+              {history.length} iterations • AlphaEvolve + Anti-Poisoning
             </span>
             <div className="flex items-center gap-2 text-xs">
-              <span className="text-slate-500">Finalna jakość:</span>
+              <span className="text-slate-500">Final quality:</span>
               <span className={cn(
                 "font-mono font-bold",
                 final_score >= 130 ? "text-emerald-400" : final_score >= 100 ? "text-amber-400" : "text-red-400"

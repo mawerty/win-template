@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { 
   DEFAULT_COUNTRY_PROFILE, 
   DEFAULT_SITUATION,
+  DEFAULT_CRITERIA,
   type CountryProfile
 } from "@/types/analysis";
 import { ChevronDown, ChevronUp, Globe, FileText, Loader2, ArrowRight, Building2, Check, MapPin } from "lucide-react";
@@ -52,13 +53,15 @@ const REGIONS = [
 interface InputFormProps {
   onSubmit: (
     profile: CountryProfile, 
-    situation: string
+    situation: string,
+    criteria: string
   ) => Promise<void>;
   isLoading?: boolean;
 }
 
 interface FormData {
   situation: string;
+  criteria: string;
   profile: CountryProfile;
 }
 
@@ -114,12 +117,13 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
   const { register, handleSubmit } = useForm<FormData>({
     defaultValues: {
       situation: DEFAULT_SITUATION,
+      criteria: DEFAULT_CRITERIA,
       profile: DEFAULT_COUNTRY_PROFILE,
     },
   });
 
   const onFormSubmit = async (data: FormData) => {
-    await onSubmit(data.profile, data.situation);
+    await onSubmit(data.profile, data.situation, data.criteria);
   };
 
   return (
@@ -136,15 +140,15 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                 <MapPin className="h-5 w-5 text-cyan-400" />
               </div>
               <div>
-                <CardTitle className="text-lg text-slate-100">Źródła Danych</CardTitle>
+                <CardTitle className="text-lg text-slate-100">Data Sources</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Wybierz kraje i instytucje do analizy • {selectedCountries.size} krajów, {selectedInstitutions.size} instytucji
+                  Select countries and institutions for analysis • {selectedCountries.size} countries, {selectedInstitutions.size} institutions
                 </CardDescription>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded-full">
-                {selectedCountries.size + selectedInstitutions.size} źródeł
+                {selectedCountries.size + selectedInstitutions.size} sources
               </span>
               {showSources ? (
                 <ChevronUp className="h-5 w-5 text-slate-400" />
@@ -162,7 +166,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-slate-200 flex items-center gap-2">
                   <Globe className="h-4 w-4 text-cyan-400" />
-                  Kraje (Ministerstwa)
+                  Countries (Ministries)
                 </h3>
                 <div className="flex gap-2">
                   <Button 
@@ -172,7 +176,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                     onClick={selectAllCountries}
                     className="text-xs text-slate-400 hover:text-slate-200 h-7"
                   >
-                    Zaznacz wszystkie
+                    Select all
                   </Button>
                   <Button 
                     type="button" 
@@ -181,7 +185,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                     onClick={deselectAllCountries}
                     className="text-xs text-slate-400 hover:text-slate-200 h-7"
                   >
-                    Odznacz wszystkie
+                    Deselect all
                   </Button>
                 </div>
               </div>
@@ -241,7 +245,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
               </div>
               
               <p className="text-xs text-slate-500">
-                💡 Źródła ministerialne: MSZ, MON, MSW, Ministerstwa Gospodarki, Handlu, Energii, Klimatu, Cyfryzacji, Edukacji
+                💡 Ministry sources: Foreign Affairs, Defense, Interior, Economy, Trade, Energy, Climate, Digital, Education
               </p>
             </div>
             
@@ -250,7 +254,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-semibold text-slate-200 flex items-center gap-2">
                   <Building2 className="h-4 w-4 text-violet-400" />
-                  Instytucje Międzynarodowe
+                  International Institutions
                 </h3>
                 <div className="flex gap-2">
                   <Button 
@@ -260,7 +264,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                     onClick={selectAllInstitutions}
                     className="text-xs text-slate-400 hover:text-slate-200 h-7"
                   >
-                    Zaznacz wszystkie
+                    Select all
                   </Button>
                   <Button 
                     type="button" 
@@ -269,7 +273,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                     onClick={deselectAllInstitutions}
                     className="text-xs text-slate-400 hover:text-slate-200 h-7"
                   >
-                    Odznacz wszystkie
+                    Deselect all
                   </Button>
                 </div>
               </div>
@@ -278,7 +282,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
               <div className="space-y-3">
                 {/* International Organizations */}
                 <div>
-                  <h4 className="text-xs text-slate-500 mb-2 uppercase tracking-wider">Organizacje międzynarodowe</h4>
+                  <h4 className="text-xs text-slate-500 mb-2 uppercase tracking-wider">International Organizations</h4>
                   <div className="flex flex-wrap gap-2">
                     {SOURCE_INSTITUTIONS.filter(i => ["international", "security", "regional"].includes(i.category)).map(inst => {
                       const isSelected = selectedInstitutions.has(inst.id);
@@ -305,7 +309,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                 
                 {/* Think Tanks */}
                 <div>
-                  <h4 className="text-xs text-slate-500 mb-2 uppercase tracking-wider">Think Tanki</h4>
+                  <h4 className="text-xs text-slate-500 mb-2 uppercase tracking-wider">Think Tanks</h4>
                   <div className="flex flex-wrap gap-2">
                     {SOURCE_INSTITUTIONS.filter(i => i.category === "think_tank").map(inst => {
                       const isSelected = selectedInstitutions.has(inst.id);
@@ -366,11 +370,11 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                 <div className="flex items-center gap-4">
                   <span className="text-cyan-400">
                     <Globe className="h-3 w-3 inline mr-1" />
-                    {selectedCountries.size} krajów
+                    {selectedCountries.size} countries
                   </span>
                   <span className="text-violet-400">
                     <Building2 className="h-3 w-3 inline mr-1" />
-                    {selectedInstitutions.size} instytucji
+                    {selectedInstitutions.size} institutions
                   </span>
                 </div>
               </div>
@@ -391,9 +395,9 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
                 <Globe className="h-5 w-5 text-emerald-400" />
               </div>
               <div>
-                <CardTitle className="text-lg text-slate-100">Profil Państwa Atlantis</CardTitle>
+                <CardTitle className="text-lg text-slate-100">Atlantis Country Profile</CardTitle>
                 <CardDescription className="text-slate-400">
-                  Dane wstępnie wypełnione - kliknij aby edytować
+                  Pre-filled data - click to edit
                 </CardDescription>
               </div>
             </div>
@@ -408,7 +412,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
         {showProfile && (
           <CardContent className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label htmlFor="profile.name" className="text-slate-300">Nazwa państwa</Label>
+              <Label htmlFor="profile.name" className="text-slate-300">Country name</Label>
               <Input 
                 {...register("profile.name")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -416,7 +420,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="profile.population" className="text-slate-300">Liczba ludności</Label>
+              <Label htmlFor="profile.population" className="text-slate-300">Population</Label>
               <Input 
                 {...register("profile.population")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -424,7 +428,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.geography" className="text-slate-300">Położenie geograficzne</Label>
+              <Label htmlFor="profile.geography" className="text-slate-300">Geographic location</Label>
               <Input 
                 {...register("profile.geography")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -432,7 +436,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="profile.climate" className="text-slate-300">Klimat</Label>
+              <Label htmlFor="profile.climate" className="text-slate-300">Climate</Label>
               <Input 
                 {...register("profile.climate")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -440,7 +444,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="profile.army" className="text-slate-300">Siły zbrojne</Label>
+              <Label htmlFor="profile.army" className="text-slate-300">Armed forces</Label>
               <Input 
                 {...register("profile.army")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -448,7 +452,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.economy" className="text-slate-300">Gospodarka</Label>
+              <Label htmlFor="profile.economy" className="text-slate-300">Economy</Label>
               <textarea 
                 {...register("profile.economy")} 
                 rows={3}
@@ -457,7 +461,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="profile.digitalization" className="text-slate-300">Cyfryzacja</Label>
+              <Label htmlFor="profile.digitalization" className="text-slate-300">Digitalization</Label>
               <Input 
                 {...register("profile.digitalization")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -465,7 +469,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="profile.currency" className="text-slate-300">Waluta</Label>
+              <Label htmlFor="profile.currency" className="text-slate-300">Currency</Label>
               <Input 
                 {...register("profile.currency")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -473,7 +477,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.key_relations" className="text-slate-300">Kluczowe relacje</Label>
+              <Label htmlFor="profile.key_relations" className="text-slate-300">Key relations</Label>
               <Input 
                 {...register("profile.key_relations")} 
                 className="bg-slate-900/50 border-slate-600 text-slate-100 focus:border-emerald-500"
@@ -481,7 +485,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.political_threats" className="text-slate-300">Zagrożenia polityczne i gospodarcze</Label>
+              <Label htmlFor="profile.political_threats" className="text-slate-300">Political and economic threats</Label>
               <textarea 
                 {...register("profile.political_threats")} 
                 rows={2}
@@ -490,7 +494,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.military_threats" className="text-slate-300">Zagrożenia militarne</Label>
+              <Label htmlFor="profile.military_threats" className="text-slate-300">Military threats</Label>
               <textarea 
                 {...register("profile.military_threats")} 
                 rows={2}
@@ -499,7 +503,7 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             </div>
             
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="profile.milestones" className="text-slate-300">Kamienie milowe</Label>
+              <Label htmlFor="profile.milestones" className="text-slate-300">Milestones</Label>
               <textarea 
                 {...register("profile.milestones")} 
                 rows={2}
@@ -518,9 +522,9 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
               <FileText className="h-5 w-5 text-amber-400" />
             </div>
             <div>
-              <CardTitle className="text-lg text-slate-100">Opis Sytuacji Międzynarodowej</CardTitle>
+              <CardTitle className="text-lg text-slate-100">International Situation Description</CardTitle>
               <CardDescription className="text-slate-400">
-                Czynniki wpływające na sytuację z wagami istotności
+                Factors affecting the situation with importance weights
               </CardDescription>
             </div>
           </div>
@@ -530,7 +534,34 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
             {...register("situation")} 
             rows={16}
             className="w-full rounded-md bg-slate-900/50 border border-slate-600 text-slate-100 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 px-4 py-3 text-sm leading-relaxed font-mono"
-            placeholder="Wprowadź opis sytuacji międzynarodowej..."
+            placeholder="Enter international situation description..."
+          />
+        </CardContent>
+      </Card>
+
+      {/* Success Criteria */}
+      <Card className="border-violet-500/30 bg-slate-800/50 backdrop-blur">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-violet-500/10">
+              <svg className="h-5 w-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <CardTitle className="text-lg text-slate-100">Success Criteria</CardTitle>
+              <CardDescription className="text-slate-400">
+                What outcomes do we want to achieve in the scenarios? List goals with importance weights.
+              </CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <textarea 
+            {...register("criteria")} 
+            rows={8}
+            className="w-full rounded-md bg-slate-900/50 border border-violet-500/30 text-slate-100 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500 px-4 py-3 text-sm leading-relaxed font-mono"
+            placeholder="e.g. 1. Maximize economic growth (weight: 25)&#10;2. Ensure energy security (weight: 20)&#10;3. Strengthen defense capabilities (weight: 15)"
           />
         </CardContent>
       </Card>
@@ -546,12 +577,12 @@ export function InputForm({ onSubmit, isLoading }: InputFormProps) {
           {isLoading ? (
             <>
               <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-              Generowanie tematów...
+              Generating topics...
             </>
           ) : (
             <>
               <ArrowRight className="mr-2 h-5 w-5" />
-              Generuj Tematy do Analizy
+              Generate Analysis Topics
             </>
           )}
         </Button>

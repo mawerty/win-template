@@ -1,0 +1,18 @@
+{
+  "id": 9,
+  "session_id": 1,
+  "name": "Impact of Eurozone Recession on Atlantis's Key Export Sectors",
+  "keywords": [
+    "export market analysis",
+    "heavy industry exports",
+    "food exports",
+    "chemical exports"
+  ],
+  "weight": 55,
+  "rationale": "Factor (c) A Eurozone recession will reduce demand for Atlantis's primary exports, necessitating a detailed sector-by-sector impact assessment.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

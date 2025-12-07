@@ -1,0 +1,2152 @@
+{
+  "user_facts": [
+    {
+      "id": "USER-a",
+      "citation": "[USER-a]",
+      "type": "user_fact",
+      "content": "A natural disaster caused the world's leading GPU manufacturer to lose 60% of production capacity, with full recovery expected by the end of 2028 through subsidiary investments.",
+      "weight": 30,
+      "url": null
+    },
+    {
+      "id": "USER-b",
+      "citation": "[USER-b]",
+      "type": "user_fact",
+      "content": "The European automotive industry is slow to adopt EV production, leading to a flood of cheap East Asian EVs and projected profits at 30% of 2020-2024 average in 2025.",
+      "weight": 15,
+      "url": null
+    },
+    {
+      "id": "USER-c",
+      "citation": "[USER-c]",
+      "type": "user_fact",
+      "content": "Eurozone countries' GDP is projected to fall by an average of 1.5% in 2025 compared to 2024.",
+      "weight": 15,
+      "url": null
+    },
+    {
+      "id": "USER-d",
+      "citation": "[USER-d]",
+      "type": "user_fact",
+      "content": "A fragile ceasefire holds in eastern Ukraine, with Russia controlling two major power plants. The Ukrainian economy is growing at 4% GDP, driven by defense and infrastructure investments.",
+      "weight": 10,
+      "url": null
+    },
+    {
+      "id": "USER-e",
+      "citation": "[USER-e]",
+      "type": "user_fact",
+      "content": "US investments in Ukraine target critical raw materials in the mining industry. Annual EU investments in Ukraine are 3% of Ukrainian GDP and will remain at this level until 2029.",
+      "weight": 5,
+      "url": null
+    },
+    {
+      "id": "USER-f",
+      "citation": "[USER-f]",
+      "type": "user_fact",
+      "content": "A sharp increase in renewable energy in the EU and China from early 2028, combined with a mid-2023 discovery of huge oil and gas deposits in South America, will lead to an oversupply of fuels and a significant drop in oil prices to 30-35 USD per barrel by late 2027, impacting Russia's budget.",
+      "weight": 25,
+      "url": null
+    }
+  ],
+  "sources_by_topic": {
+    "2": {
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "topic_citation": "[T2]",
+      "countries": {
+        "USA": [
+          {
+            "id": "USA-T2-1",
+            "citation": "[USA-T2-1]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "dir.commerce.gov",
+            "url": "https://dir.commerce.gov/sites/default/files/documents/2014/january/jeffrey0419.pdf",
+            "domain": "dir.commerce.gov"
+          },
+          {
+            "id": "USA-T2-2",
+            "citation": "[USA-T2-2]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "mbda.commerce.gov",
+            "url": "https://mbda.commerce.gov/blog/category/2227.html",
+            "domain": "mbda.commerce.gov"
+          },
+          {
+            "id": "USA-T2-3",
+            "citation": "[USA-T2-3]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "Testimony of",
+            "url": "https://www.commerce.gov/sites/default/files/media/files/2020/2020-03-11_nist_reauth_wcopan_testimony.pdf",
+            "domain": "www.commerce.gov"
+          }
+        ],
+        "China": [
+          {
+            "id": "China-T2-1",
+            "citation": "[China-T2-1]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "ipr.mofcom.gov.cn",
+            "url": "https://ipr.mofcom.gov.cn/hwwq_2/zn/Africa/ARIPO/file/GUIDELINES_FOR_EXAMINATION_AT_ARIPO.pdf",
+            "domain": "ipr.mofcom.gov.cn"
+          },
+          {
+            "id": "China-T2-2",
+            "citation": "[China-T2-2]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "On China’s WTO Compliance",
+            "url": "https://ipr.mofcom.gov.cn/zhuanti/Reports/reports/2016-China-Report-to-Congress.pdf",
+            "domain": "ipr.mofcom.gov.cn"
+          }
+        ],
+        "Germany": [
+          {
+            "id": "Germany-T2-1",
+            "citation": "[Germany-T2-1]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Industry/ipcei-cis.html",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T2-2",
+            "citation": "[Germany-T2-2]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "… and what are you doing about it?",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Industry/industrie-4-0-impulse-paper-mastering-the-impact-of-digitalisation-through-education-and-training.pdf?__blob=publicationFile&v=1",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T2-3",
+            "citation": "[Germany-T2-3]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "on the implementation of",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Wirtschaft/2nd-progress-report-implementation-of-startup-strategy-federal-government.pdf?__blob=publicationFile&v=4",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T2-4",
+            "citation": "[Germany-T2-4]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "International",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Technologie/international-cooperation-projects.pdf?__blob=publicationFile&v=2",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T2-5",
+            "citation": "[Germany-T2-5]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "Zero Trust and Industrie 4.0",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Industry/industrie-4-0-impulse-paper-zero-trust.pdf?__blob=publicationFile&v=3",
+            "domain": "www.bmwk.de"
+          }
+        ],
+        "France": [
+          {
+            "id": "France-T2-1",
+            "citation": "[France-T2-1]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/bc27d955-a500-42f4-9d5f-1eab79e5d0a9/files/c1988bc1-218e-4146-bf40-7d01a5a49a36",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T2-2",
+            "citation": "[France-T2-2]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/c30694b6-8d16-4963-bc84-8fb761e4ef44/files/350609a4-2526-4630-bfc2-927ee35ef58e",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T2-3",
+            "citation": "[France-T2-3]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/e86f62e8-18dd-4c41-b1f0-affbb1cd798f/files/b2bd0684-6efa-4157-aa14-746cb07b9cab",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T2-4",
+            "citation": "[France-T2-4]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/85306552-77c1-48c0-bccb-d5bad3142a8e/files/cd5facf6-6f0b-4d39-8f7a-5d7e898086b9",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T2-5",
+            "citation": "[France-T2-5]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/125fdfdc-37ce-411b-8350-7d45608e2aab/files/15351af4-1ab0-4e02-9026-c7ffc92bd83a",
+            "domain": "www.tresor.economie.gouv.fr"
+          }
+        ],
+        "OECD": [
+          {
+            "id": "OECD-T2-1",
+            "citation": "[OECD-T2-1]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "OECD Regional Development Papers No. 147",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/emerging-divides-in-the-transition-to-artificial-intelligence_eeb5e120/7376c776-en.pdf",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T2-2",
+            "citation": "[OECD-T2-2]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "one.oecd.org",
+            "url": "https://one.oecd.org/document/DAF/COMP/WD(2025)72/en/pdf",
+            "domain": "one.oecd.org"
+          },
+          {
+            "id": "OECD-T2-3",
+            "citation": "[OECD-T2-3]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "www.oecd.org",
+            "url": "https://www.oecd.org/en/publications/competition-in-artificial-intelligence-infrastructure_623d1874-en/full-report/component-5.html",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T2-4",
+            "citation": "[OECD-T2-4]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "ARTIFICIAL INTELLIGENCE",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/competition-in-artificial-intelligence-infrastructure_69319aee/623d1874-en.pdf",
+            "domain": "www.oecd.org"
+          }
+        ],
+        "NATO": [
+          {
+            "id": "NATO-T2-1",
+            "citation": "[NATO-T2-1]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "NATO Communications and Information Agency",
+            "url": "https://www.ncia.nato.int/resources/site1/General/newsroom/publications/Public_NCIA_Technology%20Strategy_external_v6%20-%20digital.pdf",
+            "domain": "www.ncia.nato.int"
+          },
+          {
+            "id": "NATO-T2-2",
+            "citation": "[NATO-T2-2]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "NATO DECISION -MAKING IN THE AGE OF",
+            "url": "https://www.act.nato.int/wp-content/uploads/2024/07/20210301_AC-2020_Final-Report.pdf",
+            "domain": "www.act.nato.int"
+          },
+          {
+            "id": "NATO-T2-3",
+            "citation": "[NATO-T2-3]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "Long Game",
+            "url": "https://deepportal.hq.nato.int/eacademy/wp-content/uploads/2024/09/978-3-031-58649-1.pdf",
+            "domain": "deepportal.hq.nato.int"
+          },
+          {
+            "id": "NATO-T2-4",
+            "citation": "[NATO-T2-4]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "202 6 DIANA CHALLENGE PROGRAMME",
+            "url": "https://www.diana.nato.int/resources/site1/general/challenges/docs/2026-challenge-programme-cfp.pdf",
+            "domain": "www.diana.nato.int"
+          }
+        ],
+        "European Commission": [
+          {
+            "id": "European Commission-T2-1",
+            "citation": "[European Commission-T2-1]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal",
+            "domain": "digital-strategy.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T2-2",
+            "citation": "[European Commission-T2-2]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "open-research-europe.ec.europa.eu",
+            "url": "https://open-research-europe.ec.europa.eu/articles/5-362",
+            "domain": "open-research-europe.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T2-3",
+            "citation": "[European Commission-T2-3]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 2,
+            "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/faqs/digital-package",
+            "domain": "digital-strategy.ec.europa.eu"
+          }
+        ]
+      }
+    },
+    "3": {
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "topic_citation": "[T3]",
+      "countries": {
+        "USA": [
+          {
+            "id": "USA-T3-1",
+            "citation": "[USA-T3-1]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "eda-cdn.commerce.gov",
+            "url": "https://eda-cdn.commerce.gov/news/press-release/2022/09/02/us-department-commerce-invests-approximately-508-million-boost",
+            "domain": "eda-cdn.commerce.gov"
+          },
+          {
+            "id": "USA-T3-2",
+            "citation": "[USA-T3-2]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "space.commerce.gov",
+            "url": "https://space.commerce.gov/category/industrial-base/",
+            "domain": "space.commerce.gov"
+          },
+          {
+            "id": "USA-T3-3",
+            "citation": "[USA-T3-3]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "eda-cdn.commerce.gov",
+            "url": "https://eda-cdn.commerce.gov/news/press-release/2024/07/26/senior-department-commerce-official-visit-pacific-northwest-mass",
+            "domain": "eda-cdn.commerce.gov"
+          },
+          {
+            "id": "USA-T3-4",
+            "citation": "[USA-T3-4]",
+            "type": "country_source",
+            "country": "USA",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "eda-cdn.commerce.gov",
+            "url": "https://eda-cdn.commerce.gov/news/press-release/2023/12/20/Gulf-Coast-Chambers-Network-Recompete-Plan",
+            "domain": "eda-cdn.commerce.gov"
+          }
+        ],
+        "China": [
+          {
+            "id": "China-T3-1",
+            "citation": "[China-T3-1]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "cz.mofcom.gov.cn",
+            "url": "https://cz.mofcom.gov.cn/BusinessNews/art/2024/art_761e7abed1f5436eb7726d988181e181.html",
+            "domain": "cz.mofcom.gov.cn"
+          },
+          {
+            "id": "China-T3-2",
+            "citation": "[China-T3-2]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "fdi.mofcom.gov.cn",
+            "url": "https://fdi.mofcom.gov.cn/EN/come-zonghe-con.html?id=46703",
+            "domain": "fdi.mofcom.gov.cn"
+          },
+          {
+            "id": "China-T3-3",
+            "citation": "[China-T3-3]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "ipr.mofcom.gov.cn",
+            "url": "https://ipr.mofcom.gov.cn/iprfocus/IPRFOCUS354.html",
+            "domain": "ipr.mofcom.gov.cn"
+          },
+          {
+            "id": "China-T3-4",
+            "citation": "[China-T3-4]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "english.mofcom.gov.cn",
+            "url": "https://english.mofcom.gov.cn/News/PressConference/art/2025/art_2822201e74a844859550521c782253b6.html",
+            "domain": "english.mofcom.gov.cn"
+          }
+        ],
+        "Germany": [
+          {
+            "id": "Germany-T3-1",
+            "citation": "[Germany-T3-1]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "Research, talent pipeline , production: Impetus for the",
+            "url": "https://www.bmwk.de/Redaktion/EN/Downloads/P/positionspapier-mikroelektronik-en.pdf?__blob=publicationFile&v=4",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T3-2",
+            "citation": "[Germany-T3-2]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "German data centre landscape –",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Digitale-Welt/status-and-development-of-the-german-data-centre-landscape-executive-summary.pdf?__blob=publicationFile&v=2",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T3-3",
+            "citation": "[Germany-T3-3]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "GreenTech Innovation",
+            "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Innovationspolitik/greentech-innovation-competition.pdf?__blob=publicationFile&v=3",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T3-4",
+            "citation": "[Germany-T3-4]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Digital-World/digital-agenda.html",
+            "domain": "www.bmwk.de"
+          }
+        ],
+        "France": [
+          {
+            "id": "France-T3-1",
+            "citation": "[France-T3-1]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "Economic Stakes and Role for France?",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/00be60a5-dea5-437f-8a49-b44b5663ded2/files/3a04af78-d4d3-4de4-b24b-d43653a55f9a",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T3-2",
+            "citation": "[France-T3-2]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/2024/12/05/the-artificial-intelligence-value-chain-what-economic-stakes-and-role-for-france",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T3-3",
+            "citation": "[France-T3-3]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/8b7e4e07-b944-4a12-968d-0f6477577e54/files/ae211b10-74fd-4910-b2cf-7b862fe6f232",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T3-4",
+            "citation": "[France-T3-4]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "Foreign Investment Screening in France",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/c7ec36f3-6df0-4cf8-82aa-9c772917afeb/files/83865cf0-0ecd-4684-badf-3e39fa6bb833",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T3-5",
+            "citation": "[France-T3-5]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "presse.economie.gouv.fr",
+            "url": "https://presse.economie.gouv.fr/13042023-france-and-the-netherlands-sign-a-pact-for-innovation-and-sustainable-growth/",
+            "domain": "presse.economie.gouv.fr"
+          }
+        ],
+        "OECD": [
+          {
+            "id": "OECD-T3-1",
+            "citation": "[OECD-T3-1]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.oecd.org",
+            "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-7.html",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T3-2",
+            "citation": "[OECD-T3-2]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.oecd.org",
+            "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-9.html",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T3-3",
+            "citation": "[OECD-T3-3]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "SEMICONDUCTOR VALUE",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/mapping-the-semiconductor-value-chain_5ba52971/4154cdbf-en.pdf",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T3-4",
+            "citation": "[OECD-T3-4]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.oecd.org",
+            "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-3.html",
+            "domain": "www.oecd.org"
+          }
+        ],
+        "NATO": [
+          {
+            "id": "NATO-T3-1",
+            "citation": "[NATO-T3-1]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.sto.nato.int",
+            "url": "https://www.sto.nato.int/document/programmable-photonic-circuits/",
+            "domain": "www.sto.nato.int"
+          },
+          {
+            "id": "NATO-T3-2",
+            "citation": "[NATO-T3-2]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.sto.nato.int",
+            "url": "https://www.sto.nato.int/document/photonic-integrated-circuits/",
+            "domain": "www.sto.nato.int"
+          },
+          {
+            "id": "NATO-T3-3",
+            "citation": "[NATO-T3-3]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.sto.nato.int",
+            "url": "https://www.sto.nato.int/document-tag/silicon-photonics/",
+            "domain": "www.sto.nato.int"
+          },
+          {
+            "id": "NATO-T3-4",
+            "citation": "[NATO-T3-4]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.sto.nato.int",
+            "url": "https://www.sto.nato.int/document-author/w-bogaerts/",
+            "domain": "www.sto.nato.int"
+          },
+          {
+            "id": "NATO-T3-5",
+            "citation": "[NATO-T3-5]",
+            "type": "country_source",
+            "country": "NATO",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "A Low-Cost Thermal Imaging Sensor for Military Dismounted Operations David Huckridge, Paul Manning, Nicholas Parkinson, John Gillham",
+            "url": "https://publications.sto.nato.int/publications/STO%20Meeting%20Proceedings/RTO-MP-SET-103/MP-SET-103-08.pdf",
+            "domain": "publications.sto.nato.int"
+          }
+        ],
+        "European Commission": [
+          {
+            "id": "European Commission-T3-1",
+            "citation": "[European Commission-T3-1]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/news/milestone-strengthening-europes-semiconductor-manufacturing-capacity-under-chips-act-reached",
+            "domain": "digital-strategy.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T3-2",
+            "citation": "[European Commission-T3-2]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/factpages/chips-act",
+            "domain": "digital-strategy.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T3-3",
+            "citation": "[European Commission-T3-3]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/policies/european-chips-act",
+            "domain": "digital-strategy.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T3-4",
+            "citation": "[European Commission-T3-4]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "digital-strategy.ec.europa.eu",
+            "url": "https://digital-strategy.ec.europa.eu/en/news/european-chips-act-update-latest-milestones",
+            "domain": "digital-strategy.ec.europa.eu"
+          },
+          {
+            "id": "European Commission-T3-5",
+            "citation": "[European Commission-T3-5]",
+            "type": "country_source",
+            "country": "European Commission",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "projects.research-and-innovation.ec.europa.eu",
+            "url": "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/powering-tomorrow-eu-invests-cutting-edge-microchip-tech-future-ai-and-space-applications",
+            "domain": "projects.research-and-innovation.ec.europa.eu"
+          }
+        ],
+        "CSIS": [
+          {
+            "id": "CSIS-T3-1",
+            "citation": "[CSIS-T3-1]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/analysis/strategy-united-states-regain-its-position-semiconductor-manufacturing",
+            "domain": "www.csis.org"
+          },
+          {
+            "id": "CSIS-T3-2",
+            "citation": "[CSIS-T3-2]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-lifecycle-semiconductor-chip",
+            "domain": "www.csis.org"
+          },
+          {
+            "id": "CSIS-T3-3",
+            "citation": "[CSIS-T3-3]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-strategic-importance-continued-us-leadership-chip",
+            "domain": "www.csis.org"
+          }
+        ],
+        "Chatham House": [
+          {
+            "id": "Chatham House-T3-1",
+            "citation": "[Chatham House-T3-1]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "An Embargo on Iranian Crude Oil Exports: How Likely and with What Impact? Paul Stevens Chatham House January 2012 Programme Paper: An Embargo on Iranian Crude Oil Exports www.chathamhouse.org 2",
+            "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/0112pp_stevens.pdf",
+            "domain": "www.chathamhouse.org"
+          },
+          {
+            "id": "Chatham House-T3-2",
+            "citation": "[Chatham House-T3-2]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "www.chathamhouse.org",
+            "url": "https://www.chathamhouse.org/2022/12/humanitarian-exceptions-turning-point-un-sanctions",
+            "domain": "www.chathamhouse.org"
+          },
+          {
+            "id": "Chatham House-T3-3",
+            "citation": "[Chatham House-T3-3]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "briefing paper",
+            "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy%2C%20Environment%20and%20Development/0513bp_brack.pdf",
+            "domain": "www.chathamhouse.org"
+          },
+          {
+            "id": "Chatham House-T3-4",
+            "citation": "[Chatham House-T3-4]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 3,
+            "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+            "title": "CONTROLLING THE INTERNATIONAL TRADE IN ILLEGALLY LOGGED TIMBER AND WOOD PRODUCTS",
+            "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/tradeinillegaltimber.pdf",
+            "domain": "www.chathamhouse.org"
+          }
+        ]
+      }
+    },
+    "16": {
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "topic_citation": "[T16]",
+      "countries": {
+        "France": [
+          {
+            "id": "France-T16-1",
+            "citation": "[France-T16-1]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/8b7e4e07-b944-4a12-968d-0f6477577e54/files/ae211b10-74fd-4910-b2cf-7b862fe6f232",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T16-2",
+            "citation": "[France-T16-2]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "No. 257  March 2020 The Impact of Oil Prices on the US Economy",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/3412a82b-9b6f-42a7-bbfe-59155649519c/files/21b8db79-7cdd-4d07-80f3-5b43d7632cb1",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T16-3",
+            "citation": "[France-T16-3]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "Impact of the oil price decline on France and the global economy",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/f23130f6-8966-4a2c-8ecc-a946f3539e76/files/a12fd31b-4cc6-4363-a91c-3bc72535f807",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T16-4",
+            "citation": "[France-T16-4]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.tresor.economie.gouv.fr",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/2022/05/27/energy-crisis-europe-by-candlelight",
+            "domain": "www.tresor.economie.gouv.fr"
+          },
+          {
+            "id": "France-T16-5",
+            "citation": "[France-T16-5]",
+            "type": "country_source",
+            "country": "France",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "Annex: Impact of the war in Ukraine on GDP growth, in percentage points",
+            "url": "https://www.tresor.economie.gouv.fr/Articles/99141145-3740-499d-bedb-66e6fec0596a/files/c38082d1-9f3d-4dc9-95d0-ffa8b5af08e6",
+            "domain": "www.tresor.economie.gouv.fr"
+          }
+        ],
+        "China": [
+          {
+            "id": "China-T16-1",
+            "citation": "[China-T16-1]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "fdi.mofcom.gov.cn",
+            "url": "https://fdi.mofcom.gov.cn/EN/come-datatongji-con.html?id=16359",
+            "domain": "fdi.mofcom.gov.cn"
+          },
+          {
+            "id": "China-T16-2",
+            "citation": "[China-T16-2]",
+            "type": "country_source",
+            "country": "China",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "fdi.mofcom.gov.cn",
+            "url": "https://fdi.mofcom.gov.cn/EN/come-datatongji-con.html?id=16311",
+            "domain": "fdi.mofcom.gov.cn"
+          }
+        ],
+        "Germany": [
+          {
+            "id": "Germany-T16-1",
+            "citation": "[Germany-T16-1]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Energy/petroleum-fuel-prices.html",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T16-2",
+            "citation": "[Germany-T16-2]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2024/20240412-the-economic-situation-in-germany-in-may-2024.html",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T16-3",
+            "citation": "[Germany-T16-3]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2025/20250317-the-economic-situation-in-germany-in-march-2025.html",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T16-4",
+            "citation": "[Germany-T16-4]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2024/20240412-the-economic-situation-in-germany-in-april-2024.html",
+            "domain": "www.bmwk.de"
+          },
+          {
+            "id": "Germany-T16-5",
+            "citation": "[Germany-T16-5]",
+            "type": "country_source",
+            "country": "Germany",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.bmwk.de",
+            "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2022/20220613-the-economic-situation-in-germany-in-june-2022.html",
+            "domain": "www.bmwk.de"
+          }
+        ],
+        "OECD": [
+          {
+            "id": "OECD-T16-1",
+            "citation": "[OECD-T16-1]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.oecd.org",
+            "url": "https://www.oecd.org/en/about/news/press-releases/2024/11/cost-of-support-measures-for-fossil-fuels-decreased-sharply-in-2023-but-remains-elevated-relative-to-its-historical-average.html",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T16-2",
+            "citation": "[OECD-T16-2]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "I E A S T A T I S T I C S",
+            "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2004/01/energy-prices-and-taxes_g1gh309c/energy_tax-v2003-4-en.pdf",
+            "domain": "www.oecd.org"
+          },
+          {
+            "id": "OECD-T16-3",
+            "citation": "[OECD-T16-3]",
+            "type": "country_source",
+            "country": "OECD",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "Fuel Tax",
+            "url": "https://webfs.oecd.org/TADWEB/agriculture/data/AMIS/Indicators/Sources/www.fin.gov.on.ca_en_tax_ft_rates.pdf",
+            "domain": "webfs.oecd.org"
+          }
+        ],
+        "CSIS": [
+          {
+            "id": "CSIS-T16-1",
+            "citation": "[CSIS-T16-1]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/analysis/oil-market",
+            "domain": "www.csis.org"
+          },
+          {
+            "id": "CSIS-T16-2",
+            "citation": "[CSIS-T16-2]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/analysis/russia-oil-surcharge-anticipating-benefits-and-challenges",
+            "domain": "www.csis.org"
+          },
+          {
+            "id": "CSIS-T16-3",
+            "citation": "[CSIS-T16-3]",
+            "type": "country_source",
+            "country": "CSIS",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.csis.org",
+            "url": "https://www.csis.org/analysis/critical-questions-volatility-global-oil-prices",
+            "domain": "www.csis.org"
+          }
+        ],
+        "Chatham House": [
+          {
+            "id": "Chatham House-T16-1",
+            "citation": "[Chatham House-T16-1]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.chathamhouse.org",
+            "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/030712ppt_stevens.pdf",
+            "domain": "www.chathamhouse.org"
+          },
+          {
+            "id": "Chatham House-T16-2",
+            "citation": "[Chatham House-T16-2]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.chathamhouse.org",
+            "url": "https://www.chathamhouse.org/2025/09/tightening-oil-price-cap-increase-pressure-russia/oil-rents-are-kremlins-weak-point",
+            "domain": "www.chathamhouse.org"
+          },
+          {
+            "id": "Chatham House-T16-3",
+            "citation": "[Chatham House-T16-3]",
+            "type": "country_source",
+            "country": "Chatham House",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.chathamhouse.org",
+            "url": "https://www.chathamhouse.org/2022/07/timing-key-gulf-replacing-russian-oil",
+            "domain": "www.chathamhouse.org"
+          }
+        ],
+        "Atlantic Council": [
+          {
+            "id": "Atlantic Council-T16-1",
+            "citation": "[Atlantic Council-T16-1]",
+            "type": "country_source",
+            "country": "Atlantic Council",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.atlanticcouncil.org",
+            "url": "https://www.atlanticcouncil.org/blogs/new-atlanticist/how-a-venezuela-shock-could-raise-global-oil-and-food-prices/",
+            "domain": "www.atlanticcouncil.org"
+          },
+          {
+            "id": "Atlantic Council-T16-2",
+            "citation": "[Atlantic Council-T16-2]",
+            "type": "country_source",
+            "country": "Atlantic Council",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.atlanticcouncil.org",
+            "url": "https://www.atlanticcouncil.org/blogs/energysource/how-the-new-us-sanctions-on-russian-oil-will-impact-energy-markets/",
+            "domain": "www.atlanticcouncil.org"
+          },
+          {
+            "id": "Atlantic Council-T16-3",
+            "citation": "[Atlantic Council-T16-3]",
+            "type": "country_source",
+            "country": "Atlantic Council",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.atlanticcouncil.org",
+            "url": "https://www.atlanticcouncil.org/event/pandemic-plunging-oil-prices-and-putin-what-does-the-future-hold-for-the-russian-economy/",
+            "domain": "www.atlanticcouncil.org"
+          },
+          {
+            "id": "Atlantic Council-T16-4",
+            "citation": "[Atlantic Council-T16-4]",
+            "type": "country_source",
+            "country": "Atlantic Council",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.atlanticcouncil.org",
+            "url": "https://www.atlanticcouncil.org/blogs/new-atlanticist/how-venezuela-uses-crypto-to-sell-oil-and-what-the-us-should-do-about-it/",
+            "domain": "www.atlanticcouncil.org"
+          },
+          {
+            "id": "Atlantic Council-T16-5",
+            "citation": "[Atlantic Council-T16-5]",
+            "type": "country_source",
+            "country": "Atlantic Council",
+            "topic_id": 16,
+            "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+            "title": "www.atlanticcouncil.org",
+            "url": "https://www.atlanticcouncil.org/event/russian-saudi-oil-war/",
+            "domain": "www.atlanticcouncil.org"
+          }
+        ]
+      }
+    }
+  },
+  "all_citations": {
+    "USA-T2-1": {
+      "id": "USA-T2-1",
+      "citation": "[USA-T2-1]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "dir.commerce.gov",
+      "url": "https://dir.commerce.gov/sites/default/files/documents/2014/january/jeffrey0419.pdf",
+      "domain": "dir.commerce.gov"
+    },
+    "USA-T2-2": {
+      "id": "USA-T2-2",
+      "citation": "[USA-T2-2]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "mbda.commerce.gov",
+      "url": "https://mbda.commerce.gov/blog/category/2227.html",
+      "domain": "mbda.commerce.gov"
+    },
+    "USA-T2-3": {
+      "id": "USA-T2-3",
+      "citation": "[USA-T2-3]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "Testimony of",
+      "url": "https://www.commerce.gov/sites/default/files/media/files/2020/2020-03-11_nist_reauth_wcopan_testimony.pdf",
+      "domain": "www.commerce.gov"
+    },
+    "China-T2-1": {
+      "id": "China-T2-1",
+      "citation": "[China-T2-1]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "ipr.mofcom.gov.cn",
+      "url": "https://ipr.mofcom.gov.cn/hwwq_2/zn/Africa/ARIPO/file/GUIDELINES_FOR_EXAMINATION_AT_ARIPO.pdf",
+      "domain": "ipr.mofcom.gov.cn"
+    },
+    "China-T2-2": {
+      "id": "China-T2-2",
+      "citation": "[China-T2-2]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "On China’s WTO Compliance",
+      "url": "https://ipr.mofcom.gov.cn/zhuanti/Reports/reports/2016-China-Report-to-Congress.pdf",
+      "domain": "ipr.mofcom.gov.cn"
+    },
+    "Germany-T2-1": {
+      "id": "Germany-T2-1",
+      "citation": "[Germany-T2-1]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Industry/ipcei-cis.html",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T2-2": {
+      "id": "Germany-T2-2",
+      "citation": "[Germany-T2-2]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "… and what are you doing about it?",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Industry/industrie-4-0-impulse-paper-mastering-the-impact-of-digitalisation-through-education-and-training.pdf?__blob=publicationFile&v=1",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T2-3": {
+      "id": "Germany-T2-3",
+      "citation": "[Germany-T2-3]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "on the implementation of",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Wirtschaft/2nd-progress-report-implementation-of-startup-strategy-federal-government.pdf?__blob=publicationFile&v=4",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T2-4": {
+      "id": "Germany-T2-4",
+      "citation": "[Germany-T2-4]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "International",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Technologie/international-cooperation-projects.pdf?__blob=publicationFile&v=2",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T2-5": {
+      "id": "Germany-T2-5",
+      "citation": "[Germany-T2-5]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "Zero Trust and Industrie 4.0",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Industry/industrie-4-0-impulse-paper-zero-trust.pdf?__blob=publicationFile&v=3",
+      "domain": "www.bmwk.de"
+    },
+    "France-T2-1": {
+      "id": "France-T2-1",
+      "citation": "[France-T2-1]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/bc27d955-a500-42f4-9d5f-1eab79e5d0a9/files/c1988bc1-218e-4146-bf40-7d01a5a49a36",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T2-2": {
+      "id": "France-T2-2",
+      "citation": "[France-T2-2]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/c30694b6-8d16-4963-bc84-8fb761e4ef44/files/350609a4-2526-4630-bfc2-927ee35ef58e",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T2-3": {
+      "id": "France-T2-3",
+      "citation": "[France-T2-3]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/e86f62e8-18dd-4c41-b1f0-affbb1cd798f/files/b2bd0684-6efa-4157-aa14-746cb07b9cab",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T2-4": {
+      "id": "France-T2-4",
+      "citation": "[France-T2-4]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/85306552-77c1-48c0-bccb-d5bad3142a8e/files/cd5facf6-6f0b-4d39-8f7a-5d7e898086b9",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T2-5": {
+      "id": "France-T2-5",
+      "citation": "[France-T2-5]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/125fdfdc-37ce-411b-8350-7d45608e2aab/files/15351af4-1ab0-4e02-9026-c7ffc92bd83a",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "OECD-T2-1": {
+      "id": "OECD-T2-1",
+      "citation": "[OECD-T2-1]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "OECD Regional Development Papers No. 147",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/emerging-divides-in-the-transition-to-artificial-intelligence_eeb5e120/7376c776-en.pdf",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T2-2": {
+      "id": "OECD-T2-2",
+      "citation": "[OECD-T2-2]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "one.oecd.org",
+      "url": "https://one.oecd.org/document/DAF/COMP/WD(2025)72/en/pdf",
+      "domain": "one.oecd.org"
+    },
+    "OECD-T2-3": {
+      "id": "OECD-T2-3",
+      "citation": "[OECD-T2-3]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "www.oecd.org",
+      "url": "https://www.oecd.org/en/publications/competition-in-artificial-intelligence-infrastructure_623d1874-en/full-report/component-5.html",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T2-4": {
+      "id": "OECD-T2-4",
+      "citation": "[OECD-T2-4]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "ARTIFICIAL INTELLIGENCE",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/11/competition-in-artificial-intelligence-infrastructure_69319aee/623d1874-en.pdf",
+      "domain": "www.oecd.org"
+    },
+    "NATO-T2-1": {
+      "id": "NATO-T2-1",
+      "citation": "[NATO-T2-1]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "NATO Communications and Information Agency",
+      "url": "https://www.ncia.nato.int/resources/site1/General/newsroom/publications/Public_NCIA_Technology%20Strategy_external_v6%20-%20digital.pdf",
+      "domain": "www.ncia.nato.int"
+    },
+    "NATO-T2-2": {
+      "id": "NATO-T2-2",
+      "citation": "[NATO-T2-2]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "NATO DECISION -MAKING IN THE AGE OF",
+      "url": "https://www.act.nato.int/wp-content/uploads/2024/07/20210301_AC-2020_Final-Report.pdf",
+      "domain": "www.act.nato.int"
+    },
+    "NATO-T2-3": {
+      "id": "NATO-T2-3",
+      "citation": "[NATO-T2-3]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "Long Game",
+      "url": "https://deepportal.hq.nato.int/eacademy/wp-content/uploads/2024/09/978-3-031-58649-1.pdf",
+      "domain": "deepportal.hq.nato.int"
+    },
+    "NATO-T2-4": {
+      "id": "NATO-T2-4",
+      "citation": "[NATO-T2-4]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "202 6 DIANA CHALLENGE PROGRAMME",
+      "url": "https://www.diana.nato.int/resources/site1/general/challenges/docs/2026-challenge-programme-cfp.pdf",
+      "domain": "www.diana.nato.int"
+    },
+    "European Commission-T2-1": {
+      "id": "European Commission-T2-1",
+      "citation": "[European Commission-T2-1]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-ai-regulation-proposal",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "European Commission-T2-2": {
+      "id": "European Commission-T2-2",
+      "citation": "[European Commission-T2-2]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "open-research-europe.ec.europa.eu",
+      "url": "https://open-research-europe.ec.europa.eu/articles/5-362",
+      "domain": "open-research-europe.ec.europa.eu"
+    },
+    "European Commission-T2-3": {
+      "id": "European Commission-T2-3",
+      "citation": "[European Commission-T2-3]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 2,
+      "topic_name": "Impact of Global GPU Shortage on Atlantis's AI Development Timeline",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/digital-package",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "USA-T3-1": {
+      "id": "USA-T3-1",
+      "citation": "[USA-T3-1]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "eda-cdn.commerce.gov",
+      "url": "https://eda-cdn.commerce.gov/news/press-release/2022/09/02/us-department-commerce-invests-approximately-508-million-boost",
+      "domain": "eda-cdn.commerce.gov"
+    },
+    "USA-T3-2": {
+      "id": "USA-T3-2",
+      "citation": "[USA-T3-2]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "space.commerce.gov",
+      "url": "https://space.commerce.gov/category/industrial-base/",
+      "domain": "space.commerce.gov"
+    },
+    "USA-T3-3": {
+      "id": "USA-T3-3",
+      "citation": "[USA-T3-3]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "eda-cdn.commerce.gov",
+      "url": "https://eda-cdn.commerce.gov/news/press-release/2024/07/26/senior-department-commerce-official-visit-pacific-northwest-mass",
+      "domain": "eda-cdn.commerce.gov"
+    },
+    "USA-T3-4": {
+      "id": "USA-T3-4",
+      "citation": "[USA-T3-4]",
+      "type": "country_source",
+      "country": "USA",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "eda-cdn.commerce.gov",
+      "url": "https://eda-cdn.commerce.gov/news/press-release/2023/12/20/Gulf-Coast-Chambers-Network-Recompete-Plan",
+      "domain": "eda-cdn.commerce.gov"
+    },
+    "China-T3-1": {
+      "id": "China-T3-1",
+      "citation": "[China-T3-1]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "cz.mofcom.gov.cn",
+      "url": "https://cz.mofcom.gov.cn/BusinessNews/art/2024/art_761e7abed1f5436eb7726d988181e181.html",
+      "domain": "cz.mofcom.gov.cn"
+    },
+    "China-T3-2": {
+      "id": "China-T3-2",
+      "citation": "[China-T3-2]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "fdi.mofcom.gov.cn",
+      "url": "https://fdi.mofcom.gov.cn/EN/come-zonghe-con.html?id=46703",
+      "domain": "fdi.mofcom.gov.cn"
+    },
+    "China-T3-3": {
+      "id": "China-T3-3",
+      "citation": "[China-T3-3]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "ipr.mofcom.gov.cn",
+      "url": "https://ipr.mofcom.gov.cn/iprfocus/IPRFOCUS354.html",
+      "domain": "ipr.mofcom.gov.cn"
+    },
+    "China-T3-4": {
+      "id": "China-T3-4",
+      "citation": "[China-T3-4]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "english.mofcom.gov.cn",
+      "url": "https://english.mofcom.gov.cn/News/PressConference/art/2025/art_2822201e74a844859550521c782253b6.html",
+      "domain": "english.mofcom.gov.cn"
+    },
+    "Germany-T3-1": {
+      "id": "Germany-T3-1",
+      "citation": "[Germany-T3-1]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "Research, talent pipeline , production: Impetus for the",
+      "url": "https://www.bmwk.de/Redaktion/EN/Downloads/P/positionspapier-mikroelektronik-en.pdf?__blob=publicationFile&v=4",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T3-2": {
+      "id": "Germany-T3-2",
+      "citation": "[Germany-T3-2]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "German data centre landscape –",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Digitale-Welt/status-and-development-of-the-german-data-centre-landscape-executive-summary.pdf?__blob=publicationFile&v=2",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T3-3": {
+      "id": "Germany-T3-3",
+      "citation": "[Germany-T3-3]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "GreenTech Innovation",
+      "url": "https://www.bmwk.de/Redaktion/EN/Publikationen/Innovationspolitik/greentech-innovation-competition.pdf?__blob=publicationFile&v=3",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T3-4": {
+      "id": "Germany-T3-4",
+      "citation": "[Germany-T3-4]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Digital-World/digital-agenda.html",
+      "domain": "www.bmwk.de"
+    },
+    "France-T3-1": {
+      "id": "France-T3-1",
+      "citation": "[France-T3-1]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "Economic Stakes and Role for France?",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/00be60a5-dea5-437f-8a49-b44b5663ded2/files/3a04af78-d4d3-4de4-b24b-d43653a55f9a",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T3-2": {
+      "id": "France-T3-2",
+      "citation": "[France-T3-2]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/2024/12/05/the-artificial-intelligence-value-chain-what-economic-stakes-and-role-for-france",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T3-3": {
+      "id": "France-T3-3",
+      "citation": "[France-T3-3]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/8b7e4e07-b944-4a12-968d-0f6477577e54/files/ae211b10-74fd-4910-b2cf-7b862fe6f232",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T3-4": {
+      "id": "France-T3-4",
+      "citation": "[France-T3-4]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "Foreign Investment Screening in France",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/c7ec36f3-6df0-4cf8-82aa-9c772917afeb/files/83865cf0-0ecd-4684-badf-3e39fa6bb833",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T3-5": {
+      "id": "France-T3-5",
+      "citation": "[France-T3-5]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "presse.economie.gouv.fr",
+      "url": "https://presse.economie.gouv.fr/13042023-france-and-the-netherlands-sign-a-pact-for-innovation-and-sustainable-growth/",
+      "domain": "presse.economie.gouv.fr"
+    },
+    "OECD-T3-1": {
+      "id": "OECD-T3-1",
+      "citation": "[OECD-T3-1]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.oecd.org",
+      "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-7.html",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T3-2": {
+      "id": "OECD-T3-2",
+      "citation": "[OECD-T3-2]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.oecd.org",
+      "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-9.html",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T3-3": {
+      "id": "OECD-T3-3",
+      "citation": "[OECD-T3-3]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "SEMICONDUCTOR VALUE",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/06/mapping-the-semiconductor-value-chain_5ba52971/4154cdbf-en.pdf",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T3-4": {
+      "id": "OECD-T3-4",
+      "citation": "[OECD-T3-4]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.oecd.org",
+      "url": "https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report/component-3.html",
+      "domain": "www.oecd.org"
+    },
+    "NATO-T3-1": {
+      "id": "NATO-T3-1",
+      "citation": "[NATO-T3-1]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.sto.nato.int",
+      "url": "https://www.sto.nato.int/document/programmable-photonic-circuits/",
+      "domain": "www.sto.nato.int"
+    },
+    "NATO-T3-2": {
+      "id": "NATO-T3-2",
+      "citation": "[NATO-T3-2]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.sto.nato.int",
+      "url": "https://www.sto.nato.int/document/photonic-integrated-circuits/",
+      "domain": "www.sto.nato.int"
+    },
+    "NATO-T3-3": {
+      "id": "NATO-T3-3",
+      "citation": "[NATO-T3-3]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.sto.nato.int",
+      "url": "https://www.sto.nato.int/document-tag/silicon-photonics/",
+      "domain": "www.sto.nato.int"
+    },
+    "NATO-T3-4": {
+      "id": "NATO-T3-4",
+      "citation": "[NATO-T3-4]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.sto.nato.int",
+      "url": "https://www.sto.nato.int/document-author/w-bogaerts/",
+      "domain": "www.sto.nato.int"
+    },
+    "NATO-T3-5": {
+      "id": "NATO-T3-5",
+      "citation": "[NATO-T3-5]",
+      "type": "country_source",
+      "country": "NATO",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "A Low-Cost Thermal Imaging Sensor for Military Dismounted Operations David Huckridge, Paul Manning, Nicholas Parkinson, John Gillham",
+      "url": "https://publications.sto.nato.int/publications/STO%20Meeting%20Proceedings/RTO-MP-SET-103/MP-SET-103-08.pdf",
+      "domain": "publications.sto.nato.int"
+    },
+    "European Commission-T3-1": {
+      "id": "European Commission-T3-1",
+      "citation": "[European Commission-T3-1]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/milestone-strengthening-europes-semiconductor-manufacturing-capacity-under-chips-act-reached",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "European Commission-T3-2": {
+      "id": "European Commission-T3-2",
+      "citation": "[European Commission-T3-2]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/factpages/chips-act",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "European Commission-T3-3": {
+      "id": "European Commission-T3-3",
+      "citation": "[European Commission-T3-3]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/european-chips-act",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "European Commission-T3-4": {
+      "id": "European Commission-T3-4",
+      "citation": "[European Commission-T3-4]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "digital-strategy.ec.europa.eu",
+      "url": "https://digital-strategy.ec.europa.eu/en/news/european-chips-act-update-latest-milestones",
+      "domain": "digital-strategy.ec.europa.eu"
+    },
+    "European Commission-T3-5": {
+      "id": "European Commission-T3-5",
+      "citation": "[European Commission-T3-5]",
+      "type": "country_source",
+      "country": "European Commission",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "projects.research-and-innovation.ec.europa.eu",
+      "url": "https://projects.research-and-innovation.ec.europa.eu/en/horizon-magazine/powering-tomorrow-eu-invests-cutting-edge-microchip-tech-future-ai-and-space-applications",
+      "domain": "projects.research-and-innovation.ec.europa.eu"
+    },
+    "CSIS-T3-1": {
+      "id": "CSIS-T3-1",
+      "citation": "[CSIS-T3-1]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/analysis/strategy-united-states-regain-its-position-semiconductor-manufacturing",
+      "domain": "www.csis.org"
+    },
+    "CSIS-T3-2": {
+      "id": "CSIS-T3-2",
+      "citation": "[CSIS-T3-2]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-lifecycle-semiconductor-chip",
+      "domain": "www.csis.org"
+    },
+    "CSIS-T3-3": {
+      "id": "CSIS-T3-3",
+      "citation": "[CSIS-T3-3]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/blogs/perspectives-innovation/rai-explainer-strategic-importance-continued-us-leadership-chip",
+      "domain": "www.csis.org"
+    },
+    "Chatham House-T3-1": {
+      "id": "Chatham House-T3-1",
+      "citation": "[Chatham House-T3-1]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "An Embargo on Iranian Crude Oil Exports: How Likely and with What Impact? Paul Stevens Chatham House January 2012 Programme Paper: An Embargo on Iranian Crude Oil Exports www.chathamhouse.org 2",
+      "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/0112pp_stevens.pdf",
+      "domain": "www.chathamhouse.org"
+    },
+    "Chatham House-T3-2": {
+      "id": "Chatham House-T3-2",
+      "citation": "[Chatham House-T3-2]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "www.chathamhouse.org",
+      "url": "https://www.chathamhouse.org/2022/12/humanitarian-exceptions-turning-point-un-sanctions",
+      "domain": "www.chathamhouse.org"
+    },
+    "Chatham House-T3-3": {
+      "id": "Chatham House-T3-3",
+      "citation": "[Chatham House-T3-3]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "briefing paper",
+      "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy%2C%20Environment%20and%20Development/0513bp_brack.pdf",
+      "domain": "www.chathamhouse.org"
+    },
+    "Chatham House-T3-4": {
+      "id": "Chatham House-T3-4",
+      "citation": "[Chatham House-T3-4]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 3,
+      "topic_name": "Atlantis's Domestic Semiconductor & Chip Design Capacity Building",
+      "title": "CONTROLLING THE INTERNATIONAL TRADE IN ILLEGALLY LOGGED TIMBER AND WOOD PRODUCTS",
+      "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/tradeinillegaltimber.pdf",
+      "domain": "www.chathamhouse.org"
+    },
+    "France-T16-1": {
+      "id": "France-T16-1",
+      "citation": "[France-T16-1]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/8b7e4e07-b944-4a12-968d-0f6477577e54/files/ae211b10-74fd-4910-b2cf-7b862fe6f232",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T16-2": {
+      "id": "France-T16-2",
+      "citation": "[France-T16-2]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "No. 257  March 2020 The Impact of Oil Prices on the US Economy",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/3412a82b-9b6f-42a7-bbfe-59155649519c/files/21b8db79-7cdd-4d07-80f3-5b43d7632cb1",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T16-3": {
+      "id": "France-T16-3",
+      "citation": "[France-T16-3]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "Impact of the oil price decline on France and the global economy",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/f23130f6-8966-4a2c-8ecc-a946f3539e76/files/a12fd31b-4cc6-4363-a91c-3bc72535f807",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T16-4": {
+      "id": "France-T16-4",
+      "citation": "[France-T16-4]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.tresor.economie.gouv.fr",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/2022/05/27/energy-crisis-europe-by-candlelight",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "France-T16-5": {
+      "id": "France-T16-5",
+      "citation": "[France-T16-5]",
+      "type": "country_source",
+      "country": "France",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "Annex: Impact of the war in Ukraine on GDP growth, in percentage points",
+      "url": "https://www.tresor.economie.gouv.fr/Articles/99141145-3740-499d-bedb-66e6fec0596a/files/c38082d1-9f3d-4dc9-95d0-ffa8b5af08e6",
+      "domain": "www.tresor.economie.gouv.fr"
+    },
+    "China-T16-1": {
+      "id": "China-T16-1",
+      "citation": "[China-T16-1]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "fdi.mofcom.gov.cn",
+      "url": "https://fdi.mofcom.gov.cn/EN/come-datatongji-con.html?id=16359",
+      "domain": "fdi.mofcom.gov.cn"
+    },
+    "China-T16-2": {
+      "id": "China-T16-2",
+      "citation": "[China-T16-2]",
+      "type": "country_source",
+      "country": "China",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "fdi.mofcom.gov.cn",
+      "url": "https://fdi.mofcom.gov.cn/EN/come-datatongji-con.html?id=16311",
+      "domain": "fdi.mofcom.gov.cn"
+    },
+    "Germany-T16-1": {
+      "id": "Germany-T16-1",
+      "citation": "[Germany-T16-1]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Artikel/Energy/petroleum-fuel-prices.html",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T16-2": {
+      "id": "Germany-T16-2",
+      "citation": "[Germany-T16-2]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2024/20240412-the-economic-situation-in-germany-in-may-2024.html",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T16-3": {
+      "id": "Germany-T16-3",
+      "citation": "[Germany-T16-3]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2025/20250317-the-economic-situation-in-germany-in-march-2025.html",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T16-4": {
+      "id": "Germany-T16-4",
+      "citation": "[Germany-T16-4]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2024/20240412-the-economic-situation-in-germany-in-april-2024.html",
+      "domain": "www.bmwk.de"
+    },
+    "Germany-T16-5": {
+      "id": "Germany-T16-5",
+      "citation": "[Germany-T16-5]",
+      "type": "country_source",
+      "country": "Germany",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.bmwk.de",
+      "url": "https://www.bmwk.de/Redaktion/EN/Pressemitteilungen/Wirtschaftliche-Lage/2022/20220613-the-economic-situation-in-germany-in-june-2022.html",
+      "domain": "www.bmwk.de"
+    },
+    "OECD-T16-1": {
+      "id": "OECD-T16-1",
+      "citation": "[OECD-T16-1]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.oecd.org",
+      "url": "https://www.oecd.org/en/about/news/press-releases/2024/11/cost-of-support-measures-for-fossil-fuels-decreased-sharply-in-2023-but-remains-elevated-relative-to-its-historical-average.html",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T16-2": {
+      "id": "OECD-T16-2",
+      "citation": "[OECD-T16-2]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "I E A S T A T I S T I C S",
+      "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2004/01/energy-prices-and-taxes_g1gh309c/energy_tax-v2003-4-en.pdf",
+      "domain": "www.oecd.org"
+    },
+    "OECD-T16-3": {
+      "id": "OECD-T16-3",
+      "citation": "[OECD-T16-3]",
+      "type": "country_source",
+      "country": "OECD",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "Fuel Tax",
+      "url": "https://webfs.oecd.org/TADWEB/agriculture/data/AMIS/Indicators/Sources/www.fin.gov.on.ca_en_tax_ft_rates.pdf",
+      "domain": "webfs.oecd.org"
+    },
+    "CSIS-T16-1": {
+      "id": "CSIS-T16-1",
+      "citation": "[CSIS-T16-1]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/analysis/oil-market",
+      "domain": "www.csis.org"
+    },
+    "CSIS-T16-2": {
+      "id": "CSIS-T16-2",
+      "citation": "[CSIS-T16-2]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/analysis/russia-oil-surcharge-anticipating-benefits-and-challenges",
+      "domain": "www.csis.org"
+    },
+    "CSIS-T16-3": {
+      "id": "CSIS-T16-3",
+      "citation": "[CSIS-T16-3]",
+      "type": "country_source",
+      "country": "CSIS",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.csis.org",
+      "url": "https://www.csis.org/analysis/critical-questions-volatility-global-oil-prices",
+      "domain": "www.csis.org"
+    },
+    "Chatham House-T16-1": {
+      "id": "Chatham House-T16-1",
+      "citation": "[Chatham House-T16-1]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.chathamhouse.org",
+      "url": "https://www.chathamhouse.org/sites/default/files/public/Research/Energy,%20Environment%20and%20Development/030712ppt_stevens.pdf",
+      "domain": "www.chathamhouse.org"
+    },
+    "Chatham House-T16-2": {
+      "id": "Chatham House-T16-2",
+      "citation": "[Chatham House-T16-2]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.chathamhouse.org",
+      "url": "https://www.chathamhouse.org/2025/09/tightening-oil-price-cap-increase-pressure-russia/oil-rents-are-kremlins-weak-point",
+      "domain": "www.chathamhouse.org"
+    },
+    "Chatham House-T16-3": {
+      "id": "Chatham House-T16-3",
+      "citation": "[Chatham House-T16-3]",
+      "type": "country_source",
+      "country": "Chatham House",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.chathamhouse.org",
+      "url": "https://www.chathamhouse.org/2022/07/timing-key-gulf-replacing-russian-oil",
+      "domain": "www.chathamhouse.org"
+    },
+    "Atlantic Council-T16-1": {
+      "id": "Atlantic Council-T16-1",
+      "citation": "[Atlantic Council-T16-1]",
+      "type": "country_source",
+      "country": "Atlantic Council",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.atlanticcouncil.org",
+      "url": "https://www.atlanticcouncil.org/blogs/new-atlanticist/how-a-venezuela-shock-could-raise-global-oil-and-food-prices/",
+      "domain": "www.atlanticcouncil.org"
+    },
+    "Atlantic Council-T16-2": {
+      "id": "Atlantic Council-T16-2",
+      "citation": "[Atlantic Council-T16-2]",
+      "type": "country_source",
+      "country": "Atlantic Council",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.atlanticcouncil.org",
+      "url": "https://www.atlanticcouncil.org/blogs/energysource/how-the-new-us-sanctions-on-russian-oil-will-impact-energy-markets/",
+      "domain": "www.atlanticcouncil.org"
+    },
+    "Atlantic Council-T16-3": {
+      "id": "Atlantic Council-T16-3",
+      "citation": "[Atlantic Council-T16-3]",
+      "type": "country_source",
+      "country": "Atlantic Council",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.atlanticcouncil.org",
+      "url": "https://www.atlanticcouncil.org/event/pandemic-plunging-oil-prices-and-putin-what-does-the-future-hold-for-the-russian-economy/",
+      "domain": "www.atlanticcouncil.org"
+    },
+    "Atlantic Council-T16-4": {
+      "id": "Atlantic Council-T16-4",
+      "citation": "[Atlantic Council-T16-4]",
+      "type": "country_source",
+      "country": "Atlantic Council",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.atlanticcouncil.org",
+      "url": "https://www.atlanticcouncil.org/blogs/new-atlanticist/how-venezuela-uses-crypto-to-sell-oil-and-what-the-us-should-do-about-it/",
+      "domain": "www.atlanticcouncil.org"
+    },
+    "Atlantic Council-T16-5": {
+      "id": "Atlantic Council-T16-5",
+      "citation": "[Atlantic Council-T16-5]",
+      "type": "country_source",
+      "country": "Atlantic Council",
+      "topic_id": 16,
+      "topic_name": "Impact of Global Oil Price Drop on Atlantis's Energy Security & Economy",
+      "title": "www.atlanticcouncil.org",
+      "url": "https://www.atlanticcouncil.org/event/russian-saudi-oil-war/",
+      "domain": "www.atlanticcouncil.org"
+    },
+    "USER-a": {
+      "id": "USER-a",
+      "citation": "[USER-a]",
+      "type": "user_fact",
+      "content": "A natural disaster caused the world's leading GPU manufacturer to lose 60% of production capacity, with full recovery expected by the end of 2028 through subsidiary investments.",
+      "weight": 30,
+      "url": null
+    },
+    "USER-b": {
+      "id": "USER-b",
+      "citation": "[USER-b]",
+      "type": "user_fact",
+      "content": "The European automotive industry is slow to adopt EV production, leading to a flood of cheap East Asian EVs and projected profits at 30% of 2020-2024 average in 2025.",
+      "weight": 15,
+      "url": null
+    },
+    "USER-c": {
+      "id": "USER-c",
+      "citation": "[USER-c]",
+      "type": "user_fact",
+      "content": "Eurozone countries' GDP is projected to fall by an average of 1.5% in 2025 compared to 2024.",
+      "weight": 15,
+      "url": null
+    },
+    "USER-d": {
+      "id": "USER-d",
+      "citation": "[USER-d]",
+      "type": "user_fact",
+      "content": "A fragile ceasefire holds in eastern Ukraine, with Russia controlling two major power plants. The Ukrainian economy is growing at 4% GDP, driven by defense and infrastructure investments.",
+      "weight": 10,
+      "url": null
+    },
+    "USER-e": {
+      "id": "USER-e",
+      "citation": "[USER-e]",
+      "type": "user_fact",
+      "content": "US investments in Ukraine target critical raw materials in the mining industry. Annual EU investments in Ukraine are 3% of Ukrainian GDP and will remain at this level until 2029.",
+      "weight": 5,
+      "url": null
+    },
+    "USER-f": {
+      "id": "USER-f",
+      "citation": "[USER-f]",
+      "type": "user_fact",
+      "content": "A sharp increase in renewable energy in the EU and China from early 2028, combined with a mid-2023 discovery of huge oil and gas deposits in South America, will lead to an oversupply of fuels and a significant drop in oil prices to 30-35 USD per barrel by late 2027, impacting Russia's budget.",
+      "weight": 25,
+      "url": null
+    }
+  },
+  "total_sources": 96
+}

@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "session_id": 1,
+  "name": "Atlantis's Strategic GPU Reserve & Procurement Strategy 2025-2028",
+  "keywords": [
+    "GPU supply chain",
+    "semiconductor shortage",
+    "AI infrastructure",
+    "critical raw materials"
+  ],
+  "weight": 90,
+  "rationale": "Factor (a) GPU shortage directly impacts Atlantis's ambition to build transnational AI infrastructure and requires a proactive procurement strategy.",
+  "selected": false,
+  "has_cached_urls": false,
+  "urls_cached_at": null,
+  "synthesis": false,
+  "synthesis_generated_at": null
+}

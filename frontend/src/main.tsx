@@ -6,7 +6,11 @@ import { Toaster } from "sonner";
 
 import App from "./App";
 import { queryClient } from "./lib/query-client";
+import { setupMockMode } from "./api/mock-setup";
 import "./index.css";
+
+// Enable mock mode if VITE_MOCK_MODE=true (reads from static JSON instead of API)
+setupMockMode();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

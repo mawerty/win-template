@@ -13,23 +13,24 @@ export default function NewSessionPage() {
 
   const handleSubmit = async (
     profile: CountryProfile, 
-    situation: string
+    situation: string,
+    criteria: string
   ) => {
     setIsLoading(true);
     
     try {
-      const response = await createSession(profile, situation);
+      const response = await createSession(profile, situation, criteria);
       
-      toast.success(`Utworzono sesję prognozowania z ${response.topics.length} tematami!`);
+      toast.success(`Created forecast session with ${response.topics.length} topics!`);
       navigate(`/session/${response.id}`);
     } catch (error: unknown) {
       console.error("Error creating session:", error);
       const err = error as { status?: number; payload?: { detail?: string }; message?: string };
       
       if (err.status === 0 || err.message?.includes("fetch")) {
-        toast.error("Nie można połączyć z serwerem. Sprawdź czy backend działa.");
+        toast.error("Cannot connect to server. Check if backend is running.");
       } else {
-        toast.error(`Błąd: ${err.payload?.detail || err.message || "Nieznany błąd"}`);
+        toast.error(`Error: ${err.payload?.detail || err.message || "Unknown error"}`);
       }
     } finally {
       setIsLoading(false);
@@ -46,7 +47,7 @@ export default function NewSessionPage() {
           className="text-slate-400 hover:text-slate-100"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Powrót
+          Back
         </Button>
       </div>
 
@@ -54,14 +55,14 @@ export default function NewSessionPage() {
       <div className="text-center mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm mb-4">
           <Sparkles className="h-4 w-4" />
-          Nowa Analiza
+          New Analysis
         </div>
         <h1 className="text-3xl font-bold text-slate-100 mb-3">
-          Wprowadź Dane do Analizy
+          Enter Analysis Data
         </h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-          Podaj profil państwa Atlantis oraz opis aktualnej sytuacji międzynarodowej.
-          Na podstawie tych danych wygenerujemy tematy badawcze.
+          Provide Atlantis country profile and current international situation description.
+          Based on this data, we will generate research topics.
         </p>
       </div>
 

@@ -107,7 +107,7 @@ SOURCES:
    - Count total citation references
 
 2. BIAS/CREDIBILITY (bias): Check source attribution
-   - Russia/China sources: Must say "Russia claims...", "Chinese media reports..."
+   - Russia/China/Other uncertain  sources: Must say "Russia claims...", "Chinese media reports..."
    - Global claims: Need 2+ country sources, not single-source
    - Suspicious: "worldwide trend" cited from only one country
 
@@ -119,12 +119,9 @@ SOURCES:
 
 SCORES: hall=XX cite=XX bias=XX qual=XX
 
-ISSUES:
-- [problem 1]
-- [problem 2]
-- (or "none")
+ISSUES: [max 3 bullet points, only problems - no praise]
 
-FIX: [priority fix or "none"]"""
+FIX: [single most important fix]"""
 
 
 MUTATE_PROMPT = """Fix the issues in this text.
@@ -357,14 +354,14 @@ async def evolve(
     initial_content: str,
     context: str,
     criteria: str,
-    max_iterations: int = 3,
+    max_iterations: int = 5,
     target_score: float = 150.0,  # Always aim for max
     logger: Optional[StepLogger] = None
 ) -> EvolutionResult:
     """
     Main evolution loop - iteratively improve content.
     
-    Simple 3-iteration approach:
+    5-iteration approach targeting 150/150:
     1. Evaluate current content
     2. If score < target, mutate
     3. Keep best version seen
@@ -466,8 +463,8 @@ async def evolve_country_summary(
         initial_content=summary,
         context=articles_context,
         criteria=COUNTRY_SUMMARY_CRITERIA,
-        max_iterations=3,
-        target_score=150,  # Aim for max
+        max_iterations=5,
+        target_score=150,
         logger=logger
     )
 
@@ -482,8 +479,8 @@ async def evolve_topic_synthesis(
         initial_content=synthesis,
         context=country_summaries_context,
         criteria=SYNTHESIS_CRITERIA,
-        max_iterations=3,
-        target_score=150,  # Aim for max
+        max_iterations=5,
+        target_score=150,
         logger=logger
     )
 
@@ -492,7 +489,7 @@ async def evolve_scenario(
     scenario: str,
     topic_syntheses_context: str,
     logger: Optional[StepLogger] = None,
-    max_iterations: int = 3  # 3 iterations max
+    max_iterations: int = 5
 ) -> EvolutionResult:
     """Evolve scenario using topic syntheses as context."""
     return await evolve(
@@ -500,7 +497,7 @@ async def evolve_scenario(
         context=topic_syntheses_context,
         criteria=SCENARIO_CRITERIA,
         max_iterations=max_iterations,
-        target_score=150,  # Aim for max
+        target_score=150,
         logger=logger
     )
 
@@ -560,8 +557,8 @@ async def evolve_report_section(
         initial_content=content,
         context=syntheses_context,
         criteria=criteria,
-        max_iterations=3,  # 3 iterations
-        target_score=130,  # Good enough
+        max_iterations=5,
+        target_score=150,
         logger=logger
     )
 

@@ -1,0 +1,24 @@
+{
+  "appId": "com.atlantis.analyst.demo",
+  "productName": "Atlantis Analyst Demo",
+  "directories": {
+    "output": "dist-electron-demo"
+  },
+  "files": [
+    "electron/main-mock.cjs",
+    "frontend/dist/**/*"
+  ],
+  "extraMetadata": {
+    "main": "electron/main-mock.cjs"
+  },
+  "win": {
+    "target": "portable"
+  },
+  "mac": {
+    "target": "dir"
+  },
+  "linux": {
+    "target": "AppImage"
+  }
+}
+
